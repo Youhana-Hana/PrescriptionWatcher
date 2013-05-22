@@ -1,0 +1,13 @@
+Medicine name
+start Date
+end Date
+Start time
+end time
+every hours
+Quantity
+Medicine type
+comment
+dosage جرعة
+
+
+View schedule to display
