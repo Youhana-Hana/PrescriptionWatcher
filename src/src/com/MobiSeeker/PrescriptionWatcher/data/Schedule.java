@@ -1,8 +1,8 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Schedule {
@@ -13,7 +13,13 @@ public class Schedule {
         this.prescriptions = new ArrayList<Prescription>();
     }
 
-    List<Prescription> getPrescriptions() {
+    public List<Prescription> getPrescriptions() {
+        Collections.sort(this.prescriptions, new PrescriptionComparator());
         return Collections.unmodifiableList(this.prescriptions);
     }
-}
+
+    public void add(Prescription prescription) {
+        this.prescriptions.add(prescription);
+    }
+
+ }
