@@ -2,7 +2,6 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Schedule {
@@ -21,5 +20,4 @@ public class Schedule {
     public void add(Prescription prescription) {
         this.prescriptions.add(prescription);
     }
-
  }

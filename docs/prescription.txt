@@ -1,13 +1,20 @@
+
 Medicine name
-start Date
-end Date
-Start time
-end time
-every hours
-Quantity
-Medicine type
+Date time
 comment
 dosage جرعة
+
+
+Medicine name
+start Date >>
+end Date      or until dosage finished
+
+Start time  >> 6 AM to 10 PM
+end time
+
+dosage per day
+
+
 
 
 View schedule to display
