@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Prescription {
 
-    public Prescription(String medicineName, Date time, int dosage, String comment) {
+    public Prescription(String medicineName, Date time, double dosage, String comment) {
         this.medicineName = medicineName;
         this.time = time;
         this.dosage = dosage;
@@ -19,7 +19,7 @@ public class Prescription {
         return this.time;
     }
 
-    public int getDosage() {
+    public double getDosage() {
         return this.dosage;
     }
 
@@ -31,7 +31,7 @@ public class Prescription {
 
     private Date time;
 
-    private int dosage;
+    private double dosage;
 
     private String comment;
 }

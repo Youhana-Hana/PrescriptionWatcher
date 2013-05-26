@@ -1,14 +1,11 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
+import static junit.framework.Assert.*;
 
 public class GivenAPrescription {
 
@@ -40,7 +37,7 @@ public class GivenAPrescription {
 
         Prescription prescription =  new Prescription("NAME", date, 2, null);
 
-        assertEquals(2, prescription.getDosage());
+        assertEquals(2.0, prescription.getDosage());
     }
 
     @Test

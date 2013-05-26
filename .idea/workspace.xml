@@ -24,10 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Schedule.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Schedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/prescription.txt" afterPath="$PROJECT_DIR$/docs/prescription.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/tests.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescription.java" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescription.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
@@ -43,18 +46,18 @@
     <file path="/build.xml" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369164618047" ignored="false" />
     <file path="/pre-commit" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369162559377" ignored="false" />
     <file path="/commit.sh" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369162638942" ignored="false" />
-    <file path="/Dummy.txt" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369573373367" ignored="false" />
+    <file path="/Dummy.txt" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369591456515" ignored="false" />
     <file path="/GivenAnActivity.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369165002548" ignored="false" />
-    <file path="/fragment.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369573373367" ignored="false" />
+    <file path="/fragment.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369591456515" ignored="false" />
     <file path="/prescription.txt" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369569500791" ignored="false" />
-    <file path="/Prescription.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369256357266" ignored="false" />
+    <file path="/Prescription.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369593140024" ignored="false" />
     <file path="/GivenAPrescription.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369432839888" ignored="false" />
     <file path="/Schedule.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369435070099" ignored="false" />
     <file path="/GivenASchedule.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369435022058" ignored="false" />
-    <file path="/PrescriptionComparator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369434735189" ignored="false" />
-    <file path="/GivenAPrescriptionComparator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369435238620" ignored="false" />
-    <file path="/Calculator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369574588235" ignored="false" />
-    <file path="/GivenACalculator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369574867715" ignored="false" />
+    <file path="/PrescriptionComparator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369589964322" ignored="false" />
+    <file path="/GivenAPrescriptionComparator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369589908894" ignored="false" />
+    <file path="/Calculator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369595690702" ignored="false" />
+    <file path="/GivenACalculator.java" changelist="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" time="1369594694406" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +109,23 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java" line="187" class="com.MobiSeeker.PrescriptionWatcher.data.GivenACalculator" package="com.MobiSeeker.PrescriptionWatcher.data">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -118,19 +138,28 @@
       <file leaf-file-name="prescription.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/prescription.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="14" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GivenACalculator.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GivenACalculator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="3263" selection-end="3263" vertical-scroll-proportion="0.4915254">
+            <state line="187" column="0" selection-start="7044" selection-end="7044" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Prescription.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="5" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,10 +167,19 @@
       <file leaf-file-name="Calculator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="5" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0">
+            <state line="50" column="45" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GivenASchedule.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenASchedule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.29577464">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,15 +209,15 @@
         <option value="$PROJECT_DIR$/src/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/test/build.xml" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/GivenAnActivity.java" />
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescription.java" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenASchedule.java" />
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Schedule.java" />
         <option value="$PROJECT_DIR$/docs/prescription.txt" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java" />
+        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java" />
+        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescription.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java" />
       </list>
     </option>
   </component>
@@ -349,10 +387,10 @@
     <property name="jdk.selected.JAVA_MODULE" value="1.7" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="editor.preferences.import" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/prescription.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -367,13 +405,13 @@
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.GivenACalculator">
-    <configuration default="false" name="GivenASchedule" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.tests">
+    <configuration default="false" name="GivenAPrescriptionComparator" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
-      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenASchedule" />
+      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenAPrescriptionComparator" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -390,57 +428,35 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="All in test" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="GivenACalculator" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
-      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenACalculator" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="GivenACalculator.whenCallingGetScheduleAndStartDateLessThanEndDateShouldThrow" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
       <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenACalculator" />
-      <option name="METHOD_NAME" value="whenCallingGetScheduleAndStartDateLessThanEndDateShouldThrow" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GivenACalculator.whenCallingGetScheduleAndEndDateGreaterThanStartDateShouldReturnExpected" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
+      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenACalculator" />
+      <option name="METHOD_NAME" value="whenCallingGetScheduleAndEndDateGreaterThanStartDateShouldReturnExpected" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -456,14 +472,42 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="GivenACalculator.whenCallingGetScheduleAndDosageLessThenZeroShouldThrow" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="GivenACalculator.whenCallingGetScheduleShouldReturnExpected" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
       <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenACalculator" />
-      <option name="METHOD_NAME" value="whenCallingGetScheduleAndDosageLessThenZeroShouldThrow" />
+      <option name="METHOD_NAME" value="whenCallingGetScheduleShouldReturnExpected" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GivenASchedule" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.data" />
+      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.data.GivenASchedule" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -585,21 +629,22 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Android Application.src" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GivenASchedule" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.All in test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.tests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptionComparator" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.GivenACalculator" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndStartDateLessThanEndDateShouldThrow" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndDosageLessThenZeroShouldThrow" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndEndDateGreaterThanStartDateShouldReturnExpected" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleShouldReturnExpected" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.GivenASchedule" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenACalculator" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndDosageLessThenZeroShouldThrow" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndStartDateLessThanEndDateShouldThrow" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in test" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GivenASchedule" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenASchedule" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleShouldReturnExpected" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GivenACalculator" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GivenACalculator.whenCallingGetScheduleAndEndDateGreaterThanStartDateShouldReturnExpected" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptionComparator" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -608,6 +653,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -634,20 +684,20 @@
       <workItem from="1369426645131" duration="3154000" />
       <workItem from="1369432828071" duration="2421000" />
       <workItem from="1369571718271" duration="149000" />
-      <workItem from="1369568449820" duration="6246000" />
+      <workItem from="1369568449820" duration="18726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16850000" />
+    <option name="totallyTimeSpent" value="29330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1024" height="716" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38245615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.5005171" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24405378" sideWeight="0.2859649" order="3" side_tool="true" content_ui="tabs" />
@@ -658,8 +708,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922441" sideWeight="0.67017543" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31540847" sideWeight="0.6894737" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3105263" sideWeight="0.49948293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31540847" sideWeight="0.6912281" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30877194" sideWeight="0.49948293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -737,13 +787,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/PrescriptionWatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="114" selection-end="133" vertical-scroll-proportion="0.16853933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="320" selection-end="320" vertical-scroll-proportion="0.26239067">
@@ -761,13 +804,6 @@
     <entry file="jar:///usr/dev/android-sdk-linux/platforms/android-15/android.jar!/java/util/Date.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/Date.class">
@@ -791,9 +827,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/Calendar.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="25" selection-start="2432" selection-end="2432" vertical-scroll-proportion="-0.9378531">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="0" selection-start="2900" selection-end="2900" vertical-scroll-proportion="0.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="243" selection-end="243" vertical-scroll-proportion="0.32">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/dev/android-sdk-linux/platforms/android-15/android.jar!/java/lang/Math.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/prescription.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescription.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="7" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.3859649">
+        <state line="51" column="0" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.74285716">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Prescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="5" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="0" selection-start="7044" selection-end="7044" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="45" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -802,54 +898,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenASchedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="65" selection-start="1324" selection-end="1415" vertical-scroll-proportion="0.5927052">
+        <state line="14" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.29577464">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/Calendar.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="39" selection-start="4104" selection-end="4111" vertical-scroll-proportion="0.045592707">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="555" selection-end="555" vertical-scroll-proportion="0.04385965">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/PrescriptionComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.21929824">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="5" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/prescription.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="3263" selection-end="3263" vertical-scroll-proportion="0.4915254">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
-import android.text.TextUtils;
-
+import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Calculator {
@@ -9,16 +9,64 @@ public class Calculator {
     public Schedule getSchedule(String medicineName,
                                 Date startDate,
                                 Date endDate,
-                                int startTime,
-                                int endTime,
-                                double dosagePerDay) {
+                                Time startTime,
+                                Time endTime,
+                                double dosage,
+                                int  timesPerDay,
+                                String comment) {
 
-        this.validate(medicineName, startDate, endDate, startTime, endTime, dosagePerDay);
+        this.validate(medicineName, startDate, endDate, startTime, endTime, dosage, timesPerDay);
 
-        return null;
+        long days = this.daysBetween(startDate, endDate);
+
+        long intervals = this.getInterval(startTime, endTime, timesPerDay);
+
+        return this.fillPrescriptions(medicineName, dosage, startDate, startTime, timesPerDay, days, intervals, comment);
     }
 
-    private void validate(String medicineName, Date startDate, Date endDate, int startTime, int endTime, double dosagePerDay) {
+
+    private Schedule fillPrescriptions(String medicineName,
+                                       double dosage,
+                                       Date startDate,
+                                       Time startTime,
+                                       long timesPerDay,
+                                       long days,
+                                       long intervals,
+                                       String comment) {
+
+        Schedule schedule = new Schedule();
+
+        for (int day = 0; day < days; day ++)
+        {
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(startDate);
+            calendar.set(calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DATE),
+                    0,
+                    0,
+                    0);
+
+            calendar.add(Calendar.DATE, day);
+
+            Calendar time = Calendar.getInstance();
+            time.setTime(startTime);
+
+            calendar.add(Calendar.HOUR, time.get(Calendar.HOUR));
+            calendar.add(Calendar.MINUTE, time.get(Calendar.MINUTE));
+            calendar.add(Calendar.SECOND, time.get(Calendar.SECOND));
+
+            for (int index = 0; index < timesPerDay; index++) {
+                Prescription prescription = new Prescription(medicineName, calendar.getTime(), dosage, comment);
+                schedule.add(prescription);
+            }
+        }
+
+        return schedule;
+    }
+
+    private void validate(String medicineName, Date startDate, Date endDate, Time startTime, Time endTime, double dosage, int timesPerDay) {
         if (medicineName == null) {
             throw new UnsupportedOperationException("Invalid prescription medicine name.");
         }
@@ -27,20 +75,43 @@ public class Calculator {
             throw new UnsupportedOperationException("Invalid prescription medicine name.");
         }
 
-        if (startDate.compareTo(endDate) > 0) {
+        if (startDate.after(endDate)) {
             throw new UnsupportedOperationException("Invalid prescription end date. Should be after start date");
         }
 
-        if (endTime < startTime) {
+        if (startTime.after(endTime)) {
             throw new UnsupportedOperationException("Invalid prescription end time. Should be after start time");
         }
 
-        if (dosagePerDay < 0) {
+        if (dosage < 0) {
             throw new UnsupportedOperationException("Invalid prescription dosage. Should be greater than zero");
         }
 
-        if (dosagePerDay == 0) {
+        if (dosage == 0) {
             throw new UnsupportedOperationException("Invalid prescription dosage. Should be greater than zero");
         }
+
+        if (timesPerDay < 0) {
+            throw new UnsupportedOperationException("Invalid prescription times per day. Should be greater than zero");
+        }
+
+        if (timesPerDay == 0) {
+            throw new UnsupportedOperationException("Invalid prescription times per day. Should be greater than zero");
+        }
     }
+
+    private long daysBetween(Date startDate, Date endDate) {
+        long daysBetweenInMilliSeconds = endDate.getTime() - startDate.getTime();
+
+        return Math.abs((daysBetweenInMilliSeconds/(1000*60*60*24))) + 1;
+    }
+
+    private long getInterval(Time startTime, Time endTime, double timesPerDay) {
+        long periodInMilliSeconds = endTime.getTime() - startTime.getTime();
+        long periodInMinutes = periodInMilliSeconds /(1000 * 60);
+        long dosages = (long) Math.ceil(timesPerDay);
+
+        return periodInMinutes / dosages;
+    }
+
 }
