@@ -53,14 +53,21 @@ public class Calculator {
             Calendar time = Calendar.getInstance();
             time.setTime(startTime);
 
-            calendar.add(Calendar.HOUR, time.get(Calendar.HOUR));
-            calendar.add(Calendar.MINUTE, time.get(Calendar.MINUTE));
-            calendar.add(Calendar.SECOND, time.get(Calendar.SECOND));
+            calendar.set(Calendar.AM_PM, Calendar.AM);
+            calendar.set(Calendar.HOUR, time.get(Calendar.HOUR));
+            calendar.set(Calendar.MINUTE, time.get(Calendar.MINUTE));
+            calendar.set(Calendar.SECOND, time.get(Calendar.SECOND));
+            calendar.set(Calendar.MILLISECOND, 0);
 
-            for (int index = 0; index < timesPerDay; index++) {
+            for (int index = 0; index < timesPerDay; ++index) {
+                if (index != 0) {
+                    calendar.add(Calendar.MINUTE, (int)intervals);
+                }
+
                 Prescription prescription = new Prescription(medicineName, calendar.getTime(), dosage, comment);
                 schedule.add(prescription);
-            }
+
+                }
         }
 
         return schedule;

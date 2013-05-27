@@ -1,5 +1,6 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
+import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -185,17 +186,12 @@ public class GivenACalculator {
         Time startTime = Time.valueOf("10:00:00");
         Time endTime = Time.valueOf("22:0:00");
 
-        Schedule  schedule = this.calculator.getSchedule("NAME", startDate, endDate, startTime, endTime, 2, 3, "Comment");
+        Schedule  schedule = this.calculator.getSchedule("NAME", startDate, endDate,
+                                                        startTime, endTime,
+                                                        2, 3, "Comment");
 
-        calendar.setTime(startDate);
-        calendar.set(calendar.get(Calendar.YEAR),
-                     calendar.get(Calendar.MONTH),
-                     calendar.get(Calendar.DATE),
-                     10,
-                     0,
-                     0);
-
-        Date time1 = calendar.getTime();
+        DateTime dateTime1 = new DateTime(startDate);
+        dateTime1 = dateTime1.withTime(10, 0, 0, 0);
 
         List <Prescription> prescriptions = schedule.getPrescriptions();
         assertEquals(12, prescriptions.size());
@@ -203,16 +199,29 @@ public class GivenACalculator {
         assertEquals("NAME", prescriptions.get(0).getMedicineName());
         assertEquals(2.0, prescriptions.get(0).getDosage());
         assertEquals("Comment", prescriptions.get(0).getComment());
-        assertEquals(time1, prescriptions.get(0).getTime());
+
+        assertEquals(dateTime1.toDate(), prescriptions.get(0).getTime());
+        assertEquals(dateTime1.plusHours(4).toDate(), prescriptions.get(1).getTime());
+        assertEquals(dateTime1.plusHours(8).toDate(), prescriptions.get(2).getTime());
+
+        assertEquals(dateTime1.plusDays(1).toDate(), prescriptions.get(3).getTime());
+        assertEquals(dateTime1.plusDays(1).plusHours(4).toDate(), prescriptions.get(4).getTime());
+        assertEquals(dateTime1.plusDays(1).plusHours(8).toDate(), prescriptions.get(5).getTime());
+
+        assertEquals(dateTime1.plusDays(2).toDate(), prescriptions.get(6).getTime());
+        assertEquals(dateTime1.plusDays(2).plusHours(4).toDate(), prescriptions.get(7).getTime());
+        assertEquals(dateTime1.plusDays(2).plusHours(8).toDate(), prescriptions.get(8).getTime());
+
+        assertEquals(dateTime1.plusDays(3).toDate(), prescriptions.get(9).getTime());
+        assertEquals(dateTime1.plusDays(3).plusHours(4).toDate(), prescriptions.get(10).getTime());
+        assertEquals(dateTime1.plusDays(3).plusHours(8).toDate(), prescriptions.get(11).getTime());
 
         assertEquals("NAME", prescriptions.get(5).getMedicineName());
         assertEquals(2.0, prescriptions.get(5).getDosage());
         assertEquals("Comment", prescriptions.get(5).getComment());
 
-
         assertEquals("NAME", prescriptions.get(11).getMedicineName());
         assertEquals(2.0, prescriptions.get(11).getDosage());
         assertEquals("Comment", prescriptions.get(11).getComment());
-
     }
 }
