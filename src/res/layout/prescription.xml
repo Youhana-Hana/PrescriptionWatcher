@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="5dp">
+
+    <ScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="4">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/drugName"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/drugName"
+                    android:layout_marginLeft="22dp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="text"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/dosage"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/dosage"
+                    android:imeOptions="actionNext"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/timesPerDay"
+                    android:id="@+id/textView"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/timesPerDay"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:imeOptions="actionNext"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/directions"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/comment"
+                    android:imeOptions="actionNext"
+                    android:lines="2"
+                    android:linksClickable="false"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/startDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:minWidth="100dp"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/startDate"
+                        android:layout_gravity="center_vertical|left"
+                        android:onClick="showDatePicker"
+                        android:clickable="true"
+                        android:inputType="date"
+                        android:layout_weight="3"
+                        android:focusableInTouchMode="false"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/endDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:minWidth="100dp"
+                        />
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/endDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:onClick="showDatePicker"
+                        android:clickable="true"
+                        android:layout_weight="3"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/startTime"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:minWidth="100dp"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/startTime"
+                        android:layout_gravity="left|center_vertical"
+                        android:onClick="showTimePicker"
+                        android:clickable="true"
+                        android:layout_weight="3"
+                        android:inputType="datetime"
+                        android:focusableInTouchMode="false"
+                        />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="100dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/endTime"
+                        android:layout_weight="1"
+                        android:layout_gravity="left|center_vertical"/>
+
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/endTime"
+                        android:layout_gravity="left|center_vertical"
+                        android:onClick="showTimePicker"
+                        android:clickable="true"
+                        android:layout_weight="3"
+                        android:inputType="datetime"
+                        android:focusableInTouchMode="false"
+                        />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@android:string/cancel"
+                android:onClick="cancel"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@android:string/ok"
+                android:onClick="save"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,7 +1,9 @@
-package com.MobiSeeker.PrescriptionWatcher;
+package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.MobiSeeker.PrescriptionWatcher.R;
 
 public class PrescriptionWatcher extends Activity {
     /**

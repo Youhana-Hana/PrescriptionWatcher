@@ -3,14 +3,19 @@
           package="com.MobiSeeker.PrescriptionWatcher"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="17"/>
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:allowBackup="false">
-        <activity android:name="PrescriptionWatcher"
+
+        <activity android:name=".activities.PrescriptionWatcher"
                   android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
+
+        <activity android:name=".activities.Prescription" android:label="@string/prescription" android:icon="@drawable/prescription">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+        </activity>
+
     </application>
 </manifest>

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PrescriptionWatcher</string>
+    <string name="app_name">Prescription Watcher</string>
+    <string name="prescription">Prescription</string>
+    <string name="drugName">Drug name</string>
+    <string name="dosage">Dosage</string>
+    <string name="directions">Directions</string>
+    <string name="timesPerDay">Times per day</string>
+    <string name="startDate">Start Date</string>
+    <string name="endDate">End Date</string>
+    <string name="startTime">Start time</string>
+    <string name="endTime">End time</string>
+    <string name="defaultStartTime">07:00</string>
+    <string name="defaultEndTime">22:00</string>
 </resources>
