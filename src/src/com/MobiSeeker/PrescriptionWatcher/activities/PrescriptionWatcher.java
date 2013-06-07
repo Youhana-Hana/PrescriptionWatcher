@@ -1,11 +1,12 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 
-public class PrescriptionWatcher extends Activity {
+import roboguice.activity.RoboFragmentActivity;
+
+public class PrescriptionWatcher extends RoboFragmentActivity {
     /**
      * Called when the activity is first created.
      */

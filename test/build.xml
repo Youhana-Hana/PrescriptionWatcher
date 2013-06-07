@@ -122,7 +122,7 @@
         <emmacheck coveragefile="${junit.output.dir}/coverage.emma"
                    metadatafile="${junit.output.dir}/metadata.emma"
                    output="${junit.output.dir}/requiredcoverage.line.out"
-                   overallcoverage="L100" />
+                   overallcoverage="M100" />
     </target>
 
     <target name="test-with-build" depends="cleanall, build, test" />
