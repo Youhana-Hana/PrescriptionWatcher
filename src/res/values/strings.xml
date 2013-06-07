@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PrescriptionWatcher</string>
+        <string name="patient">Patient</string>
+    
+    <string name="watcher">Watcher</string>
+    <string name="addprescription">Add Prescription</string>
+    
+    <string name="Modify Prescription">Modify /Delete  Prescription</string>
+    
 </resources>

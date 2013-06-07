@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical" android:id="@+id/addmodifiylayout"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent" android:background="@drawable/medicinemorning"
+              android:layout_width="fill_parent" android:gravity="center_vertical|center_horizontal"
+              android:layout_height="fill_parent" android:background="@drawable/medicinemorning" 
         >
+
+    <Button
+        android:id="@+id/paient"
+        android:layout_width="wrap_content" android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"  android:text="@string/patient"
+        android:background="@drawable/bluebutton" />
+
+    
+        <Button
+        android:id="@+id/watcher"
+        android:layout_width="wrap_content" android:layout_marginTop="20dp"
+        android:layout_height="wrap_content" android:text="@string/watcher"
+        android:background="@drawable/bluebutton" />
+    
         
+                 
     
 </LinearLayout>
 
