@@ -6,6 +6,6 @@
     <string name="watcher">Watcher</string>
     <string name="addprescription">Add Prescription</string>
     
-    <string name="Modify Prescription">Modify /Delete  Prescription</string>
+    <string name="modifyPrescription">Modify /Delete  Prescription</string>
     
 </resources>
