@@ -1,20 +1,23 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.content.Context;
-import android.widget.TextView;
 
+import com.MobiSeeker.PrescriptionWatcher.data.*;
 import com.xtremelabs.robolectric.Robolectric;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
 import com.xtremelabs.robolectric.shadows.ShadowApplication;
 import com.xtremelabs.robolectric.shadows.ShadowDialog;
-import com.xtremelabs.robolectric.shadows.ShadowEditText;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.*;
+
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -30,18 +33,24 @@ public class GivenAPrescription {
 
     Prescription activity;
 
+    private
+    @Mock
+    PrescriptionRepository prescriptionRepository;
+
     @Before
     public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+
         this.shadowApplication = Robolectric.getShadowApplication();
         this.context = shadowApplication.getApplicationContext();
 
         this.activity = new Prescription();
         this.activity.onCreate(null);
+        this.activity.prescriptionRepository = this.prescriptionRepository;
     }
 
     @Test
     public void whenCallingOnCreateShouldNotThrow() {
-
         assertNotNull(this.activity);
     }
 
@@ -152,5 +161,19 @@ public class GivenAPrescription {
     @Test
     public void whenCallingCancelShouldNotThrow() {
         this.activity.cancel(null);
+    }
+
+    @Test
+    public void whenCallingOnCreateShouldAllocatePrescriptionRepository() {
+        assertNotNull(this.activity.prescriptionRepository);
+    }
+
+    @Test
+    public void whenCallingSaveShouldCallPrescriptionRepositorySave() {
+        ArgumentCaptor<Entry> argumentCaptor = ArgumentCaptor.forClass(Entry.class);
+
+        this.activity.save(null);
+
+        verify(this.prescriptionRepository).save(argumentCaptor.capture());
     }
 }

@@ -181,7 +181,8 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/endTime"
                         android:layout_weight="1"
-                        android:layout_gravity="left|center_vertical"/>
+                        android:layout_gravity="left|center_vertical"
+                        />
 
                 <EditText
                         android:layout_width="wrap_content"

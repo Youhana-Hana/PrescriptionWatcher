@@ -2,10 +2,10 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.Comparator;
 
-public class PrescriptionComparator implements Comparator<Prescription> {
+public class PrescriptionComparator implements Comparator<Dosage> {
 
     @Override
-    public int compare(Prescription first, Prescription second) {
+    public int compare(Dosage first, Dosage second) {
         if (first.getTime() == null && second.getTime() == null)
             return 0;
 

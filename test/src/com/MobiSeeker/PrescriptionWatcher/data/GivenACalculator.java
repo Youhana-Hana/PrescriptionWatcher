@@ -193,7 +193,7 @@ public class GivenACalculator {
         DateTime dateTime1 = new DateTime(startDate);
         dateTime1 = dateTime1.withTime(10, 0, 0, 0);
 
-        List <Prescription> prescriptions = schedule.getPrescriptions();
+        List <Dosage> prescriptions = schedule.getPrescriptions();
         assertEquals(12, prescriptions.size());
 
         assertEquals("NAME", prescriptions.get(0).getMedicineName());

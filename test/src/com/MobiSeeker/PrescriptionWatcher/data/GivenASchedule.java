@@ -30,12 +30,12 @@ public class GivenASchedule {
 
     @Test(expected = UnsupportedOperationException.class)
     public void whenGetPrescriptionShouldBeReadOnly() {
-        this.schedule.getPrescriptions().add(new Prescription(null, null, 0, null));
+        this.schedule.getPrescriptions().add(new Dosage(null, null, 0, null));
     }
 
     @Test
     public void whenCallingAddCollectionCountShouldBeIncreasedAndItemPushedToTheCollection() {
-        Prescription prescription = new Prescription("NAME", null, 0, null);
+        Dosage prescription = new Dosage("NAME", null, 0, null);
         this.schedule.add(prescription);
 
         assertEquals(1, this.schedule.getPrescriptions().size());
@@ -48,14 +48,14 @@ public class GivenASchedule {
         Date time2 = new Date(time1.getTime()  - (10 *60 *1000));
         Date time3 = new Date(time2.getTime()  - (10 *60 *1000));
 
-        Prescription first = new Prescription("FIRST", time1, 0, null);
-        Prescription second = new Prescription("SECOND", time2, 0, null);
-        Prescription third = new Prescription("THIRD", time3, 0, null);
+        Dosage first = new Dosage("FIRST", time1, 0, null);
+        Dosage second = new Dosage("SECOND", time2, 0, null);
+        Dosage third = new Dosage("THIRD", time3, 0, null);
         this.schedule.add(first);
         this.schedule.add(second);
         this.schedule.add(third);
 
-        List<Prescription> prescriptions = this.schedule.getPrescriptions();
+        List<Dosage> prescriptions = this.schedule.getPrescriptions();
         assertEquals(third, prescriptions.get(0));
         assertEquals(second, prescriptions.get(1));
         assertEquals(first, prescriptions.get(2));

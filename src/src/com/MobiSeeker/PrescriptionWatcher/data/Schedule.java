@@ -6,18 +6,18 @@ import java.util.List;
 
 public class Schedule {
 
-    private ArrayList<Prescription> prescriptions = null;
+    private ArrayList<Dosage> prescriptions = null;
 
     public Schedule() {
-        this.prescriptions = new ArrayList<Prescription>();
+        this.prescriptions = new ArrayList<Dosage>();
     }
 
-    public List<Prescription> getPrescriptions() {
+    public List<Dosage> getPrescriptions() {
         Collections.sort(this.prescriptions, new PrescriptionComparator());
         return Collections.unmodifiableList(this.prescriptions);
     }
 
-    public void add(Prescription prescription) {
+    public void add(Dosage prescription) {
         this.prescriptions.add(prescription);
     }
  }

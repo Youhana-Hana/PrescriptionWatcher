@@ -2,9 +2,9 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.Date;
 
-public class Prescription {
+public class Dosage {
 
-    public Prescription(String medicineName, Date time, double dosage, String comment) {
+    public Dosage(String medicineName, Date time, double dosage, String comment) {
         this.medicineName = medicineName;
         this.time = time;
         this.dosage = dosage;

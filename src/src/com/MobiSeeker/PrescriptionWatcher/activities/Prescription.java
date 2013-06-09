@@ -14,6 +14,9 @@ import android.widget.TimePicker;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.MobiSeeker.PrescriptionWatcher.data.Dosage;
+import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
 import org.joda.time.LocalTime;
 
@@ -28,8 +31,6 @@ import roboguice.inject.InjectView;
 
 public class Prescription extends RoboFragmentActivity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
-
-    private final static String dateFormat = "dd/MM/yyyy";
 
     protected EditText selectedTextView = null;
 
@@ -73,6 +74,8 @@ public class Prescription extends RoboFragmentActivity implements
     @InjectResource(R.string.defaultEndTime)
     String defaultEndTime;
 
+    protected PrescriptionRepository prescriptionRepository;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -81,6 +84,8 @@ public class Prescription extends RoboFragmentActivity implements
         this.setEndtDate();
         this.setStartTime();
         this.setEndTime();
+
+        this.prescriptionRepository = new PrescriptionRepository();
     }
 
     public void showDatePicker(View view) {
@@ -118,7 +123,11 @@ public class Prescription extends RoboFragmentActivity implements
     }
 
     public void save(View view) {
+        PrescriptionRepository  prescriptionRepository = new PrescriptionRepository();
+        Entry entry=
+                new Entry(null, null, null, null, null, 0, null);
 
+        this.prescriptionRepository.save(entry);
     }
 
     public void cancel(View view) {

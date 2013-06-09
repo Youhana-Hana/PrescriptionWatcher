@@ -64,7 +64,7 @@ public class Calculator {
                     calendar.add(Calendar.MINUTE, (int)intervals);
                 }
 
-                Prescription prescription = new Prescription(medicineName, calendar.getTime(), dosage, comment);
+                Dosage prescription = new Dosage(medicineName, calendar.getTime(), dosage, comment);
                 schedule.add(prescription);
 
                 }
