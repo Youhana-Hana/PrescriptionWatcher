@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
@@ -75,6 +76,10 @@ public class Prescription extends RoboFragmentActivity implements
     protected
     @InjectResource(R.string.defaultEndTime)
     String defaultEndTime;
+
+    protected
+    @InjectResource(R.string.addingPrescriptionSucceeded)
+    String addingPrescriptionSucceeded;
 
     protected PrescriptionRepository prescriptionRepository;
 
@@ -144,6 +149,7 @@ public class Prescription extends RoboFragmentActivity implements
 
         try {
             this.prescriptionRepository.save(this, entry);
+            Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();
         }
         catch(Exception exception) {
             Log.e(Prescription.TAG, "Failed to save prescription", exception);

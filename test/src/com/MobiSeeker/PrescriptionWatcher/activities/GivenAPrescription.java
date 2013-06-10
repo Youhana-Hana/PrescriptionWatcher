@@ -1,14 +1,16 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.content.Context;
+import android.widget.Toast;
 
-import com.MobiSeeker.PrescriptionWatcher.data.*;
+import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 import com.xtremelabs.robolectric.Robolectric;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
 import com.xtremelabs.robolectric.shadows.ShadowApplication;
 import com.xtremelabs.robolectric.shadows.ShadowDialog;
+import com.xtremelabs.robolectric.shadows.ShadowToast;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,16 +18,16 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import static org.mockito.Mockito.*;
-
 
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
+import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricTestRunner.class)
 public class GivenAPrescription {
@@ -202,5 +204,20 @@ public class GivenAPrescription {
         assertEquals(endDate, entryCaptor.getValue().getEndDate());
         assertEquals(LocalTime.parse("10:00"), entryCaptor.getValue().getStartTime());
         assertEquals(LocalTime.parse("17:00"), entryCaptor.getValue().getEndTime());
+
+    }
+
+    @Test
+    public void whenCallingSaveAndSucceededShouldShowToast() throws Exception{
+        this.activity.save(null);
+
+        List<Toast> toasts = Robolectric.getShadowApplication().getShownToasts();
+
+        assertNotNull(toasts);
+        assertEquals(1, toasts.size());
+        Toast toast = toasts.get(0);
+        assertEquals(Toast.LENGTH_SHORT, toast.getDuration());
+        assertEquals(this.activity.addingPrescriptionSucceeded, ShadowToast.getTextOfLatestToast());
+
     }
 }
