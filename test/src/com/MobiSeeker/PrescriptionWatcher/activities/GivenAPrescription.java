@@ -8,6 +8,8 @@ import com.xtremelabs.robolectric.RobolectricTestRunner;
 import com.xtremelabs.robolectric.shadows.ShadowApplication;
 import com.xtremelabs.robolectric.shadows.ShadowDialog;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalTime;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -169,11 +171,36 @@ public class GivenAPrescription {
     }
 
     @Test
-    public void whenCallingSaveShouldCallPrescriptionRepositorySave() {
-        ArgumentCaptor<Entry> argumentCaptor = ArgumentCaptor.forClass(Entry.class);
+    public void whenCallingSaveShouldCallPrescriptionRepositorySave() throws Exception{
+
+        Date startDate = DateFormat.getDateInstance(DateFormat.MEDIUM).parse("Dec 10, 2012");
+
+        Date endDate = DateFormat.getDateInstance(DateFormat.MEDIUM).parse("Dec 20, 2012");
+
+        ArgumentCaptor<Context> contextCaptor = ArgumentCaptor.forClass(Context.class);
+        ArgumentCaptor<Entry> entryCaptor = ArgumentCaptor.forClass(Entry.class);
+
+        this.activity.drugName.setText("NAME");
+        this.activity.dosage.setText("3");
+        this.activity.timesPerDay.setText("5");
+        this.activity.comment.setText("COMMENT");
+        this.activity.startDate.setText("Dec 10, 2012");
+        this.activity.endDate.setText("Dec 20, 2012");
+        this.activity.startTime.setText("10:00");
+        this.activity.endTime.setText("17:00");
 
         this.activity.save(null);
 
-        verify(this.prescriptionRepository).save(argumentCaptor.capture());
+        verify(this.prescriptionRepository).save(contextCaptor.capture(), entryCaptor.capture());
+
+        assertEquals("NAME", entryCaptor.getValue().getMedicineName());
+        assertEquals("COMMENT", entryCaptor.getValue().getComment());
+        assertEquals(3.0, entryCaptor.getValue().getDosage());
+        assertEquals(5, entryCaptor.getValue().getTimesPerDay());
+
+        assertEquals(startDate, entryCaptor.getValue().getStartDate());
+        assertEquals(endDate, entryCaptor.getValue().getEndDate());
+        assertEquals(LocalTime.parse("10:00"), entryCaptor.getValue().getStartTime());
+        assertEquals(LocalTime.parse("17:00"), entryCaptor.getValue().getEndTime());
     }
 }

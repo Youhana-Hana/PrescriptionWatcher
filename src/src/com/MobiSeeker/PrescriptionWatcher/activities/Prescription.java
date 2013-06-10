@@ -5,6 +5,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -14,10 +15,10 @@ import android.widget.TimePicker;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
-import com.MobiSeeker.PrescriptionWatcher.data.Dosage;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 
 import java.text.DateFormat;
@@ -32,6 +33,7 @@ import roboguice.inject.InjectView;
 public class Prescription extends RoboFragmentActivity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
 
+    protected final static String TAG  = "com.MobiSeeker.PrescriptionWatcher.activities.Prescription";
     protected EditText selectedTextView = null;
 
     protected
@@ -44,7 +46,7 @@ public class Prescription extends RoboFragmentActivity implements
 
     protected
     @InjectView(R.id.timesPerDay)
-    TextView timerPerDay;
+    TextView timesPerDay;
 
     protected
     @InjectView(R.id.dosage)
@@ -80,12 +82,18 @@ public class Prescription extends RoboFragmentActivity implements
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.prescription);
+        init();
+
+        this.prescriptionRepository = new PrescriptionRepository();
+    }
+
+    private void init() {
         this.setStartDate();
         this.setEndtDate();
         this.setStartTime();
         this.setEndTime();
-
-        this.prescriptionRepository = new PrescriptionRepository();
+        this.dosage.setText("3");
+        this.timesPerDay.setText("3");
     }
 
     public void showDatePicker(View view) {
@@ -125,9 +133,39 @@ public class Prescription extends RoboFragmentActivity implements
     public void save(View view) {
         PrescriptionRepository  prescriptionRepository = new PrescriptionRepository();
         Entry entry=
-                new Entry(null, null, null, null, null, 0, null);
+                new Entry(this.drugName.getText().toString(),
+                        this.getDateFromControl(this.startDate),
+                        this.getDateFromControl(this.endDate),
+                        LocalTime.parse(this.startTime.getText().toString()),
+                        LocalTime.parse(this.endTime.getText().toString()),
+                        this.getDosage(),
+                        this.getTimesPerDay(),
+                        this.comment.getText().toString());
 
-        this.prescriptionRepository.save(entry);
+        try {
+            this.prescriptionRepository.save(this, entry);
+        }
+        catch(Exception exception) {
+            Log.e(Prescription.TAG, "Failed to save prescription", exception);
+        }
+    }
+
+    private int getTimesPerDay() {
+        try{
+            return Integer.parseInt(this.timesPerDay.getText().toString());
+        }
+        catch(NumberFormatException exception) {
+            return 0;
+        }
+    }
+
+    private double getDosage() {
+        try {
+            return Double.parseDouble(this.dosage.getText().toString());
+        }
+        catch(NumberFormatException exception) {
+            return 0.0;
+        }
     }
 
     public void cancel(View view) {
@@ -182,7 +220,7 @@ public class Prescription extends RoboFragmentActivity implements
         Date date = null;
 
         try {
-            date = DateFormat.getDateInstance(DateFormat.DEFAULT).parse(editText.getText().toString());
+            date = DateFormat.getDateInstance(DateFormat.MEDIUM).parse(editText.getText().toString());
         }
         catch(ParseException exception) {
             date = new Date();
@@ -195,9 +233,23 @@ public class Prescription extends RoboFragmentActivity implements
     private void updateDate(EditText view, Calendar calendar) {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
-        int dayOfMonth = calendar.get(Calendar.HOUR_OF_DAY);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
-        String formattedDate = DateFormat.getDateInstance(DateFormat.DEFAULT).format(calendar.getTime());
+        String formattedDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(calendar.getTime());
         view.setText(formattedDate);
     }
+
+    private Date getDateFromControl(EditText editText) {
+        Date date = null;
+
+        try {
+            return DateFormat.getDateInstance(DateFormat.MEDIUM).parse(editText.getText().toString());
+        }
+        catch(ParseException exception) {
+            Log.w(Prescription.TAG, exception.getMessage(), exception);
+        }
+
+        return null;
+    }
+
 }

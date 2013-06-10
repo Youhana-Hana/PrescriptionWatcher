@@ -9,13 +9,14 @@ public class Entry {
     public Entry(String medicineName,
                  Date startDate, Date endDate,
                  LocalTime startTime, LocalTime endTime,
-                 double dosage, String comment) {
+                 double dosage, int timesPerDay,String comment) {
         this.medicineName = medicineName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.dosage = dosage;
+        this.timesPerDay = timesPerDay;
         this.comment = comment;
     }
 
@@ -43,6 +44,10 @@ public class Entry {
         return this.dosage;
     }
 
+    public int getTimesPerDay() {
+        return this.timesPerDay;
+    }
+
     public String getComment() {
         return this.comment;
     }
@@ -56,5 +61,6 @@ public class Entry {
     private LocalTime endTime;
 
     private double dosage;
+    private int timesPerDay;
     private String comment;
 }
