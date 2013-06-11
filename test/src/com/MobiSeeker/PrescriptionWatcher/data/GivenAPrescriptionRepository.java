@@ -36,7 +36,7 @@ public class GivenAPrescriptionRepository {
         MockitoAnnotations.initMocks(this);
         this.repository = new PrescriptionRepository();
         this.context = Robolectric.getShadowApplication().getApplicationContext();
-        this.entry = new Entry("NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 3, "comment");
+        this.entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 3, "comment");
 
     }
 
@@ -109,7 +109,7 @@ public class GivenAPrescriptionRepository {
     @Test
     public void whenCallingGetCountShouldRetunExpected() throws Exception{
         this.repository.save(this.context, this.entry);
-        Entry entry2 = new Entry("NAME2", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 4, "comment");
+        Entry entry2 = new Entry(this.context, "NAME2", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 4, "comment");
 
         this.repository.save(this.context, this.entry);
         this.repository.save(this.context, entry2);

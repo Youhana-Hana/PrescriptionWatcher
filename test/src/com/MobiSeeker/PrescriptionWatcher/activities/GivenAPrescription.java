@@ -204,11 +204,14 @@ public class GivenAPrescription {
         assertEquals(endDate, entryCaptor.getValue().getEndDate());
         assertEquals(LocalTime.parse("10:00"), entryCaptor.getValue().getStartTime());
         assertEquals(LocalTime.parse("17:00"), entryCaptor.getValue().getEndTime());
-
     }
 
     @Test
     public void whenCallingSaveAndSucceededShouldShowToast() throws Exception{
+        this.activity.drugName.setText("NAME");
+        this.activity.dosage.setText("3");
+        this.activity.timesPerDay.setText("5");
+
         this.activity.save(null);
 
         List<Toast> toasts = Robolectric.getShadowApplication().getShownToasts();
@@ -218,6 +221,20 @@ public class GivenAPrescription {
         Toast toast = toasts.get(0);
         assertEquals(Toast.LENGTH_SHORT, toast.getDuration());
         assertEquals(this.activity.addingPrescriptionSucceeded, ShadowToast.getTextOfLatestToast());
+    }
 
+    @Test
+    public void whenCallingSaveAndFailedShouldShowToast() throws Exception{
+        this.activity.drugName.setText("NAME");
+        this.activity.dosage.setText("0");
+        this.activity.save(null);
+
+        List<Toast> toasts = Robolectric.getShadowApplication().getShownToasts();
+
+        assertNotNull(toasts);
+        assertEquals(1, toasts.size());
+        Toast toast = toasts.get(0);
+        assertEquals(Toast.LENGTH_LONG, toast.getDuration());
+        assertEquals("adding prescription failed. Invalid prescription dosage. Should be greater than zero.", ShadowToast.getTextOfLatestToast());
     }
 }

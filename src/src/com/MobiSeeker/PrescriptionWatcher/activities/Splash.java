@@ -53,7 +53,6 @@ public class Splash extends BaseActivity {
 
             @Override
             public void run() {
-                // TODO Auto-generated method stub
                 Intent intent = new Intent(Splash.this, PrescriptionWatcher.class);
                 startActivity(intent);
             }

@@ -12,7 +12,7 @@ public class Calculator {
                                 Time startTime,
                                 Time endTime,
                                 double dosage,
-                                int  timesPerDay,
+                                int timesPerDay,
                                 String comment) {
 
         this.validate(medicineName, startDate, endDate, startTime, endTime, dosage, timesPerDay);
@@ -36,8 +36,7 @@ public class Calculator {
 
         Schedule schedule = new Schedule();
 
-        for (int day = 0; day < days; day ++)
-        {
+        for (int day = 0; day < days; day++) {
 
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(startDate);
@@ -61,13 +60,13 @@ public class Calculator {
 
             for (int index = 0; index < timesPerDay; ++index) {
                 if (index != 0) {
-                    calendar.add(Calendar.MINUTE, (int)intervals);
+                    calendar.add(Calendar.MINUTE, (int) intervals);
                 }
 
                 Dosage prescription = new Dosage(medicineName, calendar.getTime(), dosage, comment);
                 schedule.add(prescription);
 
-                }
+            }
         }
 
         return schedule;
@@ -78,7 +77,7 @@ public class Calculator {
             throw new UnsupportedOperationException("Invalid prescription medicine name.");
         }
 
-        if (medicineName.isEmpty()){
+        if (medicineName.isEmpty()) {
             throw new UnsupportedOperationException("Invalid prescription medicine name.");
         }
 
@@ -110,12 +109,12 @@ public class Calculator {
     private long daysBetween(Date startDate, Date endDate) {
         long daysBetweenInMilliSeconds = endDate.getTime() - startDate.getTime();
 
-        return Math.abs((daysBetweenInMilliSeconds/(1000*60*60*24))) + 1;
+        return Math.abs((daysBetweenInMilliSeconds / (1000 * 60 * 60 * 24))) + 1;
     }
 
     private long getInterval(Time startTime, Time endTime, double timesPerDay) {
         long periodInMilliSeconds = endTime.getTime() - startTime.getTime();
-        long periodInMinutes = periodInMilliSeconds /(1000 * 60);
+        long periodInMinutes = periodInMilliSeconds / (1000 * 60);
         long dosages = (long) Math.ceil(timesPerDay);
 
         return periodInMinutes / dosages;

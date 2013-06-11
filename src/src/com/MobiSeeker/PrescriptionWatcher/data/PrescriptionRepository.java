@@ -13,7 +13,7 @@ public class PrescriptionRepository {
     protected
     final static String LOCAL_DIR_NAME = "local";
 
-    public void save(Context context, Entry entry) throws Exception{
+    public void save(Context context, Entry entry) throws Exception {
 
         File local = getLocalFolder(context);
 

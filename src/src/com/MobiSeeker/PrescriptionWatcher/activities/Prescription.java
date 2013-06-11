@@ -81,6 +81,10 @@ public class Prescription extends RoboFragmentActivity implements
     @InjectResource(R.string.addingPrescriptionSucceeded)
     String addingPrescriptionSucceeded;
 
+    protected
+    @InjectResource(R.string.addingPrescriptionFailed)
+    String addingPrescriptionFailed;
+
     protected PrescriptionRepository prescriptionRepository;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -137,8 +141,9 @@ public class Prescription extends RoboFragmentActivity implements
 
     public void save(View view) {
         PrescriptionRepository  prescriptionRepository = new PrescriptionRepository();
+        try {
         Entry entry=
-                new Entry(this.drugName.getText().toString(),
+                new Entry(this, this.drugName.getText().toString(),
                         this.getDateFromControl(this.startDate),
                         this.getDateFromControl(this.endDate),
                         LocalTime.parse(this.startTime.getText().toString()),
@@ -147,9 +152,13 @@ public class Prescription extends RoboFragmentActivity implements
                         this.getTimesPerDay(),
                         this.comment.getText().toString());
 
-        try {
             this.prescriptionRepository.save(this, entry);
             Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();
+        }
+        catch (UnsupportedOperationException exception)
+        {
+            Toast.makeText(this, addingPrescriptionFailed + " " + exception.getMessage(), Toast.LENGTH_LONG).show();
+            Log.e(Prescription.TAG, "Failed to save prescription", exception);
         }
         catch(Exception exception) {
             Log.e(Prescription.TAG, "Failed to save prescription", exception);

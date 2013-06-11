@@ -20,4 +20,4 @@ public class Schedule {
     public void add(Dosage prescription) {
         this.prescriptions.add(prescription);
     }
- }
+}
