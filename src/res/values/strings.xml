@@ -19,4 +19,8 @@
     <string name="prescriptionStartTimeError">Invalid prescription end time. Should be after start time.</string>
     <string name="prescriptionDosageError">Invalid prescription dosage. Should be greater than zero.</string>
     <string name="prescriptionTimesPerDayError">Invalid prescription times per day. Should be greater than zero.</string>
+
+    <string name="prescriptions">Prescriptions</string>
+    <string name="watching">Watch prescriptions</string>
+    <string name="settings">Settings</string>
 </resources>

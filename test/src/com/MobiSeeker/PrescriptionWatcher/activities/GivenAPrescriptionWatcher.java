@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import static junit.framework.Assert.assertNotNull;
 
 @RunWith(RobolectricTestRunner.class)
-public class GivenAnActivity {
+public class GivenAPrescriptionWatcher {
 
     private ShadowApplication shadowApplication;
     private Context context;

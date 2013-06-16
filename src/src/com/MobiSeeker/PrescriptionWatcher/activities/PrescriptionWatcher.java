@@ -4,13 +4,10 @@ import android.os.Bundle;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 
-import roboguice.activity.RoboFragmentActivity;
+import roboguice.activity.RoboActivity;
 
-public class PrescriptionWatcher extends RoboFragmentActivity {
-    /**
-     * Called when the activity is first created.
-     */
-    @Override
+public class PrescriptionWatcher extends RoboActivity {
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);

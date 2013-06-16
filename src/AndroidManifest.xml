@@ -42,10 +42,6 @@
                 android:name=".activities.Prescription"
                 android:label="@string/prescription"
                 android:icon="@drawable/prescription">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
     </application>
