@@ -35,13 +35,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/layout/prescriptions.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -172,28 +168,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Prescription.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="62" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.31367293" vertical-offset="798" max-vertical-offset="3765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrescriptionWatcher.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PrescriptionWatcher.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="109" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <folding />
+            <state line="17" column="32" selection-start="476" selection-end="476" vertical-scroll-proportion="0.66062176" vertical-offset="0" max-vertical-offset="510">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AndroidManifest.xml">
+      <file leaf-file-name="GivenAPrescriptionWatcher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="915">
+            <state line="32" column="0" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
@@ -202,7 +191,7 @@
       <file leaf-file-name="Prescriptions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="11" column="4" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="465">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,7 +214,7 @@
       <file leaf-file-name="GivenAPrescriptions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="615">
+            <state line="33" column="3" selection-start="869" selection-end="927" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
@@ -285,15 +274,15 @@
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/chrod/IChordServiceListener.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAnActivity.java" />
         <option value="$PROJECT_DIR$/src/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java" />
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/utils/Assert.java" />
         <option value="$PROJECT_DIR$/src/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/res/layout/prescriptions.xml" />
         <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptions.java" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java" />
+        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java" />
       </list>
     </option>
   </component>
@@ -616,7 +605,7 @@
       <recent name="com.MobiSeeker.PrescriptionWatcher.data" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.Prescriptions">
+  <component name="RunManager" selected="JUnit.GivenAPrescriptionWatcher">
     <configuration default="false" name="GivenAPrescription" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -839,9 +828,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptions" />
-        <item index="1" class="java.lang.String" itemvalue="Android Application.Prescriptions" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptionWatcher" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptionWatcher" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GivenAPrescriptions" />
+        <item index="2" class="java.lang.String" itemvalue="Android Application.Prescriptions" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.GivenAPrescription.whenCallingSaveAndSucceededShouldShowToast" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.GivenAPrescription" />
       </list>
@@ -921,7 +910,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1024" height="716" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17269906" sideWeight="0.5140351" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1059,13 +1048,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3315">
@@ -1106,16 +1088,37 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar:///usr/dev/android-sdk-linux/platforms/android-15/android.jar!/android/content/Intent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="0" selection-start="20829" selection-end="20829" vertical-scroll-proportion="1.2079772" vertical-offset="3296" max-vertical-offset="7620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="615">
+        <state line="33" column="3" selection-start="869" selection-end="927" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="0" selection-start="2436" selection-end="2594" vertical-scroll-proportion="0.15549597" vertical-offset="827" max-vertical-offset="3765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state line="11" column="4" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="465">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1124,22 +1127,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="109" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/dev/android-sdk-linux/platforms/android-15/android.jar!/android/content/Intent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="0" selection-start="20829" selection-end="20829" vertical-scroll-proportion="1.2079772" vertical-offset="3296" max-vertical-offset="7620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="62" selection-start="2547" selection-end="2547" vertical-scroll-proportion="0.31367293" vertical-offset="798" max-vertical-offset="3765">
-          <folding />
+        <state line="17" column="32" selection-start="476" selection-end="476" vertical-scroll-proportion="0.66062176" vertical-offset="0" max-vertical-offset="510">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

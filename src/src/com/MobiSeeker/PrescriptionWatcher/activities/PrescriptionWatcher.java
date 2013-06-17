@@ -15,7 +15,7 @@ public class PrescriptionWatcher extends RoboActivity {
     }
 
     public void viewPrescriptions(View view) {
-
+        Prescriptions.start(this);
     }
 
     public void viewContacts(View view) {

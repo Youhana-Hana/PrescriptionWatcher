@@ -1,15 +1,12 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
-import android.content.Context;
-
-import com.xtremelabs.robolectric.Robolectric;
 import com.xtremelabs.robolectric.RobolectricTestRunner;
-import com.xtremelabs.robolectric.shadows.ShadowApplication;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.MobiSeeker.PrescriptionWatcher.test.utils.*;
 import static junit.framework.Assert.assertNotNull;
 
 @RunWith(RobolectricTestRunner.class)
@@ -31,6 +28,7 @@ public class GivenAPrescriptionWatcher {
     @Test
     public void whenCallingViewPrescriptionsShouldNotThrow() {
         this.activity.viewPrescriptions(null);
+        Assert.assertActivityStarted(Prescriptions.class);
     }
 
     @Test
