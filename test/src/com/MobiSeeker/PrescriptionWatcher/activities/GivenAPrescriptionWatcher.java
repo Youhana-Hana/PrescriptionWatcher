@@ -15,19 +15,31 @@ import static junit.framework.Assert.assertNotNull;
 @RunWith(RobolectricTestRunner.class)
 public class GivenAPrescriptionWatcher {
 
-    private ShadowApplication shadowApplication;
-    private Context context;
+    private PrescriptionWatcher activity;
 
     @Before
     public void setUp() throws Exception {
-        this.shadowApplication = Robolectric.getShadowApplication();
-        this.context = shadowApplication.getApplicationContext();
+        this.activity = new PrescriptionWatcher();
+        this.activity.onCreate(null);
     }
 
     @Test
     public void whenCallingOnCreateShouldNotThrow() {
-        PrescriptionWatcher activity = new PrescriptionWatcher();
-        activity.onCreate(null);
-        assertNotNull(activity);
+        assertNotNull(this.activity);
+    }
+
+    @Test
+    public void whenCallingViewPrescriptionsShouldNotThrow() {
+        this.activity.viewPrescriptions(null);
+    }
+
+    @Test
+    public void whenCallingViewContactsShouldNotThrow() {
+        this.activity.viewContacts(null);
+    }
+
+    @Test
+    public void whenCallingViewSettingsShouldNotThrow() {
+        this.activity.viewSettings(null);
     }
 }
