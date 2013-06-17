@@ -44,6 +44,12 @@
                 android:icon="@drawable/prescription">
         </activity>
 
+        <activity
+                android:name=".activities.Prescriptions"
+                android:label="@string/prescription"
+                android:icon="@drawable/prescription">
+        </activity>
+
     </application>
 
 </manifest>

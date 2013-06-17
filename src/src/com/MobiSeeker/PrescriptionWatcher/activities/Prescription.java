@@ -2,6 +2,8 @@ package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
@@ -86,6 +88,11 @@ public class Prescription extends RoboFragmentActivity implements
     String addingPrescriptionFailed;
 
     protected PrescriptionRepository prescriptionRepository;
+
+    public static void start(Context context) {
+        Intent intent = new Intent(context, Prescription.class);
+        context.startActivity(intent);
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

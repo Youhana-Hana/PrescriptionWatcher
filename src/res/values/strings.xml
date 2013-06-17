@@ -23,4 +23,8 @@
     <string name="prescriptions">Prescriptions</string>
     <string name="watching">Watch prescriptions</string>
     <string name="settings">Settings</string>
+
+    <string name="noPrescriptions">No saved prescriptions. click create new to save prescription.</string>
+
+    <string name="newPrescription">New prescription</string>
 </resources>
