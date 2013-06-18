@@ -21,7 +21,6 @@ import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 
 import java.text.DateFormat;
@@ -34,9 +33,9 @@ import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 
 public class Prescription extends RoboFragmentActivity implements
-        DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
+        DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
-    protected final static String TAG  = "com.MobiSeeker.PrescriptionWatcher.activities.Prescription";
+    protected final static String TAG = "com.MobiSeeker.PrescriptionWatcher.activities.Prescription";
     protected EditText selectedTextView = null;
 
     protected
@@ -113,7 +112,7 @@ public class Prescription extends RoboFragmentActivity implements
     }
 
     public void showDatePicker(View view) {
-        this.selectedTextView = (EditText)view;
+        this.selectedTextView = (EditText) view;
 
         final Calendar calendar = this.getCalendarFromControl(this.selectedTextView);
 
@@ -133,7 +132,7 @@ public class Prescription extends RoboFragmentActivity implements
     }
 
     public void showTimePicker(View view) {
-        this.selectedTextView = (EditText)view;
+        this.selectedTextView = (EditText) view;
 
         LocalTime localTime = LocalTime.parse(this.selectedTextView.getText().toString());
 
@@ -147,36 +146,32 @@ public class Prescription extends RoboFragmentActivity implements
     }
 
     public void save(View view) {
-        PrescriptionRepository  prescriptionRepository = new PrescriptionRepository();
+        PrescriptionRepository prescriptionRepository = new PrescriptionRepository();
         try {
-        Entry entry=
-                new Entry(this, this.drugName.getText().toString(),
-                        this.getDateFromControl(this.startDate),
-                        this.getDateFromControl(this.endDate),
-                        LocalTime.parse(this.startTime.getText().toString()),
-                        LocalTime.parse(this.endTime.getText().toString()),
-                        this.getDosage(),
-                        this.getTimesPerDay(),
-                        this.comment.getText().toString());
+            Entry entry =
+                    new Entry(this, this.drugName.getText().toString(),
+                            this.getDateFromControl(this.startDate),
+                            this.getDateFromControl(this.endDate),
+                            LocalTime.parse(this.startTime.getText().toString()),
+                            LocalTime.parse(this.endTime.getText().toString()),
+                            this.getDosage(),
+                            this.getTimesPerDay(),
+                            this.comment.getText().toString());
 
             this.prescriptionRepository.save(this, entry);
             Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();
-        }
-        catch (UnsupportedOperationException exception)
-        {
+        } catch (UnsupportedOperationException exception) {
             Toast.makeText(this, addingPrescriptionFailed + " " + exception.getMessage(), Toast.LENGTH_LONG).show();
             Log.e(Prescription.TAG, "Failed to save prescription", exception);
-        }
-        catch(Exception exception) {
+        } catch (Exception exception) {
             Log.e(Prescription.TAG, "Failed to save prescription", exception);
         }
     }
 
     private int getTimesPerDay() {
-        try{
+        try {
             return Integer.parseInt(this.timesPerDay.getText().toString());
-        }
-        catch(NumberFormatException exception) {
+        } catch (NumberFormatException exception) {
             return 0;
         }
     }
@@ -184,8 +179,7 @@ public class Prescription extends RoboFragmentActivity implements
     private double getDosage() {
         try {
             return Double.parseDouble(this.dosage.getText().toString());
-        }
-        catch(NumberFormatException exception) {
+        } catch (NumberFormatException exception) {
             return 0.0;
         }
     }
@@ -243,8 +237,7 @@ public class Prescription extends RoboFragmentActivity implements
 
         try {
             date = DateFormat.getDateInstance(DateFormat.MEDIUM).parse(editText.getText().toString());
-        }
-        catch(ParseException exception) {
+        } catch (ParseException exception) {
             date = new Date();
         }
 
@@ -266,8 +259,7 @@ public class Prescription extends RoboFragmentActivity implements
 
         try {
             return DateFormat.getDateInstance(DateFormat.MEDIUM).parse(editText.getText().toString());
-        }
-        catch(ParseException exception) {
+        } catch (ParseException exception) {
             Log.w(Prescription.TAG, exception.getMessage(), exception);
         }
 
