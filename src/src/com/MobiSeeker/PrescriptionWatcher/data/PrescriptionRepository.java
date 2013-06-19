@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class PrescriptionRepository {
 
@@ -55,11 +56,9 @@ public class PrescriptionRepository {
         fileOutputStream.flush();
         fileOutputStream.close();
     }
-//    public Entry get(String name) {
-//        return null;
-//    }
-//
-//    public void delete(String name) {
-//
-//    }
+
+    public ArrayList<Entry> getEntries(Context context) {
+
+        return new ArrayList<Entry>();
+    }
 }

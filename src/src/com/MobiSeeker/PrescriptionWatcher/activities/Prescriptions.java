@@ -27,12 +27,20 @@ public class Prescriptions extends RoboListActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.prescriptions);
         this.prescriptionRepository = new PrescriptionRepository();
-        //List<Entry> entries = null;//this.prescriptionRepository.get(this);
-        //this.adapter = new Adapter(this, 0, entries);
-        //this.setListAdapter(adapter);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        List<Entry> entries = this.prescriptionRepository.getEntries(this);
+        this.adapter = new Adapter(this, 0, entries);
+        this.setListAdapter(adapter);
+    }
+
 
     public void createPrescription(View view) {
         Prescription.start(this);

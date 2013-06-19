@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
@@ -117,5 +118,12 @@ public class GivenAPrescriptionRepository {
         int count = this.repository.getCount(this.context);
 
         assertEquals(2, count);
+    }
+
+    @Test
+    public void whenCallingGetEntriesShouldNotThrow(){
+        ArrayList<Entry> entries= this.repository.getEntries(this.context);
+
+        assertNotNull(entries);
     }
 }
