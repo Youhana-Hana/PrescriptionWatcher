@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
+import java.sql.Time;
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
@@ -24,9 +25,20 @@ public class GivenAnEntry {
 
     private Context context;
 
+    Date startDate;
+    Date endDate;
+    Time startTime;
+    Time endTime;
+
     @Before
     public void setup() {
         this.context = Robolectric.getShadowApplication().getApplicationContext();
+
+        this.startTime = Time.valueOf("10:00:00");
+        this.endTime = Time.valueOf("12:00:00");
+
+        this.startDate = new Date();
+        this.endDate = new DateTime(startDate).plusDays(7).toDate();
     }
 
     @Rule
@@ -37,7 +49,7 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription medicine name.");
 
-        Entry entry = new Entry(this.context, "", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context, "", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
     }
 
     @Test
@@ -45,7 +57,7 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription medicine name.");
 
-        Entry entry = new Entry(this.context, null, new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context, null, this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
     }
 
     @Test
@@ -56,7 +68,9 @@ public class GivenAnEntry {
         Date startDate = new Date();
         Date endDate = new Date(startDate.getTime()  - (10 * 60 *1000));
 
-        Entry entry = new Entry(this.context, "NAME", startDate, endDate, LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+
+        Entry entry = new Entry(this.context, "NAME", startDate, endDate,
+                this.startTime, this.endTime, 2, 3, null);
     }
 
     @Test
@@ -64,7 +78,10 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription end time. Should be after start time.");
 
-        Entry entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("09:00"), 2, 3, null);
+        Time startTime = Time.valueOf("10:00:00");
+        Time endTime = Time.valueOf("09:00:00");
+
+        Entry entry = new Entry(this.context, "NAME", this.startDate, this.endDate, startTime, endTime, 2, 3, null);
     }
 
     @Test
@@ -72,7 +89,7 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription dosage. Should be greater than zero.");
 
-        Entry entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 0, 3, null);
+        Entry entry = new Entry(this.context, "NAME", this.startDate, this.endDate, startTime, endTime, 0, 3, null);
     }
 
     @Test
@@ -80,7 +97,8 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription dosage. Should be greater than zero.");
 
-        Entry entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), -1, 3, null);
+
+        Entry entry = new Entry(this.context, "NAME", this.startDate, this.endDate, startTime, endTime, -1, 3, null);
     }
 
     @Test
@@ -88,7 +106,7 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription times per day. Should be greater than zero.");
 
-        Entry entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 0, null);
+        Entry entry = new Entry(this.context, "NAME", this.startDate, this.endDate, startTime, endTime, 2, 0, null);
     }
 
     @Test
@@ -96,87 +114,67 @@ public class GivenAnEntry {
         expected.expect(UnsupportedOperationException.class);
         expected.expectMessage("Invalid prescription times per day. Should be greater than zero.");
 
-        Entry entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, -1, null);
+        Entry entry = new Entry(this.context, "NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, -1, null);
     }
 
     @Test
     public void whenConstructingShouldNotThrow() {
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
         assertNotNull(entry);
     }
 
     @Test
     public void whenCallingGetMedicineNameShouldReturnExpected() {
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
 
         assertEquals("NAME", entry.getMedicineName());
      }
 
     @Test
     public void whenCallingGetStartDateShouldReturnExpected() {
-        Date date = new Date();
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
 
-        assertEquals(date, entry.getStartDate());
+        assertEquals(this.startDate, entry.getStartDate());
     }
 
     @Test
     public void whenCallingGetEndDateShouldReturnExpected() {
-        Date startDate = new Date();
-        DateTime date = new DateTime(startDate);
-        date.plusDays(7);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
 
-        Entry entry = new Entry(this.context,"NAME", startDate, date.toDate(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
-
-        assertEquals(date.toDate(), entry.getEndDate());
+        assertEquals(this.endDate, entry.getEndDate());
     }
 
     @Test
     public void whenCallingGetStartTimeShouldReturnExpected() {
-        Date startDate = new Date();
-        DateTime date = new DateTime(startDate);
-        date.plusDays(7);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
 
-        LocalTime time = LocalTime.parse("10:00");
-        Entry entry = new Entry(this.context,"NAME", startDate, date.toDate(), time, LocalTime.parse("12:00"), 2, 3, null);
-
-        assertEquals(time, entry.getStartTime());
+        assertEquals(this.startTime, entry.getStartTime());
     }
 
     @Test
     public void whenCallingGetEndTimeShouldReturnExpected() {
-        Date startDate = new Date();
-        DateTime date = new DateTime(startDate);
-        date.plusDays(7);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, this.startTime, this.endTime, 2, 3, null);
 
-        LocalTime time = LocalTime.parse("10:00");
-        LocalTime endTime = LocalTime.parse("17:00");
-
-        Entry entry = new Entry(this.context,"NAME", startDate, date.toDate(), time, endTime, 2, 3, null);
-
-        assertEquals(endTime, entry.getEndTime());
+        assertEquals(this.endTime, entry.getEndTime());
     }
 
     @Test
     public void whenCallingGetDosageShouldReturnExpected() {
-        Date date = new Date();
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, startTime, endTime, 2, 3, null);
 
         assertEquals(2.0, entry.getDosage());
     }
 
     @Test
     public void whenCallingGetCommentShouldReturnExpected() {
-        Date date = new Date();
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, startTime, endTime, 2, 3, null);
 
         assertNull(entry.getComment());
     }
 
     @Test
     public void whenCallingGetTimesPerDayShouldReturnExpected() {
-        Date date = new Date();
-        Entry entry = new Entry(this.context,"NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("12:00"), 2, 3, null);
+        Entry entry = new Entry(this.context,"NAME", this.startDate, this.endDate, startTime, endTime, 2, 3, null);
 
         assertEquals(3, entry.getTimesPerDay());
     }

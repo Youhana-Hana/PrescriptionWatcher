@@ -23,6 +23,7 @@ import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
 import org.joda.time.LocalTime;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.Calendar;
@@ -152,8 +153,8 @@ public class Prescription extends RoboFragmentActivity implements
                     new Entry(this, this.drugName.getText().toString(),
                             this.getDateFromControl(this.startDate),
                             this.getDateFromControl(this.endDate),
-                            LocalTime.parse(this.startTime.getText().toString()),
-                            LocalTime.parse(this.endTime.getText().toString()),
+                            Time.valueOf(this.startTime.getText().toString()),
+                            Time.valueOf(this.endTime.getText().toString()),
                             this.getDosage(),
                             this.getTimesPerDay(),
                             this.comment.getText().toString());

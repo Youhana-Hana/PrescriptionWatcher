@@ -19,6 +19,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -92,12 +93,12 @@ public class GivenAPrescription {
 
     @Test
     public void startTimeShouldShowsSevenAM() {
-        assertEquals("07:00", this.activity.startTime.getText().toString());
+        assertEquals("07:00:00", this.activity.startTime.getText().toString());
     }
 
     @Test
     public void endTimeShouldShowsSevenAM() {
-        assertEquals("22:00", this.activity.endTime.getText().toString());
+        assertEquals("22:00:00", this.activity.endTime.getText().toString());
     }
 
     @Test
@@ -188,8 +189,8 @@ public class GivenAPrescription {
         this.activity.comment.setText("COMMENT");
         this.activity.startDate.setText("Dec 10, 2012");
         this.activity.endDate.setText("Dec 20, 2012");
-        this.activity.startTime.setText("10:00");
-        this.activity.endTime.setText("17:00");
+        this.activity.startTime.setText("10:00:00");
+        this.activity.endTime.setText("17:00:00");
 
         this.activity.save(null);
 
@@ -202,8 +203,8 @@ public class GivenAPrescription {
 
         assertEquals(startDate, entryCaptor.getValue().getStartDate());
         assertEquals(endDate, entryCaptor.getValue().getEndDate());
-        assertEquals(LocalTime.parse("10:00"), entryCaptor.getValue().getStartTime());
-        assertEquals(LocalTime.parse("17:00"), entryCaptor.getValue().getEndTime());
+        assertEquals(Time.valueOf("10:00:00"), entryCaptor.getValue().getStartTime());
+        assertEquals(Time.valueOf("17:00:00"), entryCaptor.getValue().getEndTime());
     }
 
     @Test

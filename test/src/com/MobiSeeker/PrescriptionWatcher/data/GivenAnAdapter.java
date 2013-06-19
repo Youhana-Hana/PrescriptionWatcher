@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,8 +45,8 @@ public class GivenAnAdapter {
         Entry entry = new Entry(this.context, "NAME",
                 startDate,
                 endDate,
-                LocalTime.parse("10:12"),
-                LocalTime.parse("17:30"),
+                Time.valueOf("10:12:00"),
+                Time.valueOf("17:30:00"),
                 3.0,
                 2,
                 "Comment"
@@ -71,8 +72,8 @@ public class GivenAnAdapter {
 
         assertEquals("NAME", title.getText().toString());
         assertEquals("2 Times per day", timerPerDay.getText().toString());
-        assertEquals("Dec 10, 2012 10:12", start.getText().toString());
-        assertEquals("Dec 20, 2012 17:30", end.getText().toString());
+        assertEquals("Dec 10, 2012 10:12:00", start.getText().toString());
+        assertEquals("Dec 20, 2012 17:30:00", end.getText().toString());
     }
 
 }

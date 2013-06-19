@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 
-import org.joda.time.LocalTime;
+import java.sql.Time;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ public class Entry {
 
     public Entry(Context context, String medicineName,
                  Date startDate, Date endDate,
-                 LocalTime startTime, LocalTime endTime,
+                 Time startTime, Time endTime,
                  double dosage, int timesPerDay, String comment) {
 
         this.medicineName = medicineName;
@@ -41,7 +41,7 @@ public class Entry {
             throw new UnsupportedOperationException(context.getString(R.string.prescriptionStartDateError));
         }
 
-        if (this.startTime.isAfter(this.endTime)) {
+        if (this.startTime.after(this.endTime)) {
             throw new UnsupportedOperationException(context.getString(R.string.prescriptionStartTimeError));
         }
 
@@ -74,11 +74,11 @@ public class Entry {
         return this.endDate;
     }
 
-    public LocalTime getStartTime() {
+    public Time getStartTime() {
         return this.startTime;
     }
 
-    public LocalTime getEndTime() {
+    public Time getEndTime() {
         return this.endTime;
     }
 
@@ -99,8 +99,8 @@ public class Entry {
     private Date startDate;
     private Date endDate;
 
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private Time startTime;
+    private Time endTime;
 
     private double dosage;
     private int timesPerDay;

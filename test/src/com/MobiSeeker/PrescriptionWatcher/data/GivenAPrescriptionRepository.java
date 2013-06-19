@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 
 import java.io.File;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -37,7 +38,7 @@ public class GivenAPrescriptionRepository {
         MockitoAnnotations.initMocks(this);
         this.repository = new PrescriptionRepository();
         this.context = Robolectric.getShadowApplication().getApplicationContext();
-        this.entry = new Entry(this.context, "NAME", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 3, "comment");
+        this.entry = new Entry(this.context, "NAME", new Date(), new Date(), Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 3, "comment");
 
     }
 
@@ -110,7 +111,7 @@ public class GivenAPrescriptionRepository {
     @Test
     public void whenCallingGetCountShouldRetunExpected() throws Exception{
         this.repository.save(this.context, this.entry);
-        Entry entry2 = new Entry(this.context, "NAME2", new Date(), new Date(), LocalTime.parse("10:00"), LocalTime.parse("17:00"), 2, 4, "comment");
+        Entry entry2 = new Entry(this.context, "NAME2", new Date(), new Date(), Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
 
         this.repository.save(this.context, this.entry);
         this.repository.save(this.context, entry2);
@@ -121,9 +122,69 @@ public class GivenAPrescriptionRepository {
     }
 
     @Test
-    public void whenCallingGetEntriesShouldNotThrow(){
+    public void whenCallingGetEntriesShouldNotThrow() throws Exception{
         ArrayList<Entry> entries= this.repository.getEntries(this.context);
 
         assertNotNull(entries);
+    }
+
+    @Test
+    public void whenCallingGetEntriesWithZeroEntriesShouldReturnEmtpyList()  throws Exception{
+        ArrayList<Entry> entries= this.repository.getEntries(this.context);
+
+        assertNotNull(entries);
+        assertTrue(entries.isEmpty());
+    }
+
+    @Test
+    public void whenCallingGetEntriesWithFilesShouldReturnExpected() throws Exception{
+        this.repository.save(this.context, this.entry);
+
+        ArrayList<Entry> entries= this.repository.getEntries(this.context);
+
+        assertNotNull(entries);
+        assertEquals(1, entries.size());
+        assertEquals(this.entry.getMedicineName(), entries.get(0).getMedicineName());
+        assertEquals(this.entry.getStartTime(), entries.get(0).getStartTime());
+        assertEquals(this.entry.getStartDate().toString(), entries.get(0).getStartDate().toString());
+        assertEquals(this.entry.getComment(), entries.get(0).getComment());
+        assertEquals(this.entry.getEndDate().toString(), entries.get(0).getEndDate().toString());
+        assertEquals(this.entry.getEndTime(), entries.get(0).getEndTime());
+        assertEquals(this.entry.getDosage(), entries.get(0).getDosage());
+        assertEquals(this.entry.getTimesPerDay(), entries.get(0).getTimesPerDay());
+    }
+
+    @Test
+    public void whenCallingGetEntriesWithMultipleFilesShouldReturnExpected() throws Exception{
+        Entry entry2 = new Entry(this.context, "NAME2", new Date(), new Date(), Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+
+        this.repository.save(this.context, this.entry);
+        this.repository.save(this.context, this.entry);
+        this.repository.save(this.context, this.entry);
+        this.repository.save(this.context, entry2);
+
+        ArrayList<Entry> entries= this.repository.getEntries(this.context);
+
+        assertNotNull(entries);
+        assertEquals(2, entries.size());
+/*
+        assertEquals(this.entry.getMedicineName(), entries.get(0).getMedicineName());
+        assertEquals(this.entry.getStartTime(), entries.get(0).getStartTime());
+        assertEquals(this.entry.getStartDate().toString(), entries.get(0).getStartDate().toString());
+        assertEquals(this.entry.getComment(), entries.get(0).getComment());
+        assertEquals(this.entry.getEndDate().toString(), entries.get(0).getEndDate().toString());
+        assertEquals(this.entry.getEndTime(), entries.get(0).getEndTime());
+        assertEquals(this.entry.getDosage(), entries.get(0).getDosage());
+        assertEquals(this.entry.getTimesPerDay(), entries.get(0).getTimesPerDay());
+
+        assertEquals(this.entry.getMedicineName(), entries.get(1.getMedicineName());
+        assertEquals(this.entry.getStartTime(), entries.get(1).getStartTime());
+        assertEquals(this.entry.getStartDate().toString(), entries.get(1).getStartDate().toString());
+        assertEquals(this.entry.getComment(), entries.get(1).getComment());
+        assertEquals(this.entry.getEndDate().toString(), entries.get(1).getEndDate().toString());
+        assertEquals(this.entry.getEndTime(), entries.get(1).getEndTime());
+        assertEquals(this.entry.getDosage(), entries.get(1).getDosage());
+        assertEquals(this.entry.getTimesPerDay(), entries.get(1).getTimesPerDay());
+*/
     }
 }

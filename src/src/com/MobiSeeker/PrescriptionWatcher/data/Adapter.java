@@ -71,7 +71,7 @@ public class Adapter extends ArrayAdapter<Entry> {
 
         return String.format(Locale.getDefault(), "%s %s",
                 date,
-                entry.getStartTime().toString("HH:mm"));
+                entry.getStartTime());
     }
 
     private String getEndTime(Entry entry) {
@@ -79,6 +79,6 @@ public class Adapter extends ArrayAdapter<Entry> {
 
         return String.format(Locale.getDefault(), "%s %s",
                 date,
-                entry.getEndTime().toString("HH:mm"));
+                entry.getEndTime());
     }
 }

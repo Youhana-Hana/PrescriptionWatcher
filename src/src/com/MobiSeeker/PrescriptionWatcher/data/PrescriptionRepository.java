@@ -5,6 +5,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,15 +51,42 @@ public class PrescriptionRepository {
             entryFile.createNewFile();
         }
 
-        FileOutputStream fileOutputStream = new FileOutputStream(entryFile, true);
-        byte[] buffer = new Gson().toJson(entry).getBytes();
+        FileOutputStream fileOutputStream = new FileOutputStream(entryFile, false);
+        byte[] buffer = new Gson().toJson(entry).getBytes("UTF-8");
         fileOutputStream.write(buffer);
         fileOutputStream.flush();
         fileOutputStream.close();
     }
 
-    public ArrayList<Entry> getEntries(Context context) {
+    public ArrayList<Entry> getEntries(Context context) throws Exception{
 
-        return new ArrayList<Entry>();
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        File local = getLocalFolder(context);
+        if (!local.exists()) {
+            return entries;
+        }
+
+        File[] files = local.listFiles();
+        if (files == null) {
+            return entries;
+        }
+
+        for (File file : files) {
+            Entry entry = getEntryFromFile(file);
+            entries.add(entry);
+        }
+
+        return entries;
+    }
+
+    private Entry getEntryFromFile(File file) throws Exception {
+        FileInputStream fileInputStream = new FileInputStream(file);
+        byte[] buffer = new byte[fileInputStream.available()];
+        int length = fileInputStream.read(buffer);
+        fileInputStream.close();
+
+        String content = new String(buffer, 0, length, "UTF-8");
+        return new Gson().fromJson(content, Entry.class);
     }
 }
