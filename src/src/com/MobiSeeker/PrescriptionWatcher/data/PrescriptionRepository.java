@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrescriptionRepository {
 
@@ -76,6 +77,8 @@ public class PrescriptionRepository {
             Entry entry = getEntryFromFile(file);
             entries.add(entry);
         }
+
+        Collections.sort(entries, new EntryComparator());
 
         return entries;
     }

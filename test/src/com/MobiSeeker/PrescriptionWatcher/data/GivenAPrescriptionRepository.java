@@ -156,18 +156,30 @@ public class GivenAPrescriptionRepository {
 
     @Test
     public void whenCallingGetEntriesWithMultipleFilesShouldReturnExpected() throws Exception{
-        Entry entry2 = new Entry(this.context, "NAME2", new Date(), new Date(), Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+        Date startDate2 = new Date(new Date().getTime() + 10 *60 *1000);
+        Entry entry2 = new Entry(this.context, "NAME2", startDate2, startDate2, Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+
+        Date startDate3 = new Date(new Date().getTime() + 20 *60 *1000);
+        Entry entry3 = new Entry(this.context, "NAME3", startDate3, startDate3, Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+
+        Date startDate4 = new Date(new Date().getTime() + 30 *60 *1000);
+        Entry entry4 = new Entry(this.context, "NAME4", startDate4, startDate4, Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+
+        Date startDate5 = new Date(new Date().getTime() + 40 *60 *1000);
+        Entry entry5 = new Entry(this.context, "NAME5", startDate5, startDate5, Time.valueOf("10:00:00"), Time.valueOf("17:00:00"), 2, 4, "comment");
+
 
         this.repository.save(this.context, this.entry);
-        this.repository.save(this.context, this.entry);
-        this.repository.save(this.context, this.entry);
         this.repository.save(this.context, entry2);
+        this.repository.save(this.context, entry3);
+        this.repository.save(this.context, entry4);
+        this.repository.save(this.context, entry5);
 
         ArrayList<Entry> entries= this.repository.getEntries(this.context);
 
         assertNotNull(entries);
-        assertEquals(2, entries.size());
-/*
+        assertEquals(5, entries.size());
+
         assertEquals(this.entry.getMedicineName(), entries.get(0).getMedicineName());
         assertEquals(this.entry.getStartTime(), entries.get(0).getStartTime());
         assertEquals(this.entry.getStartDate().toString(), entries.get(0).getStartDate().toString());
@@ -177,14 +189,22 @@ public class GivenAPrescriptionRepository {
         assertEquals(this.entry.getDosage(), entries.get(0).getDosage());
         assertEquals(this.entry.getTimesPerDay(), entries.get(0).getTimesPerDay());
 
-        assertEquals(this.entry.getMedicineName(), entries.get(1.getMedicineName());
-        assertEquals(this.entry.getStartTime(), entries.get(1).getStartTime());
-        assertEquals(this.entry.getStartDate().toString(), entries.get(1).getStartDate().toString());
-        assertEquals(this.entry.getComment(), entries.get(1).getComment());
-        assertEquals(this.entry.getEndDate().toString(), entries.get(1).getEndDate().toString());
-        assertEquals(this.entry.getEndTime(), entries.get(1).getEndTime());
-        assertEquals(this.entry.getDosage(), entries.get(1).getDosage());
-        assertEquals(this.entry.getTimesPerDay(), entries.get(1).getTimesPerDay());
-*/
+        assertEquals(entry2.getMedicineName(), entries.get(1).getMedicineName());
+        assertEquals(entry2.getStartTime(), entries.get(1).getStartTime());
+        assertEquals(entry2.getStartDate().toString(), entries.get(1).getStartDate().toString());
+        assertEquals(entry2.getComment(), entries.get(1).getComment());
+        assertEquals(entry2.getEndDate().toString(), entries.get(1).getEndDate().toString());
+        assertEquals(entry2.getEndTime(), entries.get(1).getEndTime());
+        assertEquals(entry2.getDosage(), entries.get(1).getDosage());
+        assertEquals(entry2.getTimesPerDay(), entries.get(1).getTimesPerDay());
+
+        assertEquals(entry5.getMedicineName(), entries.get(4).getMedicineName());
+        assertEquals(entry5.getStartTime(), entries.get(4).getStartTime());
+        assertEquals(entry5.getStartDate().toString(), entries.get(4).getStartDate().toString());
+        assertEquals(entry5.getComment(), entries.get(4).getComment());
+        assertEquals(entry5.getEndDate().toString(), entries.get(4).getEndDate().toString());
+        assertEquals(entry5.getEndTime(), entries.get(4).getEndTime());
+        assertEquals(entry5.getDosage(), entries.get(4).getDosage());
+        assertEquals(entry5.getTimesPerDay(), entries.get(4).getTimesPerDay());
     }
 }
