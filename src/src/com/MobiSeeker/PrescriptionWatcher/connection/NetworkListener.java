@@ -12,15 +12,19 @@ public class NetworkListener implements ChordManager.INetworkListener{
 
     @Override
     public void onConnected(int interfaceType) {
-        if (null != this.listener) {
-            this.listener.onConnectivityChanged();
+        if (null == this.listener) {
+            return;
         }
+
+        this.listener.onConnectivityChanged();
     }
 
     @Override
     public void onDisconnected(int interfaceType) {
-        if (null != this.listener) {
-            this.listener.onConnectivityChanged();
+        if (null == this.listener) {
+            return;
         }
+
+        this.listener.onConnectivityChanged();
     }
 }

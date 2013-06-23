@@ -7,7 +7,8 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class GivenAChannelInformation {
 
@@ -15,6 +16,7 @@ public class GivenAChannelInformation {
     com.samsung.chord.ChordManager chordManager;
 
     ChannelInformation channelInformation = null;
+
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -28,7 +30,7 @@ public class GivenAChannelInformation {
     }
 
     @Test
-    public void whenCallingGetPublicChannelShouldReturnExpected() {
+    public void whenCallinggetAvailableInterfaceTypesShouldReturnExpected() {
         assertEquals(ChordManager.PUBLIC_CHANNEL, this.channelInformation.getPublicChannel());
     }
 
