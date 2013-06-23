@@ -60,7 +60,7 @@ public class GivenAPrescriptions {
     }
 
     @Test
-    public void whenCallingOnStartShouldCallGetEntriesList() {
+    public void whenCallingOnStartShouldCallGetEntriesList() throws Exception{
         this.activity.onStart();
 
         verify(this.prescriptionRepository).getEntries(this.activity);
