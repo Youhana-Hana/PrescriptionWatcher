@@ -9,7 +9,7 @@ public class WakeLockManager {
 
     private static final String TAGClass = "WakeLockManager : ";
 
-    private PowerManager.WakeLock mWakeLock = null;
+    protected PowerManager.WakeLock mWakeLock = null;
 
     protected Context context = null;
 
@@ -17,20 +17,20 @@ public class WakeLockManager {
         this.context = context;
     }
 
-    public void acqureWakeLock() {
+    public void acquire() {
         if(null == mWakeLock){
             PowerManager powerMgr = (PowerManager) this.context.getSystemService(Context.POWER_SERVICE);
 
-            mWakeLock = powerMgr.newWakeLock(PowerManager.FULL_WAKE_LOCK, "ChordApiDemo Lock");
-            Log.d(TAG, TAGClass + "acqureWakeLock : new");
+            mWakeLock = powerMgr.newWakeLock(PowerManager.FULL_WAKE_LOCK, "Chord Api Lock");
+            Log.d(TAG, TAGClass + "acquire : new");
         }
 
         if(mWakeLock.isHeld()){
-            Log.w(TAG, TAGClass + "acqureWakeLock : already acquire");
+            Log.w(TAG, TAGClass + "acquire : already acquire");
             mWakeLock.release();
         }
 
-        Log.d(TAG, TAGClass + "acqureWakeLock : acquire");
+        Log.d(TAG, TAGClass + "acquire : acquire");
         mWakeLock.acquire();
     }
 

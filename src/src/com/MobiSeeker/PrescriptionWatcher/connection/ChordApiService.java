@@ -5,7 +5,6 @@ import java.util.List;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
-import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -126,7 +125,7 @@ public class ChordApiService extends Service {
     // Start chord
     public int start(int interfaceType) {
 
-        this.wakeLockManager.acqureWakeLock();
+        this.wakeLockManager.acquire();
         // #3. set some values before start
         return chordManager.start(interfaceType, new IChordManagerListener() {
             @Override
