@@ -1,8 +1,8 @@
 package com.MobiSeeker.PrescriptionWatcher.test.utils;
 
 import android.content.Intent;
-import com.xtremelabs.robolectric.Robolectric;
-import com.xtremelabs.robolectric.shadows.ShadowIntent;
+import org.robolectric.Robolectric;
+import org.robolectric.shadows.ShadowIntent;
 
 import java.util.List;
 

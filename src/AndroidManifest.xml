@@ -50,6 +50,7 @@
                 android:icon="@drawable/prescription">
         </activity>
 
+        <service android:name=".connection.ChordApiService"/>
     </application>
 
 </manifest>

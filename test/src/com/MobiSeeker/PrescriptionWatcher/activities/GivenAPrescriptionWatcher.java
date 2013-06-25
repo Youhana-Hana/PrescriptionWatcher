@@ -1,6 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
-import com.xtremelabs.robolectric.RobolectricTestRunner;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -18,14 +18,14 @@ public class WakeLockManager {
     }
 
     public void acquire() {
-        if(null == mWakeLock){
+        if(null == mWakeLock) {
             PowerManager powerMgr = (PowerManager) this.context.getSystemService(Context.POWER_SERVICE);
 
             mWakeLock = powerMgr.newWakeLock(PowerManager.FULL_WAKE_LOCK, "Chord Api Lock");
             Log.d(TAG, TAGClass + "acquire : new");
         }
 
-        if(mWakeLock.isHeld()){
+        if (mWakeLock.isHeld()) {
             Log.w(TAG, TAGClass + "acquire : already acquire");
             mWakeLock.release();
         }

@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
-import com.xtremelabs.robolectric.Robolectric;
-import com.xtremelabs.robolectric.RobolectricTestRunner;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
 import org.joda.time.LocalTime;
 import org.junit.Before;

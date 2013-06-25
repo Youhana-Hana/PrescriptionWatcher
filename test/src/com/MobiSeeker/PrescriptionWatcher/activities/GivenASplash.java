@@ -3,10 +3,10 @@ package com.MobiSeeker.PrescriptionWatcher.activities;
 import android.content.Context;
 import android.content.Intent;
 
-import com.xtremelabs.robolectric.Robolectric;
-import com.xtremelabs.robolectric.RobolectricTestRunner;
-import com.xtremelabs.robolectric.shadows.ShadowApplication;
-import com.xtremelabs.robolectric.shadows.ShadowIntent;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.shadows.ShadowApplication;
+import org.robolectric.shadows.ShadowIntent;
 
 import org.junit.Before;
 import org.junit.Test;

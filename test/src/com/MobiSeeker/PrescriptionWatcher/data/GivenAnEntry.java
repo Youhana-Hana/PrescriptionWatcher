@@ -2,8 +2,8 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 
 import android.content.Context;
 
-import com.xtremelabs.robolectric.Robolectric;
-import com.xtremelabs.robolectric.RobolectricTestRunner;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalTime;

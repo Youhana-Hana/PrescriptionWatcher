@@ -4,13 +4,14 @@ package com.MobiSeeker.PrescriptionWatcher.connection;
 import android.content.Context;
 import android.os.PowerManager;
 
-import com.xtremelabs.robolectric.Robolectric;
-import com.xtremelabs.robolectric.RobolectricTestRunner;
-import com.xtremelabs.robolectric.shadows.ShadowPowerManager;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.shadows.ShadowPowerManager;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertFalse;
@@ -28,6 +29,10 @@ public class GivenAWakeLockManager {
     PowerManager powerManager;
 
     ShadowPowerManager shadowPowerManager;
+
+   // @Mock
+   // Context mockContext;
+    //PowerManager.WakeLock wakeLock;
 
     @Before
     public void setup() {
