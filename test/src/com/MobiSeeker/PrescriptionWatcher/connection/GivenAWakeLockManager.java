@@ -13,7 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.*;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -30,9 +32,8 @@ public class GivenAWakeLockManager {
 
     ShadowPowerManager shadowPowerManager;
 
-   // @Mock
-   // Context mockContext;
-    //PowerManager.WakeLock wakeLock;
+    @Mock
+    PowerManager.WakeLock wakeLock;
 
     @Before
     public void setup() {
@@ -62,23 +63,26 @@ public class GivenAWakeLockManager {
 
     @Test
     public void whenCallingAcquireAndLoclPreviouselyExistsShouldNotAllocateNewLock() {
-        this.wakeLockManager.mWakeLock = this.shadowPowerManager.newWakeLock(0, "TAG");
+        this.wakeLock = this.shadowPowerManager.newWakeLock(0, "TAG");
+        this.wakeLockManager.mWakeLock = this.wakeLock;
 
         this.wakeLockManager.acquire();
 
         assertNotNull(this.wakeLockManager.mWakeLock);
         assertTrue(this.wakeLockManager.mWakeLock.isHeld());
+        assertEquals(this.wakeLock, this.wakeLockManager.mWakeLock);
     }
 
     @Test
     public void whenCallingAcquireAndLockAlreadyHeldShouldReleaseFirst() {
-        this.wakeLockManager.mWakeLock = this.shadowPowerManager.newWakeLock(0, "TAG");
-        this.wakeLockManager.mWakeLock.acquire();
+        this.wakeLockManager.mWakeLock = this.wakeLock;
+        doReturn(true).when(this.wakeLock).isHeld();
 
         this.wakeLockManager.acquire();
 
         assertNotNull(this.wakeLockManager.mWakeLock);
         assertTrue(this.wakeLockManager.mWakeLock.isHeld());
+        verify(this.wakeLock).release();
     }
 
     @Test
@@ -99,10 +103,12 @@ public class GivenAWakeLockManager {
 
     @Test
     public void whenCallingReleaseAndIsHledFalseShouldNotRelease() {
-       this.wakeLockManager.mWakeLock = this.shadowPowerManager.newWakeLock(0, "TAG");
+       this.wakeLockManager.mWakeLock = this.wakeLock;
+       doReturn(false).when(this.wakeLock).isHeld();
 
        this.wakeLockManager.releaseWakeLock();
 
         assertFalse(this.wakeLockManager.mWakeLock.isHeld());
+        verify(this.wakeLock, never()).release();
     }
 }

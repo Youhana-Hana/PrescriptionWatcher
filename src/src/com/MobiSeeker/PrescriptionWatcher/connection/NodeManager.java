@@ -33,10 +33,16 @@ public class NodeManager {
     // Requests for nodes on the channel.
     public List<String> getJoinedNodeList(String channelName) {
         Log.d(TAG, TAGClass + "getJoinedNodeList()");
+
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "getJoinedNodeList : chordManager is null.");
+            return null;
+        }
+
         // Request the channel interface for the specific channel name.
         IChordChannel channel = this.chordManager.getJoinedChannel(channelName);
         if (null == channel) {
-            Log.e(TAG, TAGClass + "getJoinedNodeList() : invalid channel instance-" + channelName);
+            Log.e(TAG, TAGClass + "getJoinedNodeList : invalid channel instance-" + channelName);
             return null;
         }
 
@@ -50,7 +56,12 @@ public class NodeManager {
      */
     public void setNodeKeepAliveTimeout(long timeoutMsec) {
         Log.d(TAG, TAGClass + "setNodeKeepAliveTimeout()");
-        // @param timeoutMsec Timeout with millisecond.
+
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "setNodeKeepAliveTimeout : chordManager is null.");
+            return;
+        }
+
         this.chordManager.setNodeKeepAliveTimeout(timeoutMsec);
     }
 
@@ -58,11 +69,16 @@ public class NodeManager {
     public String getNodeIpAddress(String channelName, String nodeName) {
         Log.d(TAG, TAGClass + "getNodeIpAddress() channelName : " + channelName + ", nodeName : "
                 + nodeName);
-        // Request the channel interface for the specific channel name.
+
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "getNodeIpAddress : chordManager is null.");
+            return null;
+        }
+
         IChordChannel channel = this.chordManager.getJoinedChannel(channelName);
         if(null == channel){
             Log.e(TAG, TAGClass + "getNodeIpAddress : invalid channel instance");
-            return "";
+            return null;
         }
 
         /*
@@ -76,6 +92,13 @@ public class NodeManager {
     // Request for joined channel interfaces.
     public List<IChordChannel> getJoinedChannelList() {
         Log.d(TAG, TAGClass + "getJoinedChannelList()");
+
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "getJoinedChannelList : chordManager is null.");
+            return null;
+        }
+
+
         // @return Returns a list of handle for joined channel. It returns an
         // empty list, there is no joined channel.
         return this.chordManager.getJoinedChannelList();

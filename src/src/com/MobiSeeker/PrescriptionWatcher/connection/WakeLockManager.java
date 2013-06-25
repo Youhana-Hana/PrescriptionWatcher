@@ -24,8 +24,7 @@ public class WakeLockManager {
             mWakeLock = powerMgr.newWakeLock(PowerManager.FULL_WAKE_LOCK, "Chord Api Lock");
             Log.d(TAG, TAGClass + "acquire : new");
         }
-
-        if (mWakeLock.isHeld()) {
+        else if (mWakeLock.isHeld()) {
             Log.w(TAG, TAGClass + "acquire : already acquire");
             mWakeLock.release();
         }
