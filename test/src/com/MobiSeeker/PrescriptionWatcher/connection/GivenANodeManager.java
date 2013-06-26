@@ -145,4 +145,77 @@ public class GivenANodeManager {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void whenCallingJoinChannelAndChordManagerIsNoNullShouldReturnNull() {
+        this.nodeManager = new NodeManager(null, null, null);
+
+        IChordChannel actual = this.nodeManager.joinChannel("CHANNELNAME");
+
+        Assert.assertNull(actual);
+    }
+
+    @Test
+    public void whenCallingJoinChannelAndChannelNameIsNullShouldUseDefaultName() {
+        doReturn(this.chordChannel).when(this.chordManager).joinChannel(NodeManager.CHORD_API_CHANNEL, this.chordChannelListener);
+        doReturn(NodeManager.CHORD_API_CHANNEL).when(this.channelInformation).getPrivateChannel();
+
+        IChordChannel actual = this.nodeManager.joinChannel(null);
+
+        verify(this.channelInformation).setPrivateChannel(NodeManager.CHORD_API_CHANNEL);
+        verify(this.chordManager).joinChannel(NodeManager.CHORD_API_CHANNEL, this.chordChannelListener);
+        Assert.assertEquals(this.chordChannel, actual);
+    }
+
+    @Test
+    public void whenCallingJoinChannelAndChannelNameIsEmptyShouldUseDefaultName() {
+        doReturn(this.chordChannel).when(this.chordManager).joinChannel(NodeManager.CHORD_API_CHANNEL, this.chordChannelListener);
+        doReturn(NodeManager.CHORD_API_CHANNEL).when(this.channelInformation).getPrivateChannel();
+
+        IChordChannel actual = this.nodeManager.joinChannel("");
+
+        verify(this.channelInformation).setPrivateChannel(NodeManager.CHORD_API_CHANNEL);
+        verify(this.chordManager).joinChannel(NodeManager.CHORD_API_CHANNEL, this.chordChannelListener);
+        Assert.assertEquals(this.chordChannel, actual);
+    }
+
+    @Test
+    public void whenCallingJoinChannelAndChannelNameShouldUseDefaultName() {
+        doReturn(this.chordChannel).when(this.chordManager).joinChannel("CHANNElNAME", this.chordChannelListener);
+        doReturn("CHANNElNAME").when(this.channelInformation).getPrivateChannel();
+
+        IChordChannel actual = this.nodeManager.joinChannel("CHANNElNAME");
+
+        verify(this.channelInformation).setPrivateChannel("CHANNElNAME");
+        verify(this.chordManager).joinChannel("CHANNElNAME", this.chordChannelListener);
+        Assert.assertEquals(this.chordChannel, actual);
+    }
+
+    @Test
+    public void whenCallingJoinChannelFailsShouldReturnNull() {
+        doReturn(null).when(this.chordManager).joinChannel("CHANNElNAME", this.chordChannelListener);
+        doReturn("CHANNElNAME").when(this.channelInformation).getPrivateChannel();
+
+        IChordChannel actual = this.nodeManager.joinChannel("CHANNElNAME");
+
+        verify(this.channelInformation).setPrivateChannel("CHANNElNAME");
+        verify(this.chordManager).joinChannel("CHANNElNAME", this.chordChannelListener);
+        Assert.assertNull(actual);
+    }
+
+    @Test
+    public void whenCallingLeaveChannelAndChordManagerIsNoNullShouldNotThrow() {
+        this.nodeManager = new NodeManager(null, null, null);
+
+        this.nodeManager.leaveChannel();
+    }
+
+    @Test
+    public void whenCallingLeaveChannelShouldReturnResetPrivateChannel() {
+        doReturn("CHANNElNAME").when(this.channelInformation).getPrivateChannel();
+
+        this.nodeManager.leaveChannel();
+
+        verify(this.chordManager).leaveChannel("CHANNElNAME");
+        verify(this.channelInformation).setPrivateChannel("");
+    }
 }

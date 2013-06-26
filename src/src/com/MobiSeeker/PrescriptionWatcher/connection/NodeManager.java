@@ -10,7 +10,7 @@ import java.util.List;
 
 public class NodeManager {
 
-    public static String CHORD_API_CHANNEL = "com.MobiSeeker.PrescriptionWatcher";
+    protected static String CHORD_API_CHANNEL = "com.MobiSeeker.PrescriptionWatcher";
 
     private static final String TAG = "[Chord][ApiService]";
 
@@ -76,7 +76,7 @@ public class NodeManager {
         }
 
         IChordChannel channel = this.chordManager.getJoinedChannel(channelName);
-        if(null == channel){
+        if (null == channel){
             Log.e(TAG, TAGClass + "getNodeIpAddress : invalid channel instance");
             return null;
         }
@@ -104,39 +104,43 @@ public class NodeManager {
         return this.chordManager.getJoinedChannelList();
     }
 
-    // Join a desired channel with a given listener.
     public IChordChannel joinChannel(String channelName) {
         Log.d(TAG, TAGClass + "joinChannel()" + channelName);
-        if (channelName == null || channelName.equals("")) {
-            Log.e(TAG, TAGClass + "joinChannel > " + channelName
-                    + " is invalid! Default private channel join");
-            this.channelInformation.setPrivateChannel(CHORD_API_CHANNEL);
-        } else {
-            this.channelInformation.setPrivateChannel(channelName);
-        }
 
-        /*
-         * @param channelName Channel name. It is a mandatory input.
-         * @param listener A listener that gets notified when there is events in
-         * joined channel mandatory. It is a mandatory input.
-         * @return Returns a handle of the channel if it is joined successfully,
-         * null otherwise.
-         */
-        IChordChannel channelInst = this.chordManager.joinChannel(channelName, this.chordChannelListener);
-
-        if (null == channelInst) {
-            Log.d(TAG, "fail to joinChannel! ");
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "joinChannel : chordManager is null.");
             return null;
         }
 
-        return channelInst;
+        this.setChannelName(channelName);
+
+        return this.chordManager.joinChannel(this.channelInformation.getPrivateChannel(), this.chordChannelListener);
     }
 
     // Leave a given channel.
     public void leaveChannel() {
         Log.d(TAG, TAGClass + "leaveChannel()");
-        // @param channelName Channel name
+
+        if (this.chordManager == null) {
+            Log.d(TAG, TAGClass + "leaveChannel : chordManager is null.");
+            return;
+        }
+
         this.chordManager.leaveChannel(this.channelInformation.getPrivateChannel());
+
         this.channelInformation.setPrivateChannel("");
     }
+
+    private void setChannelName(String channelName) {
+        if (channelName == null || channelName.isEmpty()) {
+
+            Log.e(TAG, TAGClass + "joinChannel > " + channelName
+                    + " is invalid! Default private channel join");
+
+            this.channelInformation.setPrivateChannel(CHORD_API_CHANNEL);
+        } else {
+            this.channelInformation.setPrivateChannel(channelName);
+        }
+    }
+
 }
