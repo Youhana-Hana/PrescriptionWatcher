@@ -11,29 +11,42 @@ public class DataHandler {
 
     private static final String TAGClass = "DataHandler : ";
 
-    private static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
+    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
 
     protected ChordManager chordManager;
 
     public DataHandler(ChordManager chordManager) {
+
+        if (chordManager == null) {
+            Log.e(TAG, TAGClass + "DataHandler() Invalid ChordManager. null value");
+            throw new IllegalArgumentException("Invalid ChordManager. null value");
+        }
+
         this.chordManager = chordManager;
     }
 
     // Send data message to the node.
     public boolean sendData(String toChannel, byte[] buf, String nodeName) {
-        if (this.chordManager == null) {
-            Log.v(TAG, "sendData : chordManager IS NULL  !!");
-            return false;
-        }
-        // Request the channel interface for the specific channel name.
-        IChordChannel channel = this.chordManager.getJoinedChannel(toChannel);
-        if (null == channel) {
-            Log.e(TAG, TAGClass + "sendData : invalid channel instance");
-            return false;
-        }
 
         if (nodeName == null) {
             Log.v(TAG, "sendData : NODE Name IS NULL !!");
+            return false;
+        }
+
+        if (nodeName.isEmpty()) {
+            Log.v(TAG, "sendData : NODE Name IS empty !!");
+            return false;
+        }
+
+
+        if (buf == null) {
+            Log.v(TAG, "sendData : buffer IS null !!");
+            return false;
+        }
+
+        IChordChannel channel = this.chordManager.getJoinedChannel(toChannel);
+        if (null == channel) {
+            Log.e(TAG, TAGClass + "sendData : invalid channel instance");
             return false;
         }
 
@@ -42,26 +55,15 @@ public class DataHandler {
 
         Log.v(TAG, TAGClass + "sendData : " + new String(buf) + ", des : " + nodeName);
 
-        /*
-         * @param toNode The joined node name that the message is sent to. It is
-         * mandatory.
-         * @param payloadType User defined message type. It is mandatory.
-         * @param payload The package of data to send
-         * @return Returns true when file transfer is success. Otherwise, false
-         * is returned
-         */
-        if (false == channel.sendData(nodeName, CHORD_APITEST_MESSAGE_TYPE, payload)) {
-            Log.e(TAG, TAGClass + "sendData : fail to sendData");
-            return false;
-        }
+        return channel.sendData(nodeName, CHORD_APITEST_MESSAGE_TYPE, payload);
 
-        return true;
-    }
+       }
 
     // Send data message to the all nodes on the channel.
     public boolean sendDataToAll(String toChannel, byte[] buf) {
-        if (this.chordManager == null) {
-            Log.v(TAG, "sendDataToAll : chordManager IS NULL  !!");
+
+        if (buf == null) {
+            Log.v(TAG, "sendDataToAll : buffer IS null !!");
             return false;
         }
 
@@ -77,17 +79,6 @@ public class DataHandler {
 
         Log.v(TAG, TAGClass + "sendDataToAll : " + new String(buf));
 
-        /*
-         * @param payloadType User defined message type. It is mandatory.
-         * @param payload The package of data to send
-         * @return Returns true when file transfer is success. Otherwise, false
-         * is returned.
-         */
-        if (false == channel.sendDataToAll(CHORD_APITEST_MESSAGE_TYPE, payload)) {
-            Log.e(TAG, TAGClass + "sendDataToAll : fail to sendDataToAll");
-            return false;
-        }
-
-        return true;
+        return channel.sendDataToAll(CHORD_APITEST_MESSAGE_TYPE, payload);
     }
 }

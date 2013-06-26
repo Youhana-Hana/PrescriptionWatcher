@@ -35,9 +35,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAFileHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/FileHandler.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/FileHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenANodeManager.java" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenANodeManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenADataHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/DataHandler.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/DataHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
@@ -232,14 +231,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GivenANodeManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenANodeManager.java">
+      <file leaf-file-name="GivenAFileHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAFileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="3375">
+            <state line="88" column="4" selection-start="2782" selection-end="3415" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="2325">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2069#2077#0" expanded="true" />
-                <element signature="e#4147#4162#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/DataHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="32" selection-start="1807" selection-end="1820" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1305">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GivenADataHandler.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenADataHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="123" column="0" selection-start="3543" selection-end="3543" vertical-scroll-proportion="0.054054055" vertical-offset="1827" max-vertical-offset="2220">
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -248,19 +265,8 @@
       <file leaf-file-name="FileHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/FileHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="7" selection-start="3003" selection-end="3003" vertical-scroll-proportion="0.0" vertical-offset="1012" max-vertical-offset="1335">
+            <state line="30" column="9" selection-start="789" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1335">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GivenAFileHandler.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAFileHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="59" selection-start="4604" selection-end="4604" vertical-scroll-proportion="0.51702785" vertical-offset="1828" max-vertical-offset="2325">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -283,8 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenAPrescriptionWatcher.java" />
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAChordManagerService.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/layout/GivenAnEntry.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAPrescriptionRepository.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAnEntry.java" />
@@ -299,6 +303,8 @@
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenANodeManager.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/FileHandler.java" />
         <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAFileHandler.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/DataHandler.java" />
+        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenADataHandler.java" />
       </list>
     </option>
   </component>
@@ -529,7 +535,7 @@
       <recent name="com.MobiSeeker.PrescriptionWatcher.activities" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GivenAFileHandler">
+  <component name="RunManager" selected="JUnit.GivenADataHandler">
     <configuration default="false" name="GivenANodeManager" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -538,50 +544,6 @@
       <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenANodeManager" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="GivenANodeManager.whenCallingJoinChannelAndChannelNameIsNullShouldUseDefaultName" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection" />
-      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenANodeManager" />
-      <option name="METHOD_NAME" value="whenCallingJoinChannelAndChannelNameIsNullShouldUseDefaultName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="GivenANodeManager.whenCallingLeaveChannelAndChordManagerIsNoNullShouldNotThrow" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection" />
-      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenANodeManager" />
-      <option name="METHOD_NAME" value="whenCallingLeaveChannelAndChordManagerIsNoNullShouldNotThrow" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
@@ -625,6 +587,50 @@
       <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection" />
       <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenAFileHandler" />
       <option name="METHOD_NAME" value="whenConstructingAndChordManagerIsNullShouldThrow" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GivenADataHandler" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection" />
+      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenADataHandler" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GivenADataHandler.whenCallingSendDataShouldRetuenExpected" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection" />
+      <option name="MAIN_CLASS_NAME" value="com.MobiSeeker.PrescriptionWatcher.connection.GivenADataHandler" />
+      <option name="METHOD_NAME" value="whenCallingSendDataShouldRetuenExpected" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
@@ -751,18 +757,18 @@
       <item index="0" class="java.lang.String" itemvalue="Android Application.src" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.tests" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.GivenANodeManager" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.GivenANodeManager.whenCallingJoinChannelAndChannelNameIsNullShouldUseDefaultName" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.GivenANodeManager.whenCallingLeaveChannelAndChordManagerIsNoNullShouldNotThrow" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler.whenConstructingAndChordManagerIsNullShouldThrow" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler.whenConstructingAndChordManagerIsNullShouldThrow" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.GivenADataHandler" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.GivenADataHandler.whenCallingSendDataShouldRetuenExpected" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler.whenConstructingAndChordManagerIsNullShouldThrow" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GivenANodeManager" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GivenANodeManager.whenCallingLeaveChannelAndChordManagerIsNoNullShouldNotThrow" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GivenANodeManager.whenCallingJoinChannelAndChannelNameIsNullShouldUseDefaultName" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GivenADataHandler" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GivenADataHandler.whenCallingSendDataShouldRetuenExpected" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GivenAFileHandler.whenConstructingAndChordManagerIsNullShouldThrow" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GivenANodeManager" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -851,14 +857,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39710444" sideWeight="0.15438597" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41403508" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41284403" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15964912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922441" sideWeight="0.67017543" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988626" sideWeight="0.68421054" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29472595" sideWeight="0.63684213" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3631579" sideWeight="0.49948293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34229577" sideWeight="0.654386" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34561405" sideWeight="0.49948293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="100" y="126" width="824" height="516" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922441" sideWeight="0.5174312" order="4" side_tool="false" content_ui="combo" />
@@ -935,33 +941,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAnEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="45" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenAnAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="45" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenADosage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.46484375" vertical-offset="1" max-vertical-offset="840" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/data/GivenACalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.61728394" vertical-offset="0" max-vertical-offset="3495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/activities/GivenASplash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="22" selection-start="274" selection-end="274" vertical-scroll-proportion="0.30864197" vertical-offset="45" max-vertical-offset="915" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/utils/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="22" selection-start="145" selection-end="145" vertical-scroll-proportion="0.24691358" vertical-offset="0" max-vertical-offset="975" />
@@ -1023,16 +1002,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/ChannelInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/ChordChannelListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="973" max-vertical-offset="4260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/ChordManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="7" selection-start="3003" selection-end="3003" vertical-scroll-proportion="0.0" vertical-offset="1012" max-vertical-offset="1335">
+        <state line="30" column="9" selection-start="789" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="1335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenAFileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="59" selection-start="4604" selection-end="4604" vertical-scroll-proportion="0.51702785" vertical-offset="1828" max-vertical-offset="2325">
+        <state line="88" column="4" selection-start="2782" selection-end="3415" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="2325">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/connection/DataHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="32" selection-start="1807" selection-end="1820" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenADataHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="0" selection-start="3543" selection-end="3543" vertical-scroll-proportion="0.054054055" vertical-offset="1827" max-vertical-offset="2220">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
