@@ -11,57 +11,51 @@ public class FileHandler {
 
     private static final String TAGClass = "FileHandler : ";
 
-    private static final String MESSAGE_TYPE_FILE_NOTIFICATION = "FILE_NOTIFICATION_V2";
+    protected static final String MESSAGE_TYPE_FILE_NOTIFICATION = "FILE_NOTIFICATION_V2";
 
-    private static final long SHARE_FILE_TIMEOUT_MILISECONDS = 1000 * 60 * 5;
+    protected static final long SHARE_FILE_TIMEOUT_MILISECONDS = 1000 * 60 * 5;
+
+    protected static final long chunkTimeoutMsec = 30*1000;
+
+    protected static final int chunkRetries = 2;
+
+    protected static final long chunkSize = 300 * 1024;
 
     protected ChordManager chordManager;
 
-    public FileHandler(ChordManager chordManager) {
+    public FileHandler(ChordManager chordManager) throws IllegalArgumentException{
+
+        if (chordManager == null) {
+            Log.e(TAG, TAGClass + "FileHandler() Invalid ChordManager. null value");
+            throw new IllegalArgumentException("Invalid ChordManager. null value");
+        }
+
         this.chordManager = chordManager;
     }
 
-    // Send file to the node on the channel.
     public String sendFile(String toChannel, String strFilePath, String toNode) {
         Log.d(TAG, TAGClass + "sendFile() ");
 
-        // Request the channel interface for the specific channel name.
         IChordChannel channel = this.chordManager.getJoinedChannel(toChannel);
         if (null == channel) {
             Log.e(TAG, TAGClass + "sendFile() : invalid channel instance");
             return null;
         }
-        /*
-         * @param toNode The node name that the file is sent to. It is
-         * mandatory.
-         * @param fileType User defined file type. It is mandatory.
-         * @param filePath The absolute path of the file to be transferred. It
-         * is mandatory.
-         * @param timeoutMsec The time to allow the receiver to accept the
-         * receiving data requests.
-         */
+
         return channel.sendFile(toNode, MESSAGE_TYPE_FILE_NOTIFICATION, strFilePath,
                 SHARE_FILE_TIMEOUT_MILISECONDS);
     }
 
-    // Accept to receive file.
     public boolean acceptFile(String fromChannel, String exchangeId) {
         Log.d(TAG, TAGClass + "acceptFile()");
-        // Request the channel interface for the specific channel name.
+
         IChordChannel channel = this.chordManager.getJoinedChannel(fromChannel);
         if (null == channel) {
             Log.e(TAG, TAGClass + "acceptFile() : invalid channel instance");
             return false;
         }
 
-        /*
-         * @param exchangeId Exchanged ID
-         * @param chunkTimeoutMsec The timeout to request the chunk data.
-         * @param chunkRetries The count that allow to retry to request chunk
-         * data.
-         * @param chunkSize Chunk size
-         */
-        return channel.acceptFile(exchangeId, 30*1000, 2, 300 * 1024);
+        return channel.acceptFile(exchangeId, FileHandler.chunkTimeoutMsec, FileHandler.chunkRetries, FileHandler.chunkSize);
     }
 
     // Cancel file transfer while it is in progress.
@@ -74,7 +68,6 @@ public class FileHandler {
             return false;
         }
 
-        // @param exchangeId Exchanged ID
         return channel.cancelFile(exchangeId);
     }
 
@@ -88,7 +81,6 @@ public class FileHandler {
             return false;
         }
 
-        // @param exchangeId Exchanged ID
-        return channel.rejectFile(coreTransactionId);
+       return channel.rejectFile(coreTransactionId);
     }
 }

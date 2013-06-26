@@ -43,8 +43,6 @@ public class GivenANodeManager {
     public void setup() {
         MockitoAnnotations.initMocks(this);
 
-       // this.context = Robolectric.getShadowApplication().getApplicationContext();
-
         this.nodeManager = new NodeManager(this.chordManager, this.chordChannelListener, this.channelInformation);
     }
     
