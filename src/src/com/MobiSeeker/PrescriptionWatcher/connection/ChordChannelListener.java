@@ -14,11 +14,11 @@ public class ChordChannelListener implements IChordChannelListener {
 
     private static final String TAGClass = "ChordChannelListener : ";
 
-    private static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
+    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
 
-    private static final String MESSAGE_TYPE_FILE_NOTIFICATION = "FILE_NOTIFICATION_V2";
+    protected static final String MESSAGE_TYPE_FILE_NOTIFICATION = "FILE_NOTIFICATION_V2";
 
-    private static final long SHARE_FILE_TIMEOUT_MILISECONDS = 1000 * 60 * 5;
+    protected static final long SHARE_FILE_TIMEOUT_MILISECONDS = 1000 * 60 * 5;
 
     protected IChordServiceListener listener;
 

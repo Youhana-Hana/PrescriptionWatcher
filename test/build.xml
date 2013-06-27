@@ -113,7 +113,7 @@
         <fail if="junit.error" message="Tests had errors."/>
         <fail if="junit.failure" message="Tests had failures."/>
 
-        <antcall target="enforce.coverage" />
+        <!--<antcall target="enforce.coverage" />-->
 
     </target>
 

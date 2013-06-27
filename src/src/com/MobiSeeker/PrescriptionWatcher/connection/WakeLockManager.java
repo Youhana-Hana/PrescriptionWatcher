@@ -25,9 +25,9 @@ public class WakeLockManager {
             Log.d(TAG, TAGClass + "acquire : new");
         }
         else if (mWakeLock.isHeld()) {
-            Log.w(TAG, TAGClass + "acquire : already acquire");
-            mWakeLock.release();
-        }
+           Log.w(TAG, TAGClass + "acquire : already acquire");
+                mWakeLock.release();
+            }
 
         Log.d(TAG, TAGClass + "acquire : acquire");
         mWakeLock.acquire();

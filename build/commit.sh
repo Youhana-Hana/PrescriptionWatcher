@@ -7,7 +7,7 @@ echo 'building project'
 ant clean release
 
 echo 'running android lint'
-/usr/dev/android-sdk-linux/tools/lint -Werror --exitcode .
+/usr/dev/android-sdk-linux/tools/lint --disable Wakelock -Werror --exitcode .
 
 echo 'running tests'
 cd ../test
