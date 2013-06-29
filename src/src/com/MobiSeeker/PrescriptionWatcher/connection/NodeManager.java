@@ -10,7 +10,8 @@ import java.util.List;
 
 public class NodeManager {
 
-    protected static String CHORD_API_CHANNEL = "com.MobiSeeker.PrescriptionWatcher";
+    protected static String CHORD_API_CHANNEL ="youssef"; 
+    	//	"com.MobiSeeker.PrescriptionWatcher";
 
     private static final String TAG = "[Chord][ApiService]";
 

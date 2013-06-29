@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/test/libs/chord-v1.0.0-20130327.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/libs/robolectric-2.2-20130624.234322-12-jar-with-dependencies.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/libs/mockito-all-1.9.5-rc1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/libs/emmacheck-0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/libs/junit-4.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/libs/joda-time-2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

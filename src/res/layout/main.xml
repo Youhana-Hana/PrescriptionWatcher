@@ -7,35 +7,42 @@
         >
 
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/prescriptions"
-            android:layout_weight="1"
             android:padding="10dp"
             android:onClick="viewPrescriptions"
             />
 
 
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/watching"
-            android:layout_weight="1"
             android:padding="10dp"
             android:onClick="viewContacts"
             />
 
 
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/settings"
-            android:layout_weight="1"
             android:padding="10dp"
             android:onClick="viewSettings"
             />
 
+       <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/testconnection"
+            android:padding="10dp"
+            android:onClick="testConnection"
+            />
+    
+    
 </LinearLayout>

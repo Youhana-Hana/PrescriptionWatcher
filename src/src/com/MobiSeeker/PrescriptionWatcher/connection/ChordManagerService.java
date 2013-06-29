@@ -20,6 +20,6 @@ public class ChordManagerService {
 
     public String getChordFilePath() {
         return Environment.getExternalStorageDirectory()
-                .getAbsolutePath() + "/Chord";
+                .getAbsolutePath() + "/Prescription";
     }
 }

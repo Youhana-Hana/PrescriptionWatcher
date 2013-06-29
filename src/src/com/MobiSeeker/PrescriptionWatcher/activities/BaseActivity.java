@@ -1,12 +1,14 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
+import com.MobiSeeker.PrescriptionWatcher.connection.IChordServiceListener;
+
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
 import roboguice.activity.RoboFragmentActivity;
 
-public abstract class BaseActivity extends RoboFragmentActivity {
+public abstract class BaseActivity extends RoboFragmentActivity implements IChordServiceListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

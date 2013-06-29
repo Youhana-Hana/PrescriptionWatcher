@@ -1,12 +1,11 @@
 package com.MobiSeeker.PrescriptionWatcher.connection;
 
-import android.os.Environment;
+import java.io.File;
+
 import android.os.StatFs;
 import android.util.Log;
 
 import com.samsung.chord.IChordChannelListener;
-
-import java.io.File;
 
 public class ChordChannelListener implements IChordChannelListener {
 
@@ -14,7 +13,7 @@ public class ChordChannelListener implements IChordChannelListener {
 
     private static final String TAGClass = "ChordChannelListener : ";
 
-    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
+    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_APITEST_MESSAGE_TYPE";
 
     protected static final String MESSAGE_TYPE_FILE_NOTIFICATION = "FILE_NOTIFICATION_V2";
 
@@ -25,6 +24,8 @@ public class ChordChannelListener implements IChordChannelListener {
     protected FileHandler fileHandler;
 
     protected ChordManagerService chordManagerService;
+    
+    
 
     public ChordChannelListener(IChordServiceListener listener, FileHandler fileHandler, ChordManagerService chordManagerService) {
         this.listener = listener;
@@ -75,10 +76,10 @@ public class ChordChannelListener implements IChordChannelListener {
     public void onDataReceived(String fromNode, String fromChannel, String payloadType,
                                byte[][] payload) {
         Log.v(TAG, TAGClass + "onDataReceived()");
-
+       
         if (!CHORD_APITEST_MESSAGE_TYPE.equals(payloadType))
             return;
-
+        System.out.println(new String(payload[0]));
         byte[] buf = payload[0];
         if (null != this.listener)
             this.listener.onReceiveMessage(fromNode, fromChannel, new String(buf));

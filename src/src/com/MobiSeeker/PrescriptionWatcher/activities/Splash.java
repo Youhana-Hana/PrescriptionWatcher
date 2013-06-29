@@ -1,11 +1,12 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
+import roboguice.activity.RoboFragmentActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 
-public class Splash extends BaseActivity {
+public class Splash extends RoboFragmentActivity {
 
     int progress = 0;
 
@@ -30,10 +31,10 @@ public class Splash extends BaseActivity {
     public void loadingStart() {
         Thread thread = new Thread() {
             public void run() {
-                while (progress < 100) {
+                while (progress < 1) {
                     loading();
                     try {
-                        sleep(100);
+                        sleep(1);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();

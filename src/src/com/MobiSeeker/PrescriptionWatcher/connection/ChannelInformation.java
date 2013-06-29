@@ -13,11 +13,11 @@ public class ChannelInformation {
     }
 
     public String getPublicChannel() {
-        return this.chordManager.PUBLIC_CHANNEL;
+        return NodeManager.CHORD_API_CHANNEL;
     }
 
     public String getPrivateChannel() {
-        return this.channelName;
+        return NodeManager.CHORD_API_CHANNEL;
     }
 
     public void setPrivateChannel(String channelName) {

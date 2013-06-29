@@ -98,6 +98,9 @@ public class ChordApiService extends Service {
         Log.d(TAG, TAGClass + "[Initialize] Chord Initialized");
 
         this.listener = listener;
+        this.chordManagerService = new ChordManagerService(this.chordManager);
+
+        this.channelListener = new ChordChannelListener(this.listener, this.fileHandler, this.chordManagerService);
 
         this.channelInformation = new ChannelInformation(chordManager);
 
@@ -105,18 +108,16 @@ public class ChordApiService extends Service {
 
         this.dataHandler = new DataHandler(this.chordManager);
 
-        this.nodeManager = new NodeManager(this.chordManager, channelListener, this.channelInformation);
-
         this.wakeLockManager = new WakeLockManager(this);
 
         this.networkListener = new NetworkListener(this.listener);
 
         this.chordManager.setNetworkListener(this.networkListener);
 
-        this.chordManagerService = new ChordManagerService(this.chordManager);
 
-        this.channelListener = new ChordChannelListener(this.listener, this.fileHandler, this.chordManagerService);
+        this.nodeManager = new NodeManager(this.chordManager, channelListener, this.channelInformation);
 
+        
         // #2. set some values before start
         chordManager.setTempDirectory(this.chordManagerService.getChordFilePath());
         chordManager.setHandleEventLooper(getMainLooper());
@@ -143,8 +144,9 @@ public class ChordApiService extends Service {
                 // start
 
                 // #4.(optional) listen for public channel
-                IChordChannel channel = chordManager.joinChannel(ChordManager.PUBLIC_CHANNEL,
+                IChordChannel channel = chordManager.joinChannel(NodeManager.CHORD_API_CHANNEL,
                         channelListener);
+                
 
                 if (null == channel) {
                     Log.e(TAG, TAGClass + "fail to join public");

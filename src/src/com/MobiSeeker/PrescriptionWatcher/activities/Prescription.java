@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
@@ -33,7 +34,7 @@ import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 
-public class Prescription extends RoboFragmentActivity implements
+public class Prescription extends BaseActivity implements
         DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     protected final static String TAG = "com.MobiSeeker.PrescriptionWatcher.activities.Prescription";
@@ -101,6 +102,7 @@ public class Prescription extends RoboFragmentActivity implements
         init();
 
         this.prescriptionRepository = new PrescriptionRepository();
+        
     }
 
     private void init() {
@@ -266,5 +268,55 @@ public class Prescription extends RoboFragmentActivity implements
 
         return null;
     }
+
+	@Override
+	public void onReceiveMessage(String node, String channel, String message) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void onFileWillReceive(String node, String channel, String fileName,
+			String exchangeId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onFileProgress(boolean bSend, String node, String channel,
+			int progress, String exchangeId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onFileCompleted(int reason, String node, String channel,
+			String exchangeId, String fileName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onNodeEvent(String node, String channel, boolean bJoined) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onNetworkDisconnected() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onUpdateNodeInfo(String nodeName, String ipAddress) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onConnectivityChanged() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

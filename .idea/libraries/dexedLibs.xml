@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/guice-2.0-no_aop-dda8ac09725e149060660d5bd565a056.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/joda-time-2.2-ac1e077ae2dce6b6d9772576f84ba2a3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/gson-2.2.2-1aa31fea7c5cd105139ed2835612c9a6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/roboguice-2.0-4bf8360ff3df3ca6efde5452566ca609.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/chord-v1.0.0-20130327-6cc8c876a7acded0120725921c722d09.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/android-support-v4-3e7d0ef8ff6ddd7e8b3be321e40f7378.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/annotations-601a9d08e386e077ffe9ade95f0d1d1e.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/bin/dexedLibs/jsr305-1.3.9-0c00154b87bff133bcfe03017e2cf6fa.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

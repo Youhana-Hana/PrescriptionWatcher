@@ -11,7 +11,7 @@ public class DataHandler {
 
     private static final String TAGClass = "DataHandler : ";
 
-    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_API_MESSAGE_TYPE";
+    protected static final String CHORD_APITEST_MESSAGE_TYPE = "CHORD_APITEST_MESSAGE_TYPE";
 
     protected ChordManager chordManager;
 

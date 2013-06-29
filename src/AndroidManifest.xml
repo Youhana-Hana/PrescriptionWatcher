@@ -50,7 +50,15 @@
                 android:icon="@drawable/prescription">
         </activity>
 
-        <service android:name=".connection.ChordApiService"/>
-    </application>
+         <service
+            android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_START" />
+                <action android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_STOP" />
+                <action android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_BIND" />
+            </intent-filter>
+        </service>
+            </application>
 
 </manifest>

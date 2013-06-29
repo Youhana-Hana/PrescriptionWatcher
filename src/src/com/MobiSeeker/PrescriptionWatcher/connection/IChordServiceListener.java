@@ -10,6 +10,8 @@ public interface IChordServiceListener {
     public static final int REJECTED = 3;
 
     public static final int FAILED = 4;
+    
+    
 
 
     void onReceiveMessage(String node, String channel, String message);
