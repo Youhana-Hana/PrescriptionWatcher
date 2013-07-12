@@ -114,7 +114,7 @@ public class NodeManager {
         }
 
         this.setChannelName(channelName);
-
+        
         return this.chordManager.joinChannel(this.channelInformation.getPrivateChannel(), this.chordChannelListener);
     }
 

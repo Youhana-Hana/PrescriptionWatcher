@@ -18,45 +18,112 @@ public class ServiceManger {
 	
 	private ChordApiService mChordService;
 	BaseActivity mainActivity;
+	List<IChordChannel> listOfChannels;
+	
+	private boolean Connected ;
 	
 	public ServiceManger(BaseActivity activity)
 	{
 		this.mainActivity=activity;
 	}	
 
-	private ServiceConnection serviceConnection=new ServiceConnection() {
-		
-		@Override
-		public void onServiceDisconnected(ComponentName name) {
-			// TODO Auto-generated method stub
-			mChordService=null;
-		}
-		
-		@Override
-		public void onServiceConnected(ComponentName name, IBinder service) {
-			// TODO Auto-generated method stub
-			ChordServiceBinder binder=(ChordServiceBinder)service;
-			mChordService=binder.getService();
-			try
-			{
-				mChordService.initialize(mainActivity);				
-			}catch(Exception EE)
-			{
-				EE.printStackTrace();
+	private ServiceConnection serviceConnection;
+	
+	public void Connect()
+	{
+		serviceConnection=new ServiceConnection() {
+			
+			@Override
+			public void onServiceDisconnected(ComponentName name) {
+				// TODO Auto-generated method stub
+				mChordService=null;
+				Connected=false;
+				
 			}
-			mChordService.start(ChordManager.INTERFACE_TYPE_WIFI);
-			mChordService.joinChannel(NodeManager.CHORD_API_CHANNEL);
-			List<IChordChannel> listOfChannels=mChordService.getJoinedChannelList();
-			System.out.println(listOfChannels);
-			sendData("welcome");
-		}
-	};
+			
+			@Override
+			public void onServiceConnected(ComponentName name, IBinder service) {
+				// TODO Auto-generated method stub
+				ChordServiceBinder binder=(ChordServiceBinder)service;
+				mChordService=binder.getService();
+				try
+				{
+					mChordService.initialize(mainActivity);
+					Connected=true;
+				}catch(Exception EE)
+				{
+					EE.printStackTrace();
+				}
+				
+				mChordService.start(ChordManager.INTERFACE_TYPE_WIFI);
+				mChordService.joinChannel(NodeManager.CHORD_API_CHANNEL);
+				listOfChannels=mChordService.getJoinedChannelList();
+				
+				System.out.println(listOfChannels);
+		//		sendData("welcome");
+			}
+		};
+		
+	}
+	
+	
 
-	public void sendData(String data)
+	
+	public void reConnect()
+	{
+		if(!isConnected())
+		{
+			Connect();
+		}
+		
+	}
+	
+	
+	public boolean isConnected() {
+		return Connected;
+	}
+
+
+	public void setConnected(boolean connected) {
+		Connected = connected;
+	}
+
+
+	public ChordApiService getmChordService() {
+		return mChordService;
+	}
+
+
+	public void setmChordService(ChordApiService mChordService) {
+		this.mChordService = mChordService;
+	}
+
+
+	public void sendData(String data,String messageType,String nodeName)
 	{
 		if(mChordService!=null)
 		{
-			mChordService.sendDataToAll(NodeManager.CHORD_API_CHANNEL, data.getBytes());
+			mChordService.sendData(NodeManager.CHORD_API_CHANNEL, data.getBytes(), nodeName, messageType);
+		}
+		
+	}
+	
+
+	public List<IChordChannel> getListOfChannels() {
+		return listOfChannels;
+	}
+
+
+	public void setListOfChannels(List<IChordChannel> listOfChannels) {
+		this.listOfChannels = listOfChannels;
+	}
+
+
+	public void sendDataToAll(String data,String messageType)
+	{
+		if(mChordService!=null)
+		{
+			mChordService.sendDataToAll(NodeManager.CHORD_API_CHANNEL, data.getBytes(),messageType);
 		}
 		
 	}

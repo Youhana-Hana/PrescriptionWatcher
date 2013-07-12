@@ -212,12 +212,12 @@ public class ChordApiService extends Service {
         return fileHandler.rejectFile(fromChannel, coreTransactionId);
     }
 
-    public boolean sendData(String toChannel, byte[] buf, String nodeName) {
-        return this.dataHandler.sendData(toChannel, buf, nodeName);
+    public boolean sendData(String toChannel, byte[] buf, String nodeName,String messageType) {
+        return this.dataHandler.sendData(toChannel, buf, nodeName,messageType);
     }
 
-    public boolean sendDataToAll(String toChannel, byte[] buf) {
-        return this.dataHandler.sendDataToAll(toChannel, buf);
+    public boolean sendDataToAll(String toChannel, byte[] buf,String messageType) {
+        return this.dataHandler.sendDataToAll(toChannel, buf,messageType);
     }
 
     public List<String> getJoinedNodeList(String channelName) {

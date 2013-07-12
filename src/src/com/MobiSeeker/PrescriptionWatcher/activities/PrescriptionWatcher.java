@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 
 import roboguice.activity.RoboActivity;
@@ -16,10 +17,8 @@ public class PrescriptionWatcher extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         manger=new ServiceManger(this);
-        
         manger.startService();
         manger.bindChordService();
-       
     }
 
     public void viewPrescriptions(View view) {
@@ -36,7 +35,7 @@ public class PrescriptionWatcher extends BaseActivity {
     
     public void testConnection(View view)
     {
-        manger.sendData("welcome");
+        manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
     	
     }
 
