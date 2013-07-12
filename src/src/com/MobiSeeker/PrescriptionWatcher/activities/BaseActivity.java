@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import roboguice.activity.RoboFragmentActivity;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements IChordServiceListener {
-
+   
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub

@@ -59,6 +59,20 @@
                 <action android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_BIND" />
             </intent-filter>
         </service>
+                <receiver android:name=".data.AlarmRecieverBroadCast">
+        <intent-filter>
+            <action android:name="packagename.ACTION"/>
+            <action android:name="packagename.ACTION2"/>
+        </intent-filter>
+    </receiver>
+
+    <receiver android:name=".data.AlarmSetterBroadCast" >
+        <intent-filter>
+            <action
+                android:name="android.intent.action.BOOT_COMPLETED" />
+        </intent-filter>
+    </receiver>
+         
             </application>
 
 </manifest>
