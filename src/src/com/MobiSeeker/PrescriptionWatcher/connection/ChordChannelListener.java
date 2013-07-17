@@ -82,7 +82,7 @@ public class ChordChannelListener implements IChordChannelListener {
 		byte[] buf = payload[0];
 		if (null != this.listener)
 			this.listener.onReceiveMessage(fromNode, fromChannel, new String(
-					buf));
+					buf),payloadType);
 	}
 
 	/*

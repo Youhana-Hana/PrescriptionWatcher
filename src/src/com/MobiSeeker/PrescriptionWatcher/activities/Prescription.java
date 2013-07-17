@@ -270,7 +270,7 @@ public class Prescription extends BaseActivity implements
     }
 
 	@Override
-	public void onReceiveMessage(String node, String channel, String message) {
+	public void onReceiveMessage(String node, String channel, String message,String MessageType) {
 		// TODO Auto-generated method stub
 	}
 

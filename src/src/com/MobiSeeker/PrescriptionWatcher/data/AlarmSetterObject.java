@@ -3,6 +3,8 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.MobiSeeker.PrescriptionWatcher.activities.Prescription;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -10,8 +12,24 @@ import android.content.Intent;
 
 public class AlarmSetterObject {
 
-	public void setAlaram(Context context,Date startDate,Date endDate)
+	public static final String ALARAM_FOR_PRESCRIPTION="ALARAM_FOR_PRESCRIPTION";
+	
+	public static final String ALARM_FOR_REQUEST_CONFIRMATION="ALARM_FOR_REQUEST_CONFIRMATION";
+	
+	
+	
+	public static void  setAlaram(Context context,Entry prescription_entry,Date startDate,Date endDate,String alarmType)
 	{
+		
+		if(alarmType.equalsIgnoreCase(ALARAM_FOR_PRESCRIPTION))
+		{
+			
+			
+		}else
+		{
+			
+		}
+		
 		Intent intent = new Intent(context, AlarmRecieverBroadCast.class);
 		intent.setAction("packagename.ACTION");
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
@@ -22,7 +40,6 @@ public class AlarmSetterObject {
 		        AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(pendingIntent);
 		alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-		
 	}
 	
 }

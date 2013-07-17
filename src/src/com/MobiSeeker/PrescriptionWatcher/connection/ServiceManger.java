@@ -1,31 +1,55 @@
 package com.MobiSeeker.PrescriptionWatcher.connection;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import com.MobiSeeker.PrescriptionWatcher.activities.BaseActivity;
-import com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.ChordServiceBinder;
-import com.samsung.chord.ChordManager;
-import com.samsung.chord.IChordChannel;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.util.Log;
+import com.MobiSeeker.PrescriptionWatcher.activities.BaseActivity;
+import com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.ChordServiceBinder;
+import com.samsung.chord.ChordManager;
+import com.samsung.chord.IChordChannel;
 
 public class ServiceManger {
 	
+	 private static ServiceManger servicemanger;
 	private ChordApiService mChordService;
 	BaseActivity mainActivity;
 	List<IChordChannel> listOfChannels;
-	
 	private boolean Connected ;
 	
-	public ServiceManger(BaseActivity activity)
+	private ArrayList<CashedNodesData> cashedNotes;
+	
+	private ServiceManger(BaseActivity activity)
 	{
 		this.mainActivity=activity;
+		cashedNotes=new ArrayList<CashedNodesData>();
 	}	
+	
+	public static ServiceManger getInstance(BaseActivity activity,boolean reCreate)
+	{
+		if(servicemanger==null)
+		{
+		servicemanger=new ServiceManger(activity);
+		servicemanger.Connect();
+		}else
+		{
+			if(!servicemanger.isConnected())
+			{
+				servicemanger.Connect();
+			}
+		}
+		
+		
+		
+		
+		
+		return servicemanger;
+	}
 
 	private ServiceConnection serviceConnection;
 	
@@ -60,7 +84,13 @@ public class ServiceManger {
 				listOfChannels=mChordService.getJoinedChannelList();
 				
 				System.out.println(listOfChannels);
-		//		sendData("welcome");
+				for(int i=0;i<cashedNotes.size();i++)
+				{
+					sendData(cashedNotes.get(i).message, cashedNotes.get(i).messageType, cashedNotes.get(i).nodeName);
+				}
+				cashedNotes.clear();
+				sendDataToAll("", ConnectionConstant.GET_DEVICE_NAME);
+			//	sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
 			}
 		};
 		
@@ -102,11 +132,22 @@ public class ServiceManger {
 	public void sendData(String data,String messageType,String nodeName)
 	{
 		if(mChordService!=null)
-		{
+		{			
+			if(isConnected()){
 			mChordService.sendData(NodeManager.CHORD_API_CHANNEL, data.getBytes(), nodeName, messageType);
+			}else
+			{
+			CashedNodesData cashedNote=new CashedNodesData();
+			cashedNote.nodeName=nodeName;
+			cashedNote.message=data;
+			cashedNote.messageType=messageType;
+			cashedNotes.add(cashedNote);	
+			}
 		}
 		
 	}
+	
+	
 	
 
 	public List<IChordChannel> getListOfChannels() {
@@ -154,5 +195,15 @@ public class ServiceManger {
 		
 	}
 	
+
+}
+
+
+class CashedNodesData
+{
+	public String nodeName;
+	public String messageType;
+	public String message;
+
 
 }

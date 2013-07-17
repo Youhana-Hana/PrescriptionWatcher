@@ -14,7 +14,7 @@ public interface IChordServiceListener {
     
 
 
-    void onReceiveMessage(String node, String channel, String message);
+    void onReceiveMessage(String node, String channel, String message,String MessageType);
 
     void onFileWillReceive(String node, String channel, String fileName, String exchangeId);
 
