@@ -2,12 +2,8 @@ package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import java.util.HashMap;
 
-import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
-import com.MobiSeeker.PrescriptionWatcher.connection.IChordServiceListener;
-import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
-
+import roboguice.activity.RoboFragmentActivity;
 import android.R;
-import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,7 +13,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import roboguice.activity.RoboFragmentActivity;
+import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
+import com.MobiSeeker.PrescriptionWatcher.connection.IChordServiceListener;
+import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.google.gson.Gson;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements IChordServiceListener {
 
@@ -48,20 +48,20 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 		else
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.GET_DEVICE_NAME))			
 		{
-			try
-			{
-				ServiceManger.getInstance(this,false).sendData(AccountManager.get(this).getAccounts()[0].name, ConnectionConstant.MY_DEVICE_NAME, node);
+		try
+		{
+			ServiceManger.getInstance(this,false).sendData(AccountManager.get(this).getAccounts()[0].name, ConnectionConstant.MY_DEVICE_NAME, node);
 			
-			}catch(Exception ee)
-			{
-				ServiceManger.getInstance(this,false).sendData(android.os.Build.MODEL, ConnectionConstant.MY_DEVICE_NAME, node);
-			}			
+		}catch(Exception ee)
+		{
+			ServiceManger.getInstance(this,false).sendData(android.os.Build.MODEL, ConnectionConstant.MY_DEVICE_NAME, node);
+		}			
 		}
 		else
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM))	
 		{
 			
-			
+			confirmToRegisterAlarmForPrescription(message);
 		}		
 		else
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED))	
@@ -90,12 +90,49 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 			
 			
 		}		
-		
+		else
+		if(MessageType.equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER))	
+		{
+			
+			
+		}		
+
 		Toast toast=	Toast.makeText(this, message, 1000*60);
 		toast.show();
 
 	}
 
+	
+	private void confirmToRegisterAlarmForPrescription(final String prescriptionEntryString)
+	{
+		Entry prescriptionEntry= new Gson().fromJson(prescriptionEntryString, Entry.class);
+		
+		
+		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(this);
+		alertBuilder.setMessage(prescriptionEntry.getMedicineName());
+		alertBuilder.setPositiveButton(getString(R.string.ok), new OnClickListener() {
+
+		@Override
+		public void onClick(DialogInterface dialog, int which)
+		{
+			
+		}
+		});
+		
+		alertBuilder.setNegativeButton(getString(R.string.cancel), new OnClickListener()
+		{
+		@Override
+		public void onClick(DialogInterface dialog, int which)
+		{
+			
+		}
+		});
+		alertBuilder.show();
+		
+		
+		
+	}
+	
 	
 	private void confirmForTakenMedicin(final String node,final String messageContent)
 	{

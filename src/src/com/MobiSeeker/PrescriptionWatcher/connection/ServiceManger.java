@@ -11,6 +11,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import com.MobiSeeker.PrescriptionWatcher.activities.BaseActivity;
 import com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.ChordServiceBinder;
+import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.samsung.chord.ChordManager;
 import com.samsung.chord.IChordChannel;
 
@@ -169,24 +170,40 @@ public class ServiceManger {
 		
 	}
 	
-	 public void bindChordService() {
+	public void sendPrescriptionToWatcher(Entry prescriptionEntry,ArrayList<String> nodeList)
+	{
+		Entry pre_entry=prescriptionEntry;
+		pre_entry.setPrescriptionType(ConnectionConstant.PRESCRIPTION_WATCHER);
+		if(nodeList!=null){
+		for(int i=0;i<nodeList.size();i++)
+		{
+			mChordService.sendData(NodeManager.CHORD_API_CHANNEL,pre_entry.toString().getBytes(), nodeList.get(i), ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM);
+		}
+		}else
+		{
+			mChordService.sendDataToAll(NodeManager.CHORD_API_CHANNEL,pre_entry.toString().getBytes(), ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM);
+		}
+	}
+	
+	 public void bindChordService()
+	 {
 	        if (mChordService == null) {
-	            Intent intent = new Intent(
-	                    "com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_BIND");
+	            Intent intent = new Intent("com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_BIND");
 	            mainActivity.bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
-	            
 	        }
-	    }
+    }
 
-	 public void startService() {
+	 public void startService()
+	 {
 	        Intent intent = new Intent("com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_START");
 	        mainActivity.startService(intent);
-	    }
+	 }
 
-	    private void stopService() {
+	 private void stopService()
+	 {
 	        Intent intent = new Intent("com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_STOP");
 	        mainActivity.stopService(intent);
-	    }
+	 }
 
 	 
 	public void initalize()

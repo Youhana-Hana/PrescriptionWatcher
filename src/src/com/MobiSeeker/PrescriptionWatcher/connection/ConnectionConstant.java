@@ -18,4 +18,18 @@ public class ConnectionConstant {
 	 
 	 public static final String GET_MY_LOCATION = "GET_MY_LOCATION";
 
+	 public static final String PRESCRIPTION_ENTRY = "PRESCRIPTION_ENTRY";
+	 
+	 
+	 /*
+	  * IF PRESCRIPTION COME SAVED BY USER 
+	  * IF YOU SEND IT YOU WILL NEED TO CHANGE TYPE TO BE PRESCRIPTION_WATCHER
+	  * 
+	  * */
+	 
+	 public static final String MY_PRESCRIPTION="MY_PRESCRIPTION";
+	 
+	 public static final String PRESCRIPTION_WATCHER="PRESCRIPTION_WATCHER";
+
+	 
 }

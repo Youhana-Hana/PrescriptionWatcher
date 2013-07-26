@@ -7,8 +7,12 @@ import android.content.Intent;
 public class AlarmRecieverBroadCast extends BroadcastReceiver{
 
 	@Override
-	public void onReceive(Context arg0, Intent arg1) {
+	public void onReceive(Context arg0, Intent alarmIntent) {
 		// TODO Auto-generated method stub
+		System.out.println("Alaram recieved ");
+		
+		
+		
 		
 	}
 

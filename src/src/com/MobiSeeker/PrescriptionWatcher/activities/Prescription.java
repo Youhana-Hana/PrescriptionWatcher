@@ -2,9 +2,11 @@ package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.app.admin.DeviceAdminInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings.System;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.util.Log;
@@ -18,9 +20,11 @@ import android.widget.Toast;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
+import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
 
 import org.joda.time.LocalTime;
 
@@ -159,7 +163,7 @@ public class Prescription extends BaseActivity implements
                             Time.valueOf(this.endTime.getText().toString()),
                             this.getDosage(),
                             this.getTimesPerDay(),
-                            this.comment.getText().toString());
+                            this.comment.getText().toString(),ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
 
             this.prescriptionRepository.save(this, entry);
             Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();

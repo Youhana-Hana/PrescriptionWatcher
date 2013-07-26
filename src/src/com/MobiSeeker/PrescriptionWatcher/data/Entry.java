@@ -3,17 +3,19 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 import android.content.Context;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.google.gson.Gson;
 
+import java.io.Serializable;
 import java.sql.Time;
 
 import java.util.Date;
 
-public class Entry {
+public class Entry implements Serializable{
 
     public Entry(Context context, String medicineName,
                  Date startDate, Date endDate,
                  Time startTime, Time endTime,
-                 double dosage, int timesPerDay, String comment) {
+                 double dosage, int timesPerDay, String comment,String prescriptionType,String prescriptionUser_imei) {
 
         this.medicineName = medicineName;
         this.startDate = startDate;
@@ -23,11 +25,23 @@ public class Entry {
         this.dosage = dosage;
         this.timesPerDay = timesPerDay;
         this.comment = comment;
-
+        this.prescriptionType=prescriptionType;
+        this.prescriptionUser=prescriptionUser_imei;
         this.validate(context);
+        
     }
 
     private void validate(Context context) {
+    	
+        if (this.prescriptionType == null) {
+            throw new UnsupportedOperationException(context.getString(R.string.prescriptionMedicineNameError));
+        }
+
+        if (this.prescriptionType == null) {
+            throw new UnsupportedOperationException(context.getString(R.string.prescriptionMedicineNameError));
+        }
+
+    	
         if (this.medicineName == null) {
             throw new UnsupportedOperationException(context.getString(R.string.prescriptionMedicineNameError));
         }
@@ -94,15 +108,44 @@ public class Entry {
         return this.comment;
     }
 
-    private String medicineName;
+    
+    
+    public String getPrescriptionType() {
+		return prescriptionType;
+	}
 
+	public void setPrescriptionType(String prescriptionType) {
+		this.prescriptionType = prescriptionType;
+	}
+
+
+
+	public String getPrescriptionUser() {
+		return prescriptionUser;
+	}
+
+	public void setPrescriptionUser(String prescriptionUser) {
+		this.prescriptionUser = prescriptionUser;
+	}
+
+
+
+	private String medicineName;
     private Date startDate;
     private Date endDate;
-
     private Time startTime;
     private Time endTime;
-
     private double dosage;
     private int timesPerDay;
     private String comment;
+    private String prescriptionType;
+    private String prescriptionUser;
+    
+    
+    @Override
+    public String toString() {
+	// TODO Auto-generated method stub
+    	return new Gson().toJson(this);
+    }   
+    
 }

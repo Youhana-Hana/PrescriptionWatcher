@@ -1,5 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 import android.os.Bundle;
@@ -9,6 +11,9 @@ import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.NodeManager;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
+import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
 import com.samsung.chord.IChordChannel;
 
 public class PrescriptionWatcher extends BaseActivity {
@@ -36,15 +41,23 @@ public class PrescriptionWatcher extends BaseActivity {
     
     public void testConnection(View view)
     {
-        manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
+   
+    	
+    	Date date=new Date();
+    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
+    	AlarmSetterObject.setAlaram(this, entery, date, date, "");
+    	
+    	manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
     	List<IChordChannel> ioChennels=	manger.getListOfChannels();
-    List<String> NoteList=manger.getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
+    	List<String> NoteList=manger.getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
+    	manger.sendPrescriptionToWatcher(entery, null);
+    	System.out.println(NoteList);
     	
-    System.out.println(NoteList);
     	
-        
     }
 
+    
+    
 	@Override
 	public void onReceiveMessage(String node, String channel, String message,String MessageType) {
 		// TODO Auto-generated method stub
