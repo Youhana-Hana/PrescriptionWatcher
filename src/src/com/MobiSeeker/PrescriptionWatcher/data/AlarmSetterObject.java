@@ -12,17 +12,13 @@ import android.content.Context;
 import android.content.Intent;
 
 public class AlarmSetterObject {
-
-	public static final String ALARAM_FOR_PRESCRIPTION="ALARAM_FOR_PRESCRIPTION";
-	
-	public static final String ALARM_FOR_REQUEST_CONFIRMATION="ALARM_FOR_REQUEST_CONFIRMATION";
 	
 	
 	
-	public static void  setAlaram(Context context,Entry prescription_entry,Date startDate,Date endDate,String alarmType)
+	public static void  setAlaram(Context context,Entry prescription_entry)
 	{
 		
-		if(alarmType.equalsIgnoreCase(ALARAM_FOR_PRESCRIPTION))
+		if(prescription_entry.getPrescriptionType().equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER))
 		{
 			
 			
@@ -37,7 +33,7 @@ public class AlarmSetterObject {
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
 		            0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(startDate);
+		calendar.setTime(prescription_entry.getStartDate());
 		calendar.setTimeInMillis(System.currentTimeMillis());
 		        AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(pendingIntent);

@@ -109,42 +109,34 @@ public class Prescription extends BaseActivity implements
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.prescription);
-        Intent intent = getIntent();
-        Entry entry = (Entry)intent.getSerializableExtra("entry");
-        init(entry);
-
+        init();
+        setCurrentRoboActivity(this);
         this.prescriptionRepository = new PrescriptionRepository();
         
     }
+    
+    @Override
+    protected void onRestart() {
+    	// TODO Auto-generated method stub
+    	
+    	super.onRestart();
+    	setCurrentRoboActivity(this);
+    }
 
-    private void init(Entry entry) {
-        if(entry == null)
-        {
-            this.setStartDate();
-            this.setEndtDate();
-            this.setStartTime();
-            this.setEndTime();
-            this.dosage.setText("3");
-            this.timesPerDay.setText("3");
-        }
-        else {
-            this.drugName.setText(entry.getMedicineName());
-            this.dosage.setText(String.valueOf(entry.getDosage()));
-            this.timesPerDay.setText(String.valueOf(entry.getTimesPerDay()));
-
-            String startDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getStartDate());
-            this.startDate.setText(startDate);
-
-            String endDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getEndDate());
-            this.endDate.setText(endDate);
-
-            LocalTime startLocalTime = new LocalTime(entry.getStartTime());
-            this.startTime.setText(startLocalTime.toString("HH:mm"));
-
-            LocalTime endLocalTime = new LocalTime(entry.getEndTime());
-            this.endTime.setText(endLocalTime.toString("HH:mm"));
-
-        }
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	setCurrentRoboActivity(this);
+    }
+    
+    private void init() {
+        this.setStartDate();
+        this.setEndtDate();
+        this.setStartTime();
+        this.setEndTime();
+        this.dosage.setText("3");
+        this.timesPerDay.setText("3");
     }
 
     public void showDatePicker(View view) {
@@ -311,51 +303,54 @@ public class Prescription extends BaseActivity implements
 	@Override
 	public void onReceiveMessage(String node, String channel, String message,String MessageType) {
 		// TODO Auto-generated method stub
+		
+		super.onReceiveMessage(node, channel, message,MessageType);
+
 	}
 
 	@Override
 	public void onFileWillReceive(String node, String channel, String fileName,
 			String exchangeId) {
 		// TODO Auto-generated method stub
-		
+		super.onFileWillReceive(node, channel, fileName, exchangeId);
 	}
 
 	@Override
 	public void onFileProgress(boolean bSend, String node, String channel,
 			int progress, String exchangeId) {
 		// TODO Auto-generated method stub
-		
+		super.onFileProgress(bSend, node, channel, progress, exchangeId);
 	}
 
 	@Override
 	public void onFileCompleted(int reason, String node, String channel,
 			String exchangeId, String fileName) {
 		// TODO Auto-generated method stub
-		
+		super.onFileCompleted(reason, node, channel, exchangeId, fileName);
 	}
 
 	@Override
 	public void onNodeEvent(String node, String channel, boolean bJoined) {
 		// TODO Auto-generated method stub
-		
+		super.onNodeEvent(node, channel, bJoined);
 	}
 
 	@Override
 	public void onNetworkDisconnected() {
 		// TODO Auto-generated method stub
-		
+		super.onNetworkDisconnected();
 	}
 
 	@Override
 	public void onUpdateNodeInfo(String nodeName, String ipAddress) {
 		// TODO Auto-generated method stub
-		
+		super.onUpdateNodeInfo(nodeName, ipAddress);
 	}
 
 	@Override
 	public void onConnectivityChanged() {
 		// TODO Auto-generated method stub
-		
+		super.onConnectivityChanged();
 	}
 
 }

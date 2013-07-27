@@ -1,9 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.connection;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -44,11 +42,6 @@ public class ServiceManger {
 				servicemanger.Connect();
 			}
 		}
-		
-		
-		
-		
-		
 		return servicemanger;
 	}
 

@@ -1,10 +1,12 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import java.util.HashMap;
+import java.util.List;
 
 import roboguice.activity.RoboFragmentActivity;
 import android.R;
 import android.accounts.AccountManager;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -16,22 +18,26 @@ import android.widget.Toast;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.IChordServiceListener;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.MobiSeeker.PrescriptionWatcher.data.EntryMangement;
 import com.google.gson.Gson;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements IChordServiceListener {
 
+	static RoboFragmentActivity currentRoboActivity;
+
 	
+
+	public static void setCurrentRoboActivity(RoboFragmentActivity _currentRoboActivity) {
+		currentRoboActivity = _currentRoboActivity;
+	}
+
 	public static HashMap<String, String> Nodes=new HashMap<String, String>();
-	
-	
-	
-	
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-
+		super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -66,7 +72,6 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 		else
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED))	
 		{
-			
 			
 		}		
 		else
@@ -105,17 +110,17 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 	
 	private void confirmToRegisterAlarmForPrescription(final String prescriptionEntryString)
 	{
-		Entry prescriptionEntry= new Gson().fromJson(prescriptionEntryString, Entry.class);
-		
-		
-		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(this);
+		final Entry prescriptionEntry= new Gson().fromJson(prescriptionEntryString, Entry.class);
+
+		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(currentRoboActivity);
 		alertBuilder.setMessage(prescriptionEntry.getMedicineName());
 		alertBuilder.setPositiveButton(getString(R.string.ok), new OnClickListener() {
 
 		@Override
 		public void onClick(DialogInterface dialog, int which)
 		{
-			
+			new EntryMangement().saveEntry(prescriptionEntry, currentRoboActivity);
+			AlarmSetterObject.setAlaram(currentRoboActivity, prescriptionEntry);
 		}
 		});
 		
@@ -136,7 +141,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 	
 	private void confirmForTakenMedicin(final String node,final String messageContent)
 	{
-		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(this);
+		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(currentRoboActivity);
 		alertBuilder.setPositiveButton(getString(R.string.ok), new OnClickListener() {
 
 		@Override

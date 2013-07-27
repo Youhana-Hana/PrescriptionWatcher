@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
@@ -15,9 +16,13 @@ import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 import java.util.List;
 
 import roboguice.activity.RoboListActivity;
+import roboguice.inject.InjectView;
 
-public class Prescriptions extends RoboListActivity {
+public class Prescriptions extends BaseActivity {
 
+	protected @InjectView(R.id.list)
+	ListView list;
+	
     private final static String TAG = "com.MobiSeeker.PrescriptionWatcher.activities.Prescriptions";
 
     protected PrescriptionRepository prescriptionRepository;
@@ -34,6 +39,14 @@ public class Prescriptions extends RoboListActivity {
 
         setContentView(R.layout.prescriptions);
         this.prescriptionRepository = new PrescriptionRepository();
+        setCurrentRoboActivity(this);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Entry entry = list.getAdapter().getItem(position);
+                LaunchPrescription(entry);
+            }
+        });
     }
 
     @Override
@@ -43,20 +56,34 @@ public class Prescriptions extends RoboListActivity {
         try {
         List<Entry> entries = this.prescriptionRepository.getEntries(this);
         this.adapter = new Adapter(this, 0, entries);
-        this.setListAdapter(adapter);
+        this.list.setAdapter(adapter);
         }
         catch(Exception exception){
             Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
         }
     }
 
+    private void LaunchPrescription(Entry entry) {
+        Prescription.start(this, entry);
+        this.finish();
+    }
+    
     public void createPrescription(View view) {
         Prescription.start(this);
     }
 
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        Entry entry = this.adapter.getItem(position);
-        Prescription.start(this, entry);
+    protected void onRestart() {
+    	// TODO Auto-generated method stub
+    	
+    	super.onRestart();
+    	setCurrentRoboActivity(this);
+    }
+
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	setCurrentRoboActivity(this);
     }
 }

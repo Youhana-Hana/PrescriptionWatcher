@@ -49,7 +49,7 @@ public class GivenAnAdapter {
                 Time.valueOf("17:30:00"),
                 3.0,
                 2,
-                "Comment"
+                "Comment", "", ""
         );
 
         entries.add(entry);

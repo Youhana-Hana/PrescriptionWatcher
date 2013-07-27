@@ -69,7 +69,7 @@ public class GivenAPrescriptions {
     @Test
     public void whenCallingOnStartShouldSetActivityAdapter() {
         this.activity.onStart();
-        ListAdapter adapter = this.activity.getListAdapter();
+        ListAdapter adapter = this.activity.list.getAdapter();
 
         assertNotNull(adapter);
         assertEquals(0, adapter.getCount());
