@@ -1,6 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class PrescriptionRepository {
+
+    private final static String TAG = "com.MobiSeeker.PrescriptionWatcher.Data.PrescriptionRepository";
 
     protected
     final static String LOCAL_DIR_NAME = "local";
@@ -74,8 +77,13 @@ public class PrescriptionRepository {
         }
 
         for (File file : files) {
-            Entry entry = getEntryFromFile(file);
-            entries.add(entry);
+            try {
+                Entry entry = getEntryFromFile(file);
+                entries.add(entry);
+            }
+            catch(Exception e){
+                Log.e(PrescriptionRepository.TAG, e.getMessage(), e);
+            }
         }
 
         Collections.sort(entries, new EntryComparator());

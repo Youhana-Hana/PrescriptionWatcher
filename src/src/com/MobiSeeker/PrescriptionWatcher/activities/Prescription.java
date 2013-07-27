@@ -182,12 +182,18 @@ public class Prescription extends BaseActivity implements
 
             this.prescriptionRepository.save(this, entry);
             Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();
+            this.LaunchPrescriptions();
         } catch (UnsupportedOperationException exception) {
             Toast.makeText(this, addingPrescriptionFailed + " " + exception.getMessage(), Toast.LENGTH_LONG).show();
             Log.e(Prescription.TAG, "Failed to save prescription", exception);
         } catch (Exception exception) {
             Log.e(Prescription.TAG, "Failed to save prescription", exception);
         }
+    }
+
+    private void LaunchPrescriptions() {
+        Prescriptions.start(this);
+        this.finish();
     }
 
     private int getTimesPerDay() {
@@ -207,7 +213,7 @@ public class Prescription extends BaseActivity implements
     }
 
     public void cancel(View view) {
-
+        this.LaunchPrescriptions();
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {

@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
+ 
     <LinearLayout android:orientation="vertical"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -13,7 +13,8 @@
         <ListView android:id="@+id/list"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:drawSelectorOnTop="false"/>
+                  android:drawSelectorOnTop="false"
+                  android:layout_gravity="left|center_vertical"/>
 
         <TextView android:id="@android:id/empty"
                   android:layout_width="match_parent"
