@@ -18,7 +18,9 @@ import android.widget.Toast;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.IChordServiceListener;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
+import com.MobiSeeker.PrescriptionWatcher.data.EntryMangement;
 import com.google.gson.Gson;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements IChordServiceListener {
@@ -71,7 +73,6 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED))	
 		{
 			
-			
 		}		
 		else
 		if(MessageType.equalsIgnoreCase(ConnectionConstant.CONFIRMED_TAKEN_MIDICEN))	
@@ -109,7 +110,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 	
 	private void confirmToRegisterAlarmForPrescription(final String prescriptionEntryString)
 	{
-		Entry prescriptionEntry= new Gson().fromJson(prescriptionEntryString, Entry.class);
+		final Entry prescriptionEntry= new Gson().fromJson(prescriptionEntryString, Entry.class);
 
 		AlertDialog.Builder alertBuilder=new AlertDialog.Builder(currentRoboActivity);
 		alertBuilder.setMessage(prescriptionEntry.getMedicineName());
@@ -118,7 +119,8 @@ public abstract class BaseActivity extends RoboFragmentActivity implements IChor
 		@Override
 		public void onClick(DialogInterface dialog, int which)
 		{
-			
+			new EntryMangement().saveEntry(prescriptionEntry, currentRoboActivity);
+			AlarmSetterObject.setAlaram(currentRoboActivity, prescriptionEntry);
 		}
 		});
 		

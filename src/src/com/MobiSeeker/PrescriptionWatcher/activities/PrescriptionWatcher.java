@@ -60,7 +60,7 @@ public class PrescriptionWatcher extends BaseActivity {
     	
     	Date date=new Date();
     	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
-    	AlarmSetterObject.setAlaram(this, entery, date, date, "");
+    	AlarmSetterObject.setAlaram(this, entery);
     	
     	manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
     	List<IChordChannel> ioChennels=	manger.getListOfChannels();
