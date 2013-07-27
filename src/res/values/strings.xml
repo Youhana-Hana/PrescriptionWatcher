@@ -25,4 +25,5 @@
     <string name="noPrescriptions">No saved prescriptions. click create new to save prescription.</string>
 
     <string name="newPrescription">New prescription</string>
+    <string name="delete">delete</string>
 </resources>

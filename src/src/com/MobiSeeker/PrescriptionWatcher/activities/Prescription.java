@@ -11,6 +11,7 @@ import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -77,6 +78,10 @@ public class Prescription extends BaseActivity implements
     EditText endTime;
 
     protected
+    @InjectView(R.id.buttonDelete)
+    Button buttonDelete;
+
+    protected
     @InjectResource(R.string.defaultStartTime)
     String defaultStartTime;
 
@@ -109,28 +114,55 @@ public class Prescription extends BaseActivity implements
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.prescription);
+
         init();
         setCurrentRoboActivity(this);
         this.prescriptionRepository = new PrescriptionRepository();
-        
     }
     
     @Override
     protected void onRestart() {
-    	// TODO Auto-generated method stub
-    	
     	super.onRestart();
     	setCurrentRoboActivity(this);
     }
 
     @Override
     protected void onResume() {
-    	// TODO Auto-generated method stub
     	super.onResume();
     	setCurrentRoboActivity(this);
     }
     
     private void init() {
+        Intent intent = getIntent();
+        Entry entry = (Entry)intent.getSerializableExtra("entry");
+        if (entry == null) {
+           this.initDefaults();
+        } else {
+            buttonDelete.setVisibility(View.VISIBLE);
+            buttonDelete.setTag(entry);
+            this.initFromEntry(entry);
+        }
+    }
+
+    private void initFromEntry(Entry entry) {
+        this.drugName.setText(entry.getMedicineName());
+        this.dosage.setText(String.valueOf(entry.getDosage()));
+        this.timesPerDay.setText(String.valueOf(entry.getTimesPerDay()));
+
+        String entryStartDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getStartDate());
+        startDate.setText(entryStartDate);
+
+        String entryEndDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getEndDate());
+        startDate.setText(entryEndDate);
+
+        LocalTime localStartTime = new LocalTime(entry.getStartTime());
+        startTime.setText(localStartTime.toString("HH:mm"));
+
+        LocalTime localEndTime = new LocalTime(entry.getEndTime());
+        endTime.setText(localEndTime.toString("HH:mm"));
+    }
+
+    private void initDefaults() {
         this.setStartDate();
         this.setEndtDate();
         this.setStartTime();
@@ -222,6 +254,18 @@ public class Prescription extends BaseActivity implements
         this.LaunchPrescriptions();
     }
 
+    public void delete(View view) {
+        Entry entry = (Entry) buttonDelete.getTag();
+        try {
+        this.prescriptionRepository.delete(this, entry);
+        } catch(Exception e)
+        {
+            Log.e(Prescription.TAG, e.getMessage(), e);
+        }
+
+        this.LaunchPrescriptions();
+    }
+
     public void onDateSet(DatePicker view, int year, int month, int day) {
         Calendar calendar = this.getTodayCalendar();
         calendar.set(year, month, day);
@@ -302,54 +346,44 @@ public class Prescription extends BaseActivity implements
 
 	@Override
 	public void onReceiveMessage(String node, String channel, String message,String MessageType) {
-		// TODO Auto-generated method stub
-		
 		super.onReceiveMessage(node, channel, message,MessageType);
-
-	}
+    }
 
 	@Override
 	public void onFileWillReceive(String node, String channel, String fileName,
 			String exchangeId) {
-		// TODO Auto-generated method stub
 		super.onFileWillReceive(node, channel, fileName, exchangeId);
 	}
 
 	@Override
 	public void onFileProgress(boolean bSend, String node, String channel,
 			int progress, String exchangeId) {
-		// TODO Auto-generated method stub
 		super.onFileProgress(bSend, node, channel, progress, exchangeId);
 	}
 
 	@Override
 	public void onFileCompleted(int reason, String node, String channel,
 			String exchangeId, String fileName) {
-		// TODO Auto-generated method stub
 		super.onFileCompleted(reason, node, channel, exchangeId, fileName);
 	}
 
 	@Override
 	public void onNodeEvent(String node, String channel, boolean bJoined) {
-		// TODO Auto-generated method stub
 		super.onNodeEvent(node, channel, bJoined);
 	}
 
 	@Override
 	public void onNetworkDisconnected() {
-		// TODO Auto-generated method stub
 		super.onNetworkDisconnected();
 	}
 
 	@Override
 	public void onUpdateNodeInfo(String nodeName, String ipAddress) {
-		// TODO Auto-generated method stub
 		super.onUpdateNodeInfo(nodeName, ipAddress);
 	}
 
 	@Override
 	public void onConnectivityChanged() {
-		// TODO Auto-generated method stub
 		super.onConnectivityChanged();
 	}
 

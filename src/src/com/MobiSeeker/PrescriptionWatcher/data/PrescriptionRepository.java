@@ -44,6 +44,26 @@ public class PrescriptionRepository {
         return files.length;
     }
 
+    public void delete(Context context, Entry entry) throws Exception {
+        File local = getLocalFolder(context);
+        if (!local.exists()) {
+            return;
+        }
+
+        File[] files = local.listFiles();
+        if (files == null) {
+            return;
+        }
+
+        for (File file : files) {
+            if (file.getName().compareTo(entry.getMedicineName()) == 0)
+            {
+                file.delete();
+                return;
+            }
+        }
+    }
+
     private File getLocalFolder(Context context) {
         return new File(context.getFilesDir().getPath(), LOCAL_DIR_NAME);
     }

@@ -187,5 +187,13 @@
                 android:layout_height="wrap_content"
                 android:text="@android:string/ok" android:layout_weight="1"
                 android:onClick="save"/>
+
+        <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/delete" android:layout_weight="1"
+                android:onClick="delete"
+                android:visibility="invisible"/>
     </LinearLayout>
 </LinearLayout>
