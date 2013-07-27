@@ -104,11 +104,26 @@ public class Prescription extends BaseActivity implements
 
         setContentView(R.layout.prescription);
         init();
-
+        setCurrentRoboActivity(this);
         this.prescriptionRepository = new PrescriptionRepository();
         
     }
+    
+    @Override
+    protected void onRestart() {
+    	// TODO Auto-generated method stub
+    	
+    	super.onRestart();
+    	setCurrentRoboActivity(this);
+    }
 
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	setCurrentRoboActivity(this);
+    }
+    
     private void init() {
         this.setStartDate();
         this.setEndtDate();
@@ -276,51 +291,54 @@ public class Prescription extends BaseActivity implements
 	@Override
 	public void onReceiveMessage(String node, String channel, String message,String MessageType) {
 		// TODO Auto-generated method stub
+		
+		super.onReceiveMessage(node, channel, message,MessageType);
+
 	}
 
 	@Override
 	public void onFileWillReceive(String node, String channel, String fileName,
 			String exchangeId) {
 		// TODO Auto-generated method stub
-		
+		super.onFileWillReceive(node, channel, fileName, exchangeId);
 	}
 
 	@Override
 	public void onFileProgress(boolean bSend, String node, String channel,
 			int progress, String exchangeId) {
 		// TODO Auto-generated method stub
-		
+		super.onFileProgress(bSend, node, channel, progress, exchangeId);
 	}
 
 	@Override
 	public void onFileCompleted(int reason, String node, String channel,
 			String exchangeId, String fileName) {
 		// TODO Auto-generated method stub
-		
+		super.onFileCompleted(reason, node, channel, exchangeId, fileName);
 	}
 
 	@Override
 	public void onNodeEvent(String node, String channel, boolean bJoined) {
 		// TODO Auto-generated method stub
-		
+		super.onNodeEvent(node, channel, bJoined);
 	}
 
 	@Override
 	public void onNetworkDisconnected() {
 		// TODO Auto-generated method stub
-		
+		super.onNetworkDisconnected();
 	}
 
 	@Override
 	public void onUpdateNodeInfo(String nodeName, String ipAddress) {
 		// TODO Auto-generated method stub
-		
+		super.onUpdateNodeInfo(nodeName, ipAddress);
 	}
 
 	@Override
 	public void onConnectivityChanged() {
 		// TODO Auto-generated method stub
-		
+		super.onConnectivityChanged();
 	}
 
 }
