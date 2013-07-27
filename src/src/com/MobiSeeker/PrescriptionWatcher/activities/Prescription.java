@@ -99,23 +99,52 @@ public class Prescription extends BaseActivity implements
         context.startActivity(intent);
     }
 
+    public static void start(Context context, Entry entry) {
+        Intent intent = new Intent(context, Prescription.class);
+        intent.putExtra("entry", entry);
+        context.startActivity(intent);
+    }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.prescription);
-        init();
+        Intent intent = getIntent();
+        Entry entry = (Entry)intent.getSerializableExtra("entry");
+        init(entry);
 
         this.prescriptionRepository = new PrescriptionRepository();
         
     }
 
-    private void init() {
-        this.setStartDate();
-        this.setEndtDate();
-        this.setStartTime();
-        this.setEndTime();
-        this.dosage.setText("3");
-        this.timesPerDay.setText("3");
+    private void init(Entry entry) {
+        if(entry == null)
+        {
+            this.setStartDate();
+            this.setEndtDate();
+            this.setStartTime();
+            this.setEndTime();
+            this.dosage.setText("3");
+            this.timesPerDay.setText("3");
+        }
+        else {
+            this.drugName.setText(entry.getMedicineName());
+            this.dosage.setText(String.valueOf(entry.getDosage()));
+            this.timesPerDay.setText(String.valueOf(entry.getTimesPerDay()));
+
+            String startDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getStartDate());
+            this.startDate.setText(startDate);
+
+            String endDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(entry.getEndDate());
+            this.endDate.setText(endDate);
+
+            LocalTime startLocalTime = new LocalTime(entry.getStartTime());
+            this.startTime.setText(startLocalTime.toString("HH:mm"));
+
+            LocalTime endLocalTime = new LocalTime(entry.getEndTime());
+            this.endTime.setText(endLocalTime.toString("HH:mm"));
+
+        }
     }
 
     public void showDatePicker(View view) {

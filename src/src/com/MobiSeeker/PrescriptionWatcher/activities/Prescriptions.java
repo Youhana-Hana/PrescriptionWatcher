@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.data.Adapter;
@@ -51,5 +52,11 @@ public class Prescriptions extends RoboListActivity {
 
     public void createPrescription(View view) {
         Prescription.start(this);
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Entry entry = this.adapter.getItem(position);
+        Prescription.start(this, entry);
     }
 }
