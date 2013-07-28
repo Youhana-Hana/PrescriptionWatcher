@@ -1,15 +1,10 @@
 <component name="libraryTable">
   <library name="libs">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/libs/joda-time-2.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/jsr305-1.3.9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/roboguice-2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/chord-v1.0.0-20130327.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/android-support-v4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/guice-2.0-no_aop.jar!/" />
-      <root url="jar://$PROJECT_DIR$/src/libs/gson-2.2.2.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/libs" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/libs" recursive="false" />
   </library>
 </component>
