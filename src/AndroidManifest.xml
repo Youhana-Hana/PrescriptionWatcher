@@ -27,9 +27,9 @@
                 android:label="@string/app_name"
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.background">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -50,9 +50,13 @@
                 android:label="@string/prescription"
                 android:icon="@drawable/prescription">
         </activity>
+        <activity
+                android:name=".activities.Settings"
+                android:label="Settings">
+        </activity>
 
-         <service
-            android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService"
+        <service
+            android:name=".connection.ChordApiService"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="com.MobiSeeker.PrescriptionWatcher.connection.ChordApiService.SERVICE_START" />
@@ -74,6 +78,5 @@
         </intent-filter>
     </receiver>
          
-            </application>
-
+   </application>
 </manifest>
