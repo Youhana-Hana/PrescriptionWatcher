@@ -6,8 +6,6 @@ import java.util.List;
 
 import com.MobiSeeker.PrescriptionWatcher.activities.Prescription;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
-import com.buzzbox.mob.android.scheduler.ScheduledTask;
-import com.buzzbox.mob.android.scheduler.SchedulerManager;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
