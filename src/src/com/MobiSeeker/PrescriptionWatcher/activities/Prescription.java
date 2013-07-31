@@ -23,6 +23,7 @@ import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
@@ -156,10 +157,10 @@ public class Prescription extends BaseActivity implements
         startDate.setText(entryEndDate);
 
         LocalTime localStartTime = new LocalTime(entry.getStartTime());
-        startTime.setText(localStartTime.toString("HH:mm"));
+        startTime.setText(localStartTime.toString("HH:mm:ss"));
 
         LocalTime localEndTime = new LocalTime(entry.getEndTime());
-        endTime.setText(localEndTime.toString("HH:mm"));
+        endTime.setText(localEndTime.toString("HH:mm:ss"));
     }
 
     private void initDefaults() {
@@ -219,6 +220,7 @@ public class Prescription extends BaseActivity implements
                             this.comment.getText().toString(),ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
 
             this.prescriptionRepository.save(this, entry);
+            AlarmSetterObject.setAlaram(this,entry);
             Toast.makeText(this, this.addingPrescriptionSucceeded, Toast.LENGTH_SHORT).show();
             this.LaunchPrescriptions();
         } catch (UnsupportedOperationException exception) {
@@ -274,7 +276,7 @@ public class Prescription extends BaseActivity implements
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         LocalTime localTime = new LocalTime(hourOfDay, minute);
-        selectedTextView.setText(localTime.toString("HH:mm"));
+        selectedTextView.setText(localTime.toString("HH:mm:ss"));
     }
 
     private void setStartDate() {
@@ -295,6 +297,9 @@ public class Prescription extends BaseActivity implements
 
     private void setStartTime() {
         this.startTime.setText(this.defaultStartTime);
+        LocalTime localTime = new LocalTime(new Date());
+        startTime.setText(localTime.toString("HH:mm:ss"));
+
     }
 
     private void setEndTime() {

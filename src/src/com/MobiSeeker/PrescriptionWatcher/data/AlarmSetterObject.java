@@ -2,9 +2,12 @@ package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import com.MobiSeeker.PrescriptionWatcher.activities.Prescription;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
+import com.buzzbox.mob.android.scheduler.ScheduledTask;
+import com.buzzbox.mob.android.scheduler.SchedulerManager;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -26,18 +29,25 @@ public class AlarmSetterObject {
 		{
 			
 		}
-		
-		Intent intent = new Intent(context, AlarmRecieverBroadCast.class);
-		intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY,prescription_entry);
-		intent.setAction("packagename.ACTION");
-		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
-		            0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(prescription_entry.getStartDate());
-		calendar.setTimeInMillis(System.currentTimeMillis());
-		        AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-		alarm.cancel(pendingIntent);
-		alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()+1000, AlarmManager.INTERVAL_DAY, pendingIntent);
+		Calculator calculator=new Calculator();
+		Schedule schudle=calculator.getSchedule(prescription_entry.getMedicineName(), prescription_entry.getStartDate(), prescription_entry.getEndDate(),
+		prescription_entry.getStartTime(),prescription_entry.getEndTime(), prescription_entry.getDosage(), prescription_entry.getTimesPerDay(), prescription_entry.getComment());
+		List<Dosage> listofDosage=schudle.getPrescriptions();
+		for(int i=0;i<listofDosage.size();i++)
+		{
+			Dosage dosage=listofDosage.get(i);
+			Intent intent = new Intent(context, AlarmRecieverBroadCast.class);
+			intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY,prescription_entry);
+			intent.setAction("packagename.ACTION");
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(dosage.getTime());
+			System.out.println(calendar.toString());
+			System.out.println(System.currentTimeMillis()+"   "+calendar.getTimeInMillis() + (calendar.getTimeInMillis()-System.currentTimeMillis()));
+		    AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+			alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+		}
 	}
 	
 }
