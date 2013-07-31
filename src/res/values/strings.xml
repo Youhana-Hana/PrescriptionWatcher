@@ -26,4 +26,10 @@
 
     <string name="newPrescription">New prescription</string>
     <string name="delete">delete</string>
+
+    <string name="user_profile">User profile</string>
+    <string name="user_name">User name</string>
+    <string name="user_name_summary">User name for identified for your prescriptions</string>
+    <string name="pref_vibrate">vibrate</string>
+    <string name="pref_vibrate_summary">enable vibrate for reminders</string>
 </resources>
