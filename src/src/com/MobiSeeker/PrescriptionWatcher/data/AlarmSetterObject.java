@@ -1,16 +1,15 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-
-import com.MobiSeeker.PrescriptionWatcher.activities.Prescription;
-import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
+import java.util.Random;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+
+import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 
 public class AlarmSetterObject {
 	
@@ -37,14 +36,15 @@ public class AlarmSetterObject {
 			Intent intent = new Intent(context, AlarmRecieverBroadCast.class);
 			intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY,prescription_entry);
 			intent.setAction("packagename.ACTION");
-			PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(context,new Random().nextInt()*999999999, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(dosage.getTime());
 			System.out.println(calendar.toString());
 			System.out.println(System.currentTimeMillis()+"   "+calendar.getTimeInMillis() + (calendar.getTimeInMillis()-System.currentTimeMillis()));
 		    AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-			alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-
+		    
+			alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+			
 		}
 	}
 	
