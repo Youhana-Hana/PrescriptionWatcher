@@ -53,16 +53,23 @@ public class Prescriptions extends BaseActivity {
     protected void onStart() {
         super.onStart();
 
-        try {
-        List<Entry> entries = this.prescriptionRepository.getEntries(this);
-        this.adapter = new Adapter(this, 0, entries);
-        this.list.setAdapter(adapter);
-        }
-        catch(Exception exception){
-            Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
-        }
-    }
+        loadEntries();
+         }
 
+    public void loadEntries()
+    {
+    	
+    	 try {
+    	        List<Entry> entries = this.prescriptionRepository.getEntries(this);
+    	        this.adapter = new Adapter(this, 0, entries);
+    	        this.list.setAdapter(adapter);
+    	        }
+    	        catch(Exception exception){
+    	            Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
+    	        }
+    	  
+    }
+    
     private void LaunchPrescription(Entry entry) {
         Prescription.start(this, entry);
         this.finish();
@@ -85,5 +92,6 @@ public class Prescriptions extends BaseActivity {
     	// TODO Auto-generated method stub
     	super.onResume();
     	setCurrentRoboActivity(this);
+    	loadEntries();
     }
 }

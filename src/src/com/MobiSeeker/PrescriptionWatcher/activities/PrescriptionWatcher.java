@@ -4,6 +4,9 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
+import org.w3c.dom.NodeList;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -56,15 +59,18 @@ public class PrescriptionWatcher extends BaseActivity {
     
     public void testConnection(View view)
     {
-    	Date date=new Date();
-    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
-    	AlarmSetterObject.setAlaram(this, entery);
+//    	Date date=new Date();
+//    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
+//    	AlarmSetterObject.setAlaram(this, entery);
+//    	
+//    	manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
+//    	List<IChordChannel> ioChennels=	manger.getListOfChannels();
+//    	List<String> NoteList=manger.getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
+//    	manger.sendPrescriptionToWatcher(entery, null);
+//    	System.out.println(NoteList);
     	
-    	manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
-    	List<IChordChannel> ioChennels=	manger.getListOfChannels();
-    	List<String> NoteList=manger.getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
-    	manger.sendPrescriptionToWatcher(entery, null);
-    	System.out.println(NoteList);
+    	Intent intent=new Intent(this,NodesList.class);
+    	startActivity(intent);
     }
 
         

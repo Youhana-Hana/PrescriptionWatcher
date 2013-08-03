@@ -6,7 +6,7 @@
           android:versionName="1.0">
 
     <uses-sdk
-            android:minSdkVersion="10"
+            android:minSdkVersion="11"
             android:targetSdkVersion="17"/>
 	
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
@@ -26,10 +26,10 @@
             android:allowBackup="false">
 
         <activity
-                android:name=".activities.Splash"
+                android:name=".activities.PrescriptionWatcher"
                 android:label="@string/app_name"
                 android:screenOrientation="portrait"
-                android:theme="@style/Theme.background">
+                android:theme="@android:style/Holo.ButtonBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -37,25 +37,19 @@
         </activity>
 
         <activity
-                android:launchMode="singleInstance"
-                android:name=".activities.PrescriptionWatcher"
-                android:label="@string/app_name">
-        </activity>
-
-        <activity
                 android:name=".activities.Prescription"
                 android:label="@string/prescription"
-                android:icon="@drawable/prescription">
+                android:icon="@drawable/prescription" android:theme="@android:style/Holo.ButtonBar">
         </activity>
 
         <activity
                 android:name=".activities.Prescriptions"
                 android:label="@string/prescription"
-                android:icon="@drawable/prescription">
+                android:icon="@drawable/prescription" android:theme="@android:style/Holo.ButtonBar">
         </activity>
         <activity
                 android:name=".activities.Settings"
-                android:label="Settings">
+                android:label="Settings" android:theme="@android:style/Holo.ButtonBar">
         </activity>
 
         <service
@@ -80,6 +74,7 @@
                 android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
+    <activity android:name=".activities.NodesList"></activity>
          
    </application>
 </manifest>

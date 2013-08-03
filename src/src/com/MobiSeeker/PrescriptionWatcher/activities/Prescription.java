@@ -232,7 +232,6 @@ public class Prescription extends BaseActivity implements
     }
 
     private void LaunchPrescriptions() {
-        Prescriptions.start(this);
         this.finish();
     }
 
