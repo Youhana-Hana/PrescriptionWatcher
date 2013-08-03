@@ -2,11 +2,13 @@ package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.app.admin.DeviceAdminInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings.System;
+import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -22,7 +25,6 @@ import com.MobiSeeker.PrescriptionWatcher.Fragments.DatePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.Fragments.TimePickerFragment;
 import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
-import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
@@ -36,7 +38,6 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
-import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectResource;
 import roboguice.inject.InjectView;
 
@@ -83,6 +84,10 @@ public class Prescription extends BaseActivity implements
     Button buttonDelete;
 
     protected
+    @InjectView(R.id.image)
+    ImageView image;
+
+    protected
     @InjectResource(R.string.defaultStartTime)
     String defaultStartTime;
 
@@ -99,6 +104,9 @@ public class Prescription extends BaseActivity implements
     String addingPrescriptionFailed;
 
     protected PrescriptionRepository prescriptionRepository;
+
+    private final int REQ_CODE_PICK_IMAGE = 1;
+    private String imagePath = null;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, Prescription.class);
@@ -161,6 +169,12 @@ public class Prescription extends BaseActivity implements
 
         LocalTime localEndTime = new LocalTime(entry.getEndTime());
         endTime.setText(localEndTime.toString("HH:mm:ss"));
+
+        this.imagePath = entry.getPrescriptionImagePath();
+
+        if (this.imagePath != null && !this.imagePath.isEmpty()) {
+            image.setImageURI(Uri.parse(this.imagePath));
+        }
     }
 
     private void initDefaults() {
@@ -217,7 +231,10 @@ public class Prescription extends BaseActivity implements
                             Time.valueOf(this.endTime.getText().toString()),
                             this.getDosage(),
                             this.getTimesPerDay(),
-                            this.comment.getText().toString(),ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
+                            this.comment.getText().toString(),
+                            ConnectionConstant.MY_PRESCRIPTION,
+                            Utilites.getDeviceImei(this),
+                            this.imagePath);
 
             this.prescriptionRepository.save(this, entry);
             AlarmSetterObject.setAlaram(this,entry);
@@ -250,6 +267,7 @@ public class Prescription extends BaseActivity implements
             return 0.0;
         }
     }
+
 
     public void cancel(View view) {
         this.LaunchPrescriptions();
@@ -391,4 +409,35 @@ public class Prescription extends BaseActivity implements
 		super.onConnectivityChanged();
 	}
 
+    public void getImage(View view) {
+        Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, REQ_CODE_PICK_IMAGE);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+
+        switch(requestCode) {
+            case REQ_CODE_PICK_IMAGE:
+
+                if(resultCode != RESULT_OK) {
+                    return;
+                }
+
+                Uri selectedImage = imageReturnedIntent.getData();
+                String[] filePathColumn = {android.provider.MediaStore.Images.Media.DATA};
+
+                Cursor cursor = getContentResolver().query(
+                        selectedImage, filePathColumn, null, null, null);
+
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                this.imagePath = cursor.getString(columnIndex);
+                cursor.close();
+
+                image.setImageBitmap(BitmapFactory.decodeFile(this.imagePath));
+        }
+    }
 }

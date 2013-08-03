@@ -15,7 +15,7 @@ public class Entry implements Serializable{
     public Entry(Context context, String medicineName,
                  Date startDate, Date endDate,
                  Time startTime, Time endTime,
-                 double dosage, int timesPerDay, String comment,String prescriptionType,String prescriptionUser_imei) {
+                 double dosage, int timesPerDay, String comment,String prescriptionType,String prescriptionUser_imei, String prescriptionImagePath) {
 
         this.medicineName = medicineName;
         this.startDate = startDate;
@@ -27,6 +27,7 @@ public class Entry implements Serializable{
         this.comment = comment;
         this.prescriptionType=prescriptionType;
         this.prescriptionUser=prescriptionUser_imei;
+        this.prescriptionImagePath = prescriptionImagePath;
         this.validate(context);
         
     }
@@ -108,8 +109,6 @@ public class Entry implements Serializable{
         return this.comment;
     }
 
-    
-    
     public String getPrescriptionType() {
 		return prescriptionType;
 	}
@@ -118,15 +117,21 @@ public class Entry implements Serializable{
 		this.prescriptionType = prescriptionType;
 	}
 
-
-
 	public String getPrescriptionUser() {
 		return prescriptionUser;
 	}
 
+    public String getPrescriptionImagePath() {
+        return this.prescriptionImagePath;
+    }
+
 	public void setPrescriptionUser(String prescriptionUser) {
 		this.prescriptionUser = prescriptionUser;
 	}
+
+    public void setPrescriptionImagePath(String prescriptionImagePath) {
+        this.prescriptionImagePath = prescriptionImagePath;
+    }
 
 
 
@@ -140,7 +145,7 @@ public class Entry implements Serializable{
     private String comment;
     private String prescriptionType;
     private String prescriptionUser;
-    
+    private String prescriptionImagePath;
     
     @Override
     public String toString() {
