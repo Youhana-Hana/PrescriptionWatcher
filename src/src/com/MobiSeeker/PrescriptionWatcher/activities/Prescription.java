@@ -169,6 +169,12 @@ public class Prescription extends BaseActivity implements
 
         LocalTime localEndTime = new LocalTime(entry.getEndTime());
         endTime.setText(localEndTime.toString("HH:mm:ss"));
+
+        this.imagePath = entry.getPrescriptionImagePath();
+
+        if (this.imagePath != null && !this.imagePath.isEmpty()) {
+            image.setImageURI(Uri.parse(this.imagePath));
+        }
     }
 
     private void initDefaults() {
@@ -225,7 +231,10 @@ public class Prescription extends BaseActivity implements
                             Time.valueOf(this.endTime.getText().toString()),
                             this.getDosage(),
                             this.getTimesPerDay(),
-                            this.comment.getText().toString(),ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
+                            this.comment.getText().toString(),
+                            ConnectionConstant.MY_PRESCRIPTION,
+                            Utilites.getDeviceImei(this),
+                            this.imagePath);
 
             this.prescriptionRepository.save(this, entry);
             AlarmSetterObject.setAlaram(this,entry);

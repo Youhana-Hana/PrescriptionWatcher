@@ -57,7 +57,7 @@ public class PrescriptionWatcher extends BaseActivity {
     public void testConnection(View view)
     {
     	Date date=new Date();
-    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this));
+    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this), null);
     	AlarmSetterObject.setAlaram(this, entery);
     	
     	manger.sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
