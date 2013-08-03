@@ -20,9 +20,21 @@ public class Settings {
     }
 
     public boolean isVibrate() {
+        return this.getBooleanValue("prefVibrate", false);
+    }
+
+    public boolean isWatchingPrescriptions() {
+        return this.getBooleanValue("prefWatch", true);
+    }
+
+    private boolean getBooleanValue(String key, boolean defaultValue) {
         SharedPreferences sharedPrefs = PreferenceManager
                 .getDefaultSharedPreferences(this.context);
 
-        return sharedPrefs.getBoolean("prefVibrate", false);
+        return sharedPrefs.getBoolean(key, defaultValue);
     }
+
+
+
+
 }
