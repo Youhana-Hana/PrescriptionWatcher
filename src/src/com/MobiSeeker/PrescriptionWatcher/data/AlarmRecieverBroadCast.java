@@ -1,6 +1,7 @@
 package com.MobiSeeker.PrescriptionWatcher.data;
 
-import com.MobiSeeker.PrescriptionWatcher.activities.Splash;
+
+import com.MobiSeeker.PrescriptionWatcher.activities.PrescriptionWatcher;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,7 +13,7 @@ public class AlarmRecieverBroadCast extends BroadcastReceiver{
 	public void onReceive(Context arg0, Intent alarmIntent) {
 		// TODO Auto-generated method stub
 		System.out.println("Alaram recieved ");
-		Intent intent=new Intent(arg0,Splash.class);
+		Intent intent=new Intent(arg0,PrescriptionWatcher.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);                     
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		arg0.startActivity(intent);
