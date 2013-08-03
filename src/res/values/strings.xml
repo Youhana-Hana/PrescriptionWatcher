@@ -34,4 +34,6 @@
     <string name="pref_vibrate_summary">Enable vibrate for reminders</string>
     <string name="pref_watch">watch prescriptions</string>
     <string name="pref_watch_summary">Enable watching amd monitoring prescriptions</string>
+
+    <string name="selectImage">Tap to select image from gallery</string>
 </resources>
