@@ -35,9 +35,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/layout/entry.xml" afterPath="$PROJECT_DIR$/src/res/layout/entry.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -212,22 +210,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prescriptions.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Prescriptions.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="56" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1545">
+            <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
               <folding>
-                <element signature="e#1446#1748#0" expanded="true" />
-                <element signature="e#1733#1734#0" expanded="true" />
+                <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
+                <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Adapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Adapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="32" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.33333334" vertical-offset="677" max-vertical-offset="1260">
+            <state line="74" column="46" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1260">
               <folding />
             </state>
           </provider>
@@ -326,8 +324,8 @@
         <option value="$PROJECT_DIR$/src/res/layout/prescriptions.xml" />
         <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/res/layout/entry.xml" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
       </list>
     </option>
   </component>
@@ -1115,20 +1113,20 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="56" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="1545">
-          <folding>
-            <element signature="e#1446#1748#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
-          </folding>
+        <state line="74" column="46" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1260">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java">
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="32" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.33333334" vertical-offset="677" max-vertical-offset="1260">
-          <folding />
+        <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
+          <folding>
+            <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
+            <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
+          </folding>
         </state>
       </provider>
     </entry>
