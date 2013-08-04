@@ -47,6 +47,14 @@ public class Prescriptions extends BaseActivity {
         super.onStart();
 
         loadEntries();
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Entry entry = (Entry)list.getItemAtPosition(position);
+                LaunchPrescription(entry);
+            }
+            });
          }
 
     public void loadEntries()
