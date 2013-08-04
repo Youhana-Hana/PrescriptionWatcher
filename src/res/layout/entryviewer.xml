@@ -1,39 +1,172 @@
-<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="5dp">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
+            android:layout_height="0dp"
+            android:layout_width="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
-    <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
-            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/drugName"
+                    android:layout_gravity="left|center_vertical"/>
 
-    <TextView
-            android:id="@+id/timesPerDay"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
-            />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/drugName"
+                    android:layout_marginLeft="22dp"
+                    />
 
-    <TextView
-            android:id="@+id/start"
-            android:layout_below="@id/title"
-            android:layout_alignParentLeft="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
-            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/dosage"
+                    android:layout_gravity="left|center_vertical"/>
 
-    <TextView
-            android:id="@+id/end"
-            android:layout_below="@id/title"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:textIsSelectable="true"
-            />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/dosage"/>
 
-</RelativeLayout>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/timesPerDay"
+                    android:id="@+id/textView"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/timesPerDay"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="22dp"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/directions"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/comment"
+                    />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/startDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:minWidth="100dp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/startDate"
+                        android:layout_gravity="center_vertical|left"
+                        android:paddingLeft="5dp"
+                        android:layout_weight="2"
+                        />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:minWidth="100dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/startTime"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1" android:paddingLeft="5dp"
+                        />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/endDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_weight="1"
+                        android:minWidth="100dp"
+                        />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/endDate"
+                        android:layout_gravity="left|center_vertical"
+                        android:paddingLeft="5dp"
+                        android:layout_weight="2"
+                        />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/endTime"
+                        android:layout_gravity="left|center_vertical"
+                       android:paddingLeft="5dp"
+                        android:layout_weight="1"
+                        />
+            </LinearLayout>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/prescriptionimage"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    android:minWidth="100dp"/>
+
+
+            <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/selectImage"
+                    android:maxHeight="150dp"
+                    android:src="@drawable/prescription"
+                    android:maxWidth="180dp"
+                  />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
