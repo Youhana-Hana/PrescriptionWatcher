@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
@@ -20,6 +21,8 @@ public class Adapter extends ArrayAdapter<Entry> {
         public TextView timesPerDay;
         public TextView start;
         public TextView end;
+        public Button share;
+        public Button delete;
     }
 
     protected Context context;
@@ -45,6 +48,8 @@ public class Adapter extends ArrayAdapter<Entry> {
             viewHolder.timesPerDay = (TextView) rowView.findViewById(R.id.timesPerDay);
             viewHolder.start = (TextView) rowView.findViewById(R.id.start);
             viewHolder.end = (TextView) rowView.findViewById(R.id.end);
+            viewHolder.share = (Button) rowView.findViewById(R.id.share);
+            viewHolder.delete = (Button) rowView.findViewById(R.id.delete);
 
             rowView.setTag(viewHolder);
         }
@@ -58,7 +63,8 @@ public class Adapter extends ArrayAdapter<Entry> {
         viewHolder.timesPerDay.setText(timesPreDay);
         viewHolder.start.setText(getStartTime(entry));
         viewHolder.end.setText(getEndTime(entry));
-
+        viewHolder.share.setTag(entry);
+        viewHolder.delete.setTag(entry);
         return rowView;
     }
 

@@ -8,7 +8,8 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
+            android:padding="10dp"
+            android:textIsSelectable="false"
             />
 
     <TextView
@@ -16,7 +17,8 @@
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
+            android:padding="10dp"
+            android:textIsSelectable="false"
             />
 
     <TextView
@@ -25,7 +27,8 @@
             android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp" android:textIsSelectable="true"
+            android:padding="10dp"
+            android:textIsSelectable="false"
             />
 
     <TextView
@@ -33,7 +36,28 @@
             android:layout_below="@id/title"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:textIsSelectable="true"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="false"
             />
 
+    <Button
+            android:id="@+id/share"
+            android:layout_below="@id/start"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:onClick="shareItem"
+            android:text="@string/share"
+            />
+    <Button
+            android:id="@+id/delete"
+            android:layout_below="@id/end"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:onClick="deleteItem"
+            android:text="@string/delete"
+            />
 </RelativeLayout>

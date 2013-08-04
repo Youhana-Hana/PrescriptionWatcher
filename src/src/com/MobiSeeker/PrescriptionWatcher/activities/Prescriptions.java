@@ -80,10 +80,24 @@ public class Prescriptions extends BaseActivity {
         Prescription.start(this);
     }
 
+    public void deleteItem(View view) {
+        try {
+        Entry entry = (Entry) view.getTag();
+        this.prescriptionRepository.delete(this, entry);
+        }
+        catch (Exception e) {
+            Log.e(Prescriptions.TAG, e.getMessage(), e);
+        }
+    }
+
+    public void shareItem(View view) {
+        Entry entry = (Entry) view.getTag();
+    }
+
     @Override
     protected void onRestart() {
     	// TODO Auto-generated method stub
-    	
+
     	super.onRestart();
     	setCurrentRoboActivity(this);
     }
@@ -95,4 +109,5 @@ public class Prescriptions extends BaseActivity {
     	setCurrentRoboActivity(this);
     	loadEntries();
     }
+
 }
