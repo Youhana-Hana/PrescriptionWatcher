@@ -72,8 +72,6 @@ public class PrescriptionWatcher extends BaseActivity {
 //    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this), null);
 //    	AlarmSetterObject.setAlaram(this, entery);
     	
-    	Intent intent=new Intent(this,NodesList.class);
-    	startActivity(intent);
     }
 
         

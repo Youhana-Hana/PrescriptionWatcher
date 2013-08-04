@@ -20,7 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/watching"
+            android:text="@string/watching" android:visibility="gone"
             android:padding="10dp"
             android:onClick="viewContacts"
             />
@@ -36,7 +36,7 @@
             />
 
        <Button
-            android:layout_width="fill_parent"
+            android:layout_width="fill_parent" android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/testconnection"
