@@ -1,11 +1,12 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
@@ -15,14 +16,14 @@ import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
 
 import java.util.List;
 
-import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectView;
 
 public class Prescriptions extends BaseActivity {
 
-	protected @InjectView(R.id.list)
-	ListView list;
-	
+    protected
+    @InjectView(R.id.list)
+    ListView list;
+
     private final static String TAG = "com.MobiSeeker.PrescriptionWatcher.activities.Prescriptions";
 
     protected PrescriptionRepository prescriptionRepository;
@@ -41,38 +42,24 @@ public class Prescriptions extends BaseActivity {
         this.prescriptionRepository = new PrescriptionRepository();
         setCurrentRoboActivity(this);
     }
-    
+
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        loadEntries();
-
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Entry entry = (Entry)list.getItemAtPosition(position);
-//                LaunchPrescription(entry);
-//            }
-//            });
-         }
-
-    public void loadEntries()
-    {
-    	
-    	 try {
-    	        List<Entry> entries = this.prescriptionRepository.getEntries(this);
-    	        this.adapter = new Adapter(this, 0, entries);
-    	        this.list.setAdapter(adapter);
-    	      
-    	        }
-    	        catch(Exception exception){
-    	            Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
-    	        }
-    	  
     }
-    
+
+    public void loadEntries() {
+        try {
+            List<Entry> entries = this.prescriptionRepository.getEntries(this);
+            this.adapter = new Adapter(this, 0, entries);
+            this.list.setAdapter(adapter);
+
+        } catch (Exception exception) {
+            Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
+        }
+    }
+
     private void LaunchPrescription(Entry entry) {
         Prescription.start(this, entry);
         this.finish();
@@ -83,34 +70,51 @@ public class Prescriptions extends BaseActivity {
     }
 
     public void deleteItem(View view) {
+        final Entry entry = (Entry) view.getTag();
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle(this.getResources().getString(R.string.deleteEntry));
+        alertDialog.setMessage(this.getResources().getString(R.string.deleteEntryMessage));
+        alertDialog.setButton(this.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                deleteEntry(entry);
+            }
+        });
+
+        alertDialog.setButton(this.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+
+        alertDialog.show();
+
+    }
+
+
+    private void deleteEntry(Entry entry) {
         try {
-        Entry entry = (Entry) view.getTag();
-        this.prescriptionRepository.delete(this, entry);
-        loadEntries();
-        }
-        catch (Exception e) {
+            prescriptionRepository.delete(this, entry);
+            loadEntries();
+
+        } catch (Exception e) {
             Log.e(Prescriptions.TAG, e.getMessage(), e);
         }
     }
-
+    
     public void shareItem(View view) {
         Entry entry = (Entry) view.getTag();
     }
 
     @Override
     protected void onRestart() {
-    	// TODO Auto-generated method stub
-
-    	super.onRestart();
-    	setCurrentRoboActivity(this);
+        super.onRestart();
+        setCurrentRoboActivity(this);
     }
 
     @Override
     protected void onResume() {
-    	// TODO Auto-generated method stub
-    	super.onResume();
-    	setCurrentRoboActivity(this);
-    	loadEntries();
+        super.onResume();
+        setCurrentRoboActivity(this);
+        loadEntries();
     }
-
 }

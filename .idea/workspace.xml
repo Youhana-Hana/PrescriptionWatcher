@@ -36,6 +36,8 @@
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -213,10 +215,10 @@
       <file leaf-file-name="Prescriptions.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
+            <state line="102" column="4" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.3858268" vertical-offset="938" max-vertical-offset="1650">
               <folding>
-                <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
-                <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
+                <element signature="e#2389#2557#0" expanded="true" />
+                <element signature="e#2546#2547#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,7 +236,7 @@
       <file leaf-file-name="prescriptions.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/res/layout/prescriptions.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="51" selection-start="667" selection-end="667" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
+            <state line="16" column="51" selection-start="719" selection-end="719" vertical-scroll-proportion="-8.653846" vertical-offset="15" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -260,7 +262,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="1786" selection-end="1786" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="705">
+            <state line="27" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -322,9 +324,9 @@
         <option value="$PROJECT_DIR$/src/res/layout/entryviewer.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionViewer.java" />
         <option value="$PROJECT_DIR$/src/res/layout/prescriptions.xml" />
-        <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/res/layout/entry.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" />
+        <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
       </list>
     </option>
@@ -908,17 +910,17 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38883144" sideWeight="0.58947366" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5321101" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22982456" sideWeight="0.28645295" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48421052" sideWeight="0.28645295" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34126163" sideWeight="0.19122808" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22982456" sideWeight="0.71354705" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48421052" sideWeight="0.71354705" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48947367" sideWeight="0.5005171" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32807016" sideWeight="0.49948293" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24922441" sideWeight="0.58947366" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988626" sideWeight="0.5105263" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34126163" sideWeight="0.77017546" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34126163" sideWeight="0.51578945" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3444056" sideWeight="0.49948293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="100" y="126" width="824" height="516" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.49948293" order="8" side_tool="false" content_ui="tabs" />
@@ -1086,19 +1088,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/res/layout/prescriptions.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="51" selection-start="667" selection-end="667" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
+        <state line="16" column="51" selection-start="719" selection-end="719" vertical-scroll-proportion="-8.653846" vertical-offset="15" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1786" selection-end="1786" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="705">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/res/layout/entry.xml">
@@ -1120,12 +1115,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
+        <state line="102" column="4" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.3858268" vertical-offset="938" max-vertical-offset="1650">
           <folding>
-            <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
-            <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
+            <element signature="e#2389#2557#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
           </folding>
         </state>
       </provider>

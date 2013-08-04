@@ -28,7 +28,8 @@
 
     <string name="newPrescription">New prescription</string>
     <string name="delete">delete</string>
-
+    <string name="deleteEntry">Delete prescription</string>
+    <string name="deleteEntryMessage">Are you sure you want to delete this prescription?</string>
     <string name="user_profile">User profile</string>
     <string name="user_name">User name</string>
     <string name="user_name_summary">User name for identified for your prescriptions</string>
