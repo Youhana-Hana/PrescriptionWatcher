@@ -59,7 +59,7 @@ public class NodesList extends BaseActivity {
         this.prescriptionRepository = new PrescriptionRepository();
         listofNodes=new ArrayList<NodeObject>();
         this.adapter = new CheckListAdapter(this, 0, listofNodes);
-        presCriptionEntry=(Entry)this.getIntent().getSerializableExtra(ConnectionConstant.MY_PRESCRIPTION);
+        presCriptionEntry=(Entry)this.getIntent().getSerializableExtra(ConnectionConstant.PRESCRIPTION_ENTRY);
         
         setCurrentRoboActivity(this);
         
@@ -90,7 +90,7 @@ public class NodesList extends BaseActivity {
     		
     		if(this.adapter.getItem(i).isCheck)
     		{
-    			ServiceManger.getInstance(this,false).sendData("",ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM, this.adapter.getItem(i).nodeName);
+    			ServiceManger.getInstance(this,false).sendData(presCriptionEntry.toString(),ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM, this.adapter.getItem(i).nodeName);
     		}
     		
     	}

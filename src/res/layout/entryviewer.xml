@@ -62,6 +62,22 @@
                     android:layout_marginLeft="22dp"
                     />
 
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/directions"
+                    android:layout_gravity="left|center_vertical"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/comment"
+                    />
+
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

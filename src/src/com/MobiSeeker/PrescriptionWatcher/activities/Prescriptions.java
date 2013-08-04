@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
+import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.data.Adapter;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
@@ -103,6 +104,10 @@ public class Prescriptions extends BaseActivity {
     
     public void shareItem(View view) {
         Entry entry = (Entry) view.getTag();
+    	Intent intent=new Intent(this,NodesList.class);
+    	intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY, entry);
+    	startActivity(intent);
+
     }
 
     @Override
