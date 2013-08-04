@@ -73,21 +73,21 @@ public class Prescriptions extends BaseActivity {
     public void deleteItem(View view) {
         final Entry entry = (Entry) view.getTag();
 
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setTitle(this.getResources().getString(R.string.deleteEntry));
         alertDialog.setMessage(this.getResources().getString(R.string.deleteEntryMessage));
-        alertDialog.setButton(this.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(this.getResources().getString(android.R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 deleteEntry(entry);
             }
         });
 
-        alertDialog.setButton(this.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton(this.getResources().getString(android.R.string.no), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
             }
         });
 
-        alertDialog.show();
+        alertDialog.create().show();
 
     }
 

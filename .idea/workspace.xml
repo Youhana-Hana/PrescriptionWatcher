@@ -36,8 +36,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -195,7 +193,7 @@
       <file leaf-file-name="Prescription.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="9" selection-start="4233" selection-end="4233" vertical-scroll-proportion="0.0" vertical-offset="2310" max-vertical-offset="6720">
+            <state line="150" column="1" selection-start="4075" selection-end="4129" vertical-scroll-proportion="0.0" vertical-offset="2298" max-vertical-offset="6720">
               <folding />
             </state>
           </provider>
@@ -215,10 +213,10 @@
       <file leaf-file-name="Prescriptions.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="4" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.3858268" vertical-offset="938" max-vertical-offset="1650">
+            <state line="89" column="29" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.39433962" vertical-offset="871" max-vertical-offset="1710">
               <folding>
-                <element signature="e#2389#2557#0" expanded="true" />
-                <element signature="e#2546#2547#0" expanded="true" />
+                <element signature="e#2469#2637#0" expanded="true" />
+                <element signature="e#2626#2627#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -910,7 +908,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38883144" sideWeight="0.58947366" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5321101" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48421052" sideWeight="0.28645295" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48421052" sideWeight="0.28645295" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34126163" sideWeight="0.19122808" order="3" side_tool="true" content_ui="tabs" />
@@ -1060,13 +1058,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="9" selection-start="4233" selection-end="4233" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="6135">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="34" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="1530">
@@ -1122,12 +1113,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="1" selection-start="4075" selection-end="4129" vertical-scroll-proportion="0.0" vertical-offset="2298" max-vertical-offset="6720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="4" selection-start="3067" selection-end="3067" vertical-scroll-proportion="1.3858268" vertical-offset="938" max-vertical-offset="1650">
+        <state line="89" column="29" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.39433962" vertical-offset="871" max-vertical-offset="1710">
           <folding>
-            <element signature="e#2389#2557#0" expanded="true" />
-            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#2469#2637#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="true" />
           </folding>
         </state>
       </provider>
