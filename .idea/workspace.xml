@@ -36,7 +36,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09902d37-4fbe-4180-bc8f-6cebe9b3c8b8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" afterPath="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrescriptionWatcher.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,7 +94,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" line="36" class="com.MobiSeeker.PrescriptionWatcher.data.Adapter" package="com.MobiSeeker.PrescriptionWatcher.data">
+      <breakpoint url="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" line="39" class="com.MobiSeeker.PrescriptionWatcher.data.Adapter" package="com.MobiSeeker.PrescriptionWatcher.data">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -110,7 +109,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" line="65" class="com.MobiSeeker.PrescriptionWatcher.data.Adapter" package="com.MobiSeeker.PrescriptionWatcher.data">
+      <breakpoint url="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" line="71" class="com.MobiSeeker.PrescriptionWatcher.data.Adapter" package="com.MobiSeeker.PrescriptionWatcher.data">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -204,7 +203,9 @@
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionViewer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="131" column="34" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="1530">
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,11 +213,20 @@
       <file leaf-file-name="Prescriptions.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="3" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.924812" vertical-offset="351" max-vertical-offset="1320">
+            <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
               <folding>
-                <element signature="e#1446#1748#0" expanded="true" />
-                <element signature="e#1733#1734#0" expanded="true" />
+                <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
+                <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Adapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="46" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1260">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,7 +234,7 @@
       <file leaf-file-name="prescriptions.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/res/layout/prescriptions.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="17" selection-start="633" selection-end="633" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
+            <state line="15" column="51" selection-start="667" selection-end="667" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -236,12 +246,23 @@
       <file leaf-file-name="entry.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/res/layout/entry.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-              <folding />
+            <state line="56" column="23" selection-start="1941" selection-end="1941" vertical-scroll-proportion="-13.0" vertical-offset="502" max-vertical-offset="1020">
+              <folding>
+                <marker date="1375649274094" expanded="true" signature="1786:2145" placeholder="..." />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="1786" selection-end="1786" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="705">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -255,7 +276,7 @@
       <file leaf-file-name="checkitem.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/res/layout/checkitem.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
@@ -268,15 +289,6 @@
         <entry file="file://$PROJECT_DIR$/src/res/drawable-xhdpi/prescription.png">
           <provider selected="true" editor-type-id="images">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrescriptionWatcher.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="29" selection-start="2307" selection-end="2307" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="1290">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -298,21 +310,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/src/com/MobiSeeker/PrescriptionWatcher/connection/GivenADataHandler.java" />
-        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Splash.java" />
-        <option value="$PROJECT_DIR$/src/res/layout/settings" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Settings.java" />
         <option value="$PROJECT_DIR$/src/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/AlarmSetterObject.java" />
         <option value="$PROJECT_DIR$/src/res/xml/settings.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Settings.java" />
         <option value="$PROJECT_DIR$/src/res/layout/prescription.xml" />
-        <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Entry.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescription.java" />
         <option value="$PROJECT_DIR$/src/res/layout/entryviewer.xml" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionViewer.java" />
+        <option value="$PROJECT_DIR$/src/res/layout/prescriptions.xml" />
+        <option value="$PROJECT_DIR$/src/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/res/layout/entry.xml" />
+        <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java" />
         <option value="$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java" />
       </list>
     </option>
@@ -423,6 +435,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrescriptionWatcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrescriptionWatcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -438,6 +472,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrescriptionWatcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -945,26 +997,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/res/xml/settings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="50" selection-start="865" selection-end="874" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="495" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="43" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="12" selection-start="2394" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="705">
+        <state line="25" column="43" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="119" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="2310" />
+        <state line="17" column="119" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="2310">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionWatcher.java">
@@ -974,16 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/layout/entry.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/res/drawable-xhdpi/prescription.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -991,16 +1025,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/res/drawable-xhdpi/applicationicon.png">
       <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/layout/checkitem.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="386">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
@@ -1044,13 +1068,15 @@
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/PrescriptionViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="34" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="1530">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/layout/prescriptions.xml">
+    <entry file="file://$PROJECT_DIR$/src/res/layout/checkitem.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="633" selection-end="633" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="386">
           <folding />
         </state>
       </provider>
@@ -1058,12 +1084,48 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/layout/prescriptions.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="51" selection-start="667" selection-end="667" vertical-scroll-proportion="-8.653846" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1786" selection-end="1786" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/layout/entry.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="23" selection-start="1941" selection-end="1941" vertical-scroll-proportion="-13.0" vertical-offset="502" max-vertical-offset="1020">
+          <folding>
+            <marker date="1375649274094" expanded="true" signature="1786:2145" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/data/Adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="46" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/com/MobiSeeker/PrescriptionWatcher/activities/Prescriptions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="3" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.924812" vertical-offset="351" max-vertical-offset="1320">
+        <state line="56" column="17" selection-start="1418" selection-end="1764" vertical-scroll-proportion="0.6967419" vertical-offset="322" max-vertical-offset="1545">
           <folding>
-            <element signature="e#1446#1748#0" expanded="true" />
-            <element signature="e#1733#1734#0" expanded="true" />
+            <marker date="1375649427691" expanded="true" signature="1448:1612" placeholder="onItemClick(adapterView, view, position, l) -&gt; {" />
+            <marker date="1375649427691" expanded="true" signature="1745:1762" placeholder="}" />
           </folding>
         </state>
       </provider>

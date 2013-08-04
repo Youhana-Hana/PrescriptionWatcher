@@ -48,13 +48,13 @@ public class Prescriptions extends BaseActivity {
 
         loadEntries();
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Entry entry = (Entry)list.getItemAtPosition(position);
-                LaunchPrescription(entry);
-            }
-            });
+//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                Entry entry = (Entry)list.getItemAtPosition(position);
+//                LaunchPrescription(entry);
+//            }
+//            });
          }
 
     public void loadEntries()
@@ -81,10 +81,24 @@ public class Prescriptions extends BaseActivity {
         Prescription.start(this);
     }
 
+    public void deleteItem(View view) {
+        try {
+        Entry entry = (Entry) view.getTag();
+        this.prescriptionRepository.delete(this, entry);
+        }
+        catch (Exception e) {
+            Log.e(Prescriptions.TAG, e.getMessage(), e);
+        }
+    }
+
+    public void shareItem(View view) {
+        Entry entry = (Entry) view.getTag();
+    }
+
     @Override
     protected void onRestart() {
     	// TODO Auto-generated method stub
-    	
+
     	super.onRestart();
     	setCurrentRoboActivity(this);
     }
@@ -96,4 +110,5 @@ public class Prescriptions extends BaseActivity {
     	setCurrentRoboActivity(this);
     	loadEntries();
     }
+
 }
