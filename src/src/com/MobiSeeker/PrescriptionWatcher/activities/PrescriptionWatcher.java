@@ -68,9 +68,9 @@ public class PrescriptionWatcher extends BaseActivity {
 //    	List<String> NoteList=manger.getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
 //    	manger.sendPrescriptionToWatcher(entery, null);
 //    	System.out.println(NoteList);
-    	Date date=new Date();
-    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this), null);
-    	AlarmSetterObject.setAlaram(this, entery);
+//    	Date date=new Date();
+//    	Entry entery=new Entry(this,"Panadoool",date,date,new Time(date.getTime()),new Time(date.getTime()),2d,2,"Panadool",ConnectionConstant.MY_PRESCRIPTION,Utilites.getDeviceImei(this), null);
+//    	AlarmSetterObject.setAlaram(this, entery);
     	
     	Intent intent=new Intent(this,NodesList.class);
     	startActivity(intent);
