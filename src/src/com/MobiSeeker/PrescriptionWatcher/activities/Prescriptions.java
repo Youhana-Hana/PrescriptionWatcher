@@ -41,6 +41,7 @@ public class Prescriptions extends BaseActivity {
         this.prescriptionRepository = new PrescriptionRepository();
         setCurrentRoboActivity(this);
     }
+    
 
     @Override
     protected void onStart() {
@@ -85,6 +86,7 @@ public class Prescriptions extends BaseActivity {
         try {
         Entry entry = (Entry) view.getTag();
         this.prescriptionRepository.delete(this, entry);
+        loadEntries();
         }
         catch (Exception e) {
             Log.e(Prescriptions.TAG, e.getMessage(), e);
