@@ -92,7 +92,7 @@ public class PrescriptionViewer extends BaseActivity  {
 
         setContentView(R.layout.entryviewer);
         Intent intent = getIntent();
-        Entry entry = (Entry)intent.getSerializableExtra("entry");
+        Entry entry = (Entry)intent.getSerializableExtra(ConnectionConstant.PRESCRIPTION_ENTRY);
 
         initFromEntry(entry);
         setCurrentRoboActivity(this);

@@ -7,8 +7,10 @@ public class Utilites {
 	
 	public static String getDeviceImei(Context context)
 	{
-		TelephonyManager manger=(TelephonyManager)(context.getSystemService(Context.TELEPHONY_SERVICE));
-		return manger.getDeviceId();	
+		 String id = android.provider.Settings.System.getString(context.getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+	        return id;
+//		TelephonyManager manger=(TelephonyManager)(context.getSystemService(Context.TELEPHONY_SERVICE));
+//		return manger.getDeviceId();	
 	}
 
 }

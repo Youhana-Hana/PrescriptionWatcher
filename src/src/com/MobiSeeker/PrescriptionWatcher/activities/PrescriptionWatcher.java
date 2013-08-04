@@ -1,26 +1,18 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
-import java.sql.Time;
-import java.util.Date;
-import java.util.List;
-
-import org.w3c.dom.NodeList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
-import com.MobiSeeker.PrescriptionWatcher.connection.NodeManager;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
-import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
-import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
-import com.samsung.chord.IChordChannel;
 
 public class PrescriptionWatcher extends BaseActivity {
 
+	 
+	Entry prescriptionEntry;
 	ServiceManger manger;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +21,18 @@ public class PrescriptionWatcher extends BaseActivity {
         manger.startService();
         manger.bindChordService();
         setCurrentRoboActivity(this);
+        prescriptionEntry=(Entry)this.getIntent().getSerializableExtra(ConnectionConstant.MY_PRESCRIPTION);
+        if(prescriptionEntry!=null)
+        {
+    		Intent intent=new Intent(this,PrescriptionViewer.class);
+    		intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY, prescriptionEntry);
+    		intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);                     
+    		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    		startActivity(intent);
+
+        }
+        
+        
     }
     @Override
     protected void onRestart() {

@@ -21,6 +21,7 @@ import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.EntryMangement;
+import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
 import com.google.gson.Gson;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements
@@ -78,12 +79,13 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 				.equalsIgnoreCase(ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM)) {
 
 			confirmToRegisterAlarmForPrescription(message);
-		} else if (MessageType
-				.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED)) {
-
+		} else if (MessageType.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED))
+		{
+			
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.CONFIRMED_TAKEN_MIDICEN)) {
-
+			confirmForTakenMedicin(node, message);
+			
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.CANCEL_TAKEN_MIDICEN)) {
 
