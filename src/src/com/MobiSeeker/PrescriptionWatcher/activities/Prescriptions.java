@@ -64,14 +64,7 @@ public class Prescriptions extends BaseActivity {
     	        List<Entry> entries = this.prescriptionRepository.getEntries(this);
     	        this.adapter = new Adapter(this, 0, entries);
     	        this.list.setAdapter(adapter);
-    	        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-    	            @Override
-    	            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-    	                Entry entry = (Entry)list.getAdapter().getItem(position);
-    	                LaunchPrescription(entry);
-    	            }
-    	        });
-
+    	      
     	        }
     	        catch(Exception exception){
     	            Log.e(Prescriptions.TAG, "Prescriptions onStart", exception);
