@@ -82,6 +82,9 @@ public class ServiceManger {
 				mChordService.start(ChordManager.INTERFACE_TYPE_WIFI);
 				mChordService.joinChannel(NodeManager.CHORD_API_CHANNEL);
 				listOfChannels=mChordService.getJoinedChannelList();
+				if(onconnected!=null)
+					onconnected.connected();
+			
 				
 				System.out.println(listOfChannels);
 				for(int i=0;i<cashedNotes.size();i++)
@@ -90,8 +93,6 @@ public class ServiceManger {
 				}
 				cashedNotes.clear();
 				sendDataToAll("", ConnectionConstant.GET_DEVICE_NAME);
-				if(onconnected!=null)
-					onconnected.connected();
 			//	sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
 			}
 		};

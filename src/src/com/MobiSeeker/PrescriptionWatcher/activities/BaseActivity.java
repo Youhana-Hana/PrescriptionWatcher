@@ -9,6 +9,7 @@ import android.accounts.AccountManager;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.Window;
@@ -118,6 +119,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						prescriptionEntry.setPrescriptionType(ConnectionConstant.PRESCRIPTION_WATCHER);
 						new EntryMangement().saveEntry(prescriptionEntry,
 								currentRoboActivity);
 						AlarmSetterObject.setAlaram(currentRoboActivity,
@@ -138,6 +140,15 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 	private void confirmForTakenMedicin(final String node,
 			final String messageContent) {
+		
+		if(currentRoboActivity!=null&&currentRoboActivity.isFinishing())
+		{
+			Intent intent=new Intent(this,PrescriptionWatcher.class);
+			
+			startActivity(intent);
+			
+			
+		}
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
 				currentRoboActivity);
 		alertBuilder.setPositiveButton(getString(R.string.ok),
