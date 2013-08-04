@@ -7,9 +7,10 @@ import android.view.View;
 import com.MobiSeeker.PrescriptionWatcher.R;
 import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
+import com.MobiSeeker.PrescriptionWatcher.connection.onConnected;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 
-public class PrescriptionWatcher extends BaseActivity {
+public class PrescriptionWatcher extends BaseActivity implements onConnected {
 
 	 
 	Entry prescriptionEntry;
@@ -17,11 +18,11 @@ public class PrescriptionWatcher extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        manger=ServiceManger.getInstance(this,true);
+        manger=ServiceManger.getInstance(this,true,this);
         manger.startService();
         manger.bindChordService();
         setCurrentRoboActivity(this);
-        prescriptionEntry=(Entry)this.getIntent().getSerializableExtra(ConnectionConstant.MY_PRESCRIPTION);
+        prescriptionEntry=(Entry)this.getIntent().getSerializableExtra(ConnectionConstant.PRESCRIPTION_ENTRY);
         if(prescriptionEntry!=null)
         {
     		Intent intent=new Intent(this,PrescriptionViewer.class);
@@ -29,15 +30,11 @@ public class PrescriptionWatcher extends BaseActivity {
     		intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);                     
     		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     		startActivity(intent);
-
         }
-        
-        
     }
     @Override
     protected void onRestart() {
     	// TODO Auto-generated method stub
-    	
     	super.onRestart();
     	setCurrentRoboActivity(this);
     }
@@ -77,6 +74,12 @@ public class PrescriptionWatcher extends BaseActivity {
 //    	AlarmSetterObject.setAlaram(this, entery);
     	
     }
+	@Override
+	public void connected() {
+		// TODO Auto-generated method stub
+		if(prescriptionEntry!=null&&prescriptionEntry.getPrescriptionType().equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER))
+		ServiceManger.getInstance(this, false, null).sendDataToAll(prescriptionEntry.toString(), ConnectionConstant.CONFIRMED_TAKEN_MIDICEN);
+	}
 
         
 }

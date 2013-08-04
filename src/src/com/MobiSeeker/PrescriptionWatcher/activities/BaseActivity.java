@@ -57,12 +57,12 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 		if (MessageType.equalsIgnoreCase(ConnectionConstant.GET_DEVICE_NAME)) {
 			try {
-				ServiceManger.getInstance(this, false).sendData(
+				ServiceManger.getInstance(this, false,null).sendData(
 						AccountManager.get(this).getAccounts()[0].name,
 						ConnectionConstant.MY_DEVICE_NAME, node);
 
 			} catch (Exception ee) {
-				ServiceManger.getInstance(this, false).sendData(
+				ServiceManger.getInstance(this, false,null).sendData(
 						android.os.Build.MODEL,
 						ConnectionConstant.MY_DEVICE_NAME, node);
 			}
@@ -146,7 +146,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						ServiceManger
-								.getInstance(BaseActivity.this, false)
+								.getInstance(BaseActivity.this, false,null)
 								.sendData(
 										messageContent,
 										ConnectionConstant.CONFIRMED_TAKEN_MIDICEN,
@@ -159,7 +159,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						ServiceManger
-								.getInstance(BaseActivity.this, false)
+								.getInstance(BaseActivity.this, false,null)
 								.sendData(
 										messageContent,
 										ConnectionConstant.CANCEL_TAKEN_MIDICEN,

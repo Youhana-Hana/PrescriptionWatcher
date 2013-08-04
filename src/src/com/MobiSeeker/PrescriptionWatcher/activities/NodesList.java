@@ -71,10 +71,10 @@ public class NodesList extends BaseActivity {
 
         try
         {
-        List<String> nodeObjects = ServiceManger.getInstance(this, false).getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
+        List<String> nodeObjects = ServiceManger.getInstance(this, false,null).getmChordService().getJoinedNodeList(NodeManager.CHORD_API_CHANNEL);
         for(int i=0;i<nodeObjects.size();i++)
         {
-        	ServiceManger.getInstance(this, false).sendData("", ConnectionConstant.GET_DEVICE_NAME, nodeObjects.get(i));        	
+        	ServiceManger.getInstance(this, false,null).sendData("", ConnectionConstant.GET_DEVICE_NAME, nodeObjects.get(i));        	
         }
         }
         catch(Exception exception){
@@ -90,7 +90,7 @@ public class NodesList extends BaseActivity {
     		
     		if(this.adapter.getItem(i).isCheck)
     		{
-    			ServiceManger.getInstance(this,false).sendData(presCriptionEntry.toString(),ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM, this.adapter.getItem(i).nodeName);
+    			ServiceManger.getInstance(this,false,null).sendData(presCriptionEntry.toString(),ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM, this.adapter.getItem(i).nodeName);
     		}
     		
     	}

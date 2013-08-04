@@ -23,18 +23,23 @@ public class ServiceManger {
 	
 	private ArrayList<CashedNodesData> cashedNotes;
 	
+	static onConnected onconnected;
+	
 	private ServiceManger(BaseActivity activity)
 	{
 		this.mainActivity=activity;
 		cashedNotes=new ArrayList<CashedNodesData>();
 	}	
 	
-	public static ServiceManger getInstance(BaseActivity activity,boolean reCreate)
+	public static ServiceManger getInstance(BaseActivity activity,boolean reCreate,onConnected onConnected)
 	{
 		if(servicemanger==null)
 		{
 		servicemanger=new ServiceManger(activity);
+		if(onConnected!=null)
+		onconnected=onConnected;	
 		servicemanger.Connect();
+		
 		}else
 		{
 			if(!servicemanger.isConnected())
@@ -68,6 +73,7 @@ public class ServiceManger {
 				{
 					mChordService.initialize(mainActivity);
 					Connected=true;
+				
 				}catch(Exception EE)
 				{
 					EE.printStackTrace();
@@ -84,6 +90,8 @@ public class ServiceManger {
 				}
 				cashedNotes.clear();
 				sendDataToAll("", ConnectionConstant.GET_DEVICE_NAME);
+				if(onconnected!=null)
+					onconnected.connected();
 			//	sendDataToAll("welcome",ConnectionConstant.SEND_MESSAGE);
 			}
 		};
