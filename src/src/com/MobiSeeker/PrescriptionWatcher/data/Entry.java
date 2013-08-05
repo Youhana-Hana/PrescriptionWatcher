@@ -146,8 +146,20 @@ public class Entry implements Serializable{
     private String prescriptionType;
     private String prescriptionUser;
     private String prescriptionImagePath;
+    private String username;
     
-    @Override
+    
+    
+    public String getUsername() {
+    	
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	@Override
     public String toString() {
 	// TODO Auto-generated method stub
     	return new Gson().toJson(this);

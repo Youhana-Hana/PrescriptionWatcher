@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -111,6 +113,7 @@ public class PrescriptionViewer extends BaseActivity  {
     }
 
     private void initFromEntry(Entry entry) {
+    	runNotification();
         this.drugName.setText(entry.getMedicineName());
         this.dosage.setText(String.valueOf(entry.getDosage()));
         this.timesPerDay.setText(String.valueOf(entry.getTimesPerDay()));
@@ -133,4 +136,29 @@ public class PrescriptionViewer extends BaseActivity  {
             image.setImageURI(Uri.parse(imagePath));
         }
     }
+    
+    Ringtone r ;
+    
+	public void runNotification()
+	{
+		Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+		r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+		r.play();
+		
+	}
+
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		super.finish();
+		stop();
+	}
+	
+	public void stop()
+	{
+		if(r!=null&&r.isPlaying())
+		r.stop();
+	}
+	
+	
 }

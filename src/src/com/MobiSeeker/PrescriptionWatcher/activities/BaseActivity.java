@@ -1,18 +1,17 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
 import java.util.HashMap;
-import java.util.List;
-
 import roboguice.activity.RoboFragmentActivity;
 import android.R;
 import android.accounts.AccountManager;
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ import com.MobiSeeker.PrescriptionWatcher.connection.ServiceManger;
 import com.MobiSeeker.PrescriptionWatcher.data.AlarmSetterObject;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.EntryMangement;
-import com.MobiSeeker.PrescriptionWatcher.data.Utilites;
+import com.MobiSeeker.PrescriptionWatcher.data.Settings;
 import com.google.gson.Gson;
 
 public abstract class BaseActivity extends RoboFragmentActivity implements
@@ -58,8 +57,8 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 		if (MessageType.equalsIgnoreCase(ConnectionConstant.GET_DEVICE_NAME)) {
 			try {
-				ServiceManger.getInstance(this, false,null).sendData(
-						AccountManager.get(this).getAccounts()[0].name,
+				ServiceManger.getInstance(this, false,null).sendData(new Settings(this).getUserName()+" ( "+
+						AccountManager.get(this).getAccounts()[0].name+" )",
 						ConnectionConstant.MY_DEVICE_NAME, node);
 
 			} catch (Exception ee) {
@@ -84,39 +83,77 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 		{
 			
 		} else if (MessageType
-				.equalsIgnoreCase(ConnectionConstant.CONFIRMED_TAKEN_MIDICEN)) {
+				.equalsIgnoreCase(ConnectionConstant.PLEAECONFIRME_TAKEN_MIDICEN)) {
 			confirmForTakenMedicin(node, message);
 			
 		} else if (MessageType
-				.equalsIgnoreCase(ConnectionConstant.CANCEL_TAKEN_MIDICEN)) {
+				.equalsIgnoreCase(ConnectionConstant.CONFIRMED_TAKEN_MIDICEN))
+		{
+			Toast toast = Toast.makeText(this, this.getString(com.MobiSeeker.PrescriptionWatcher.R.string.thanksforinterest), 10000 * 60);
+			toast.show();
 
+		}else if (MessageType
+				.equalsIgnoreCase(ConnectionConstant.CANCEL_TAKEN_MIDICEN)) {
+			cancelForTakenMedicin(node, message);
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.REQUEST_FOR_TAKE_MEDICIEN)) {
 			confirmForTakenMedicin(node, message);
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.GET_MY_LOCATION)) {
 
-		} else if (MessageType
-				.equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER)) {
-
 		}
-
-		Toast toast = Toast.makeText(this, message, 1000 * 60);
-		toast.show();
+		
+//		Toast toast = Toast.makeText(this, message, 1000 * 60);
+//		toast.show();
 
 	}
+	
+	
+	public void checkActivity()
+	{
+		if(currentRoboActivity!=null&&currentRoboActivity.isFinishing()){
+			Intent intent=new Intent(this,PrescriptionWatcher.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			}
 
+	}
+	Ringtone r;
+	Uri notification;
+	public void runNotification()
+	{
+		if(notification==null)
+		 notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		if(r==null)
+		r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+		if(!r.isPlaying())
+		r.play();
+		
+		
+	}
+	
+	public void stopAlaram()
+	{
+		
+	}
+	
 	private void confirmToRegisterAlarmForPrescription(
 			final String prescriptionEntryString) {
+
+		checkActivity();
+		if(!new Settings(currentRoboActivity).isWatchingPrescriptions())
+			return;
+		runNotification();
 		final Entry prescriptionEntry = new Gson().fromJson(
 				prescriptionEntryString, Entry.class);
 
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
 				currentRoboActivity);
-		alertBuilder.setMessage(prescriptionEntry.getMedicineName());
+		alertBuilder.setTitle(prescriptionEntry.getUsername());
+	alertBuilder.setMessage(currentRoboActivity.getString(com.MobiSeeker.PrescriptionWatcher.R.string.acceptmedience));
 		alertBuilder.setPositiveButton(getString(R.string.ok),
 				new OnClickListener() {
-
+			
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						prescriptionEntry.setPrescriptionType(ConnectionConstant.PRESCRIPTION_WATCHER);
@@ -124,6 +161,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 								currentRoboActivity);
 						AlarmSetterObject.setAlaram(currentRoboActivity,
 								prescriptionEntry);
+						
 					}
 				});
 
@@ -131,7 +169,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 				new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-
+						stopAlaram();
 					}
 				});
 		alertBuilder.show();
@@ -140,28 +178,25 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 	private void confirmForTakenMedicin(final String node,
 			final String messageContent) {
-		
-		if(currentRoboActivity!=null&&currentRoboActivity.isFinishing())
-		{
-			Intent intent=new Intent(this,PrescriptionWatcher.class);
-			
-			startActivity(intent);
-			
-			
-		}
+		checkActivity();
+		runNotification();
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
 				currentRoboActivity);
+		alertBuilder.setMessage(currentRoboActivity.getString(com.MobiSeeker.PrescriptionWatcher.R.string.dearcustomerconfirm));
+
 		alertBuilder.setPositiveButton(getString(R.string.ok),
 				new OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						stopAlaram();
 						ServiceManger
 								.getInstance(BaseActivity.this, false,null)
 								.sendData(
 										messageContent,
 										ConnectionConstant.CONFIRMED_TAKEN_MIDICEN,
 										node);
+						
 					}
 				});
 
@@ -169,6 +204,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 				new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						stopAlaram();
 						ServiceManger
 								.getInstance(BaseActivity.this, false,null)
 								.sendData(
@@ -180,6 +216,37 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 		alertBuilder.show();
 	}
 
+	
+
+	private void cancelForTakenMedicin(final String node,
+			final String messageContent) {
+		checkActivity();
+
+		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
+				currentRoboActivity);
+		alertBuilder.setMessage(currentRoboActivity.getString(com.MobiSeeker.PrescriptionWatcher.R.string.cancelmedicine));
+
+		alertBuilder.setPositiveButton(getString(R.string.ok),
+				new OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						stopAlaram();
+					}
+				});
+
+		alertBuilder.show();
+	}
+
+	
+	@Override
+	public void finish() {
+		// TODO Auto-generated method stub
+		super.finish();
+		stopAlaram();
+	}
+	
+	
 	@Override
 	public void onFileWillReceive(String node, String channel, String fileName,
 			String exchangeId) {

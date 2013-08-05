@@ -28,7 +28,7 @@ public class PrescriptionWatcher extends BaseActivity implements onConnected {
         	
     		if(prescriptionEntry!=null&&prescriptionEntry.getPrescriptionType().equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER))
     		{
-    			ServiceManger.getInstance(this, false, null).sendDataToAll(prescriptionEntry.toString(), ConnectionConstant.CONFIRMED_TAKEN_MIDICEN);
+    			ServiceManger.getInstance(this, false, null).sendDataToAll(prescriptionEntry.toString(), ConnectionConstant.PLEAECONFIRME_TAKEN_MIDICEN);
     		}else{
     		Intent intent=new Intent(this,PrescriptionViewer.class);
     		intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY, prescriptionEntry);
@@ -85,7 +85,7 @@ public class PrescriptionWatcher extends BaseActivity implements onConnected {
 		// TODO Auto-generated method stub
 		if(prescriptionEntry!=null&&prescriptionEntry.getPrescriptionType().equalsIgnoreCase(ConnectionConstant.PRESCRIPTION_WATCHER))
 		{
-			ServiceManger.getInstance(this, false, null).sendDataToAll(prescriptionEntry.toString(), ConnectionConstant.CONFIRMED_TAKEN_MIDICEN);
+			ServiceManger.getInstance(this, false, null).sendDataToAll(prescriptionEntry.toString(), ConnectionConstant.PLEAECONFIRME_TAKEN_MIDICEN);
 		}
 
 	}

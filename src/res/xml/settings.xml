@@ -17,7 +17,7 @@
     </PreferenceCategory>
  
     <PreferenceCategory android:title="@string/pref_watch" >
-        <CheckBoxPreference android:defaultValue="false"
+        <CheckBoxPreference android:defaultValue="true"
                             android:key="prefWatch"
                             android:summary="@string/pref_watch_summary"
                             android:title="@string/pref_watch" >

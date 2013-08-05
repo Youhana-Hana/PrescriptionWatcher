@@ -11,7 +11,9 @@ public class ConnectionConstant {
 
 	 public static final String REQUEST_FOR_REGISTER_ALARAM = "REQUEST_FOR_REGISTER_ALARAM";
 	 public static final String ALARAM_REGISTERED = "ALARAM_REGISTERED";
+	 public static final String PLEAECONFIRME_TAKEN_MIDICEN = "PLEAECONFIRME_TAKEN_MIDICEN";
 	 public static final String CONFIRMED_TAKEN_MIDICEN = "CONFIRMED_TAKEN_MIDICEN";
+	 
 	 public static final String CANCEL_TAKEN_MIDICEN = "CANCEL_TAKEN_MIDICEN";
 
 	 public static final String REQUEST_FOR_TAKE_MEDICIEN = "REQUEST_FOR_TAKE_MEDICIEN";

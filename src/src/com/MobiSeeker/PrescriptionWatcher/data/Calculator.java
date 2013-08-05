@@ -14,7 +14,7 @@ public class Calculator {
                                 double dosage,
                                 int timesPerDay,
                                 String comment) {
-
+    	
         this.validate(medicineName, startDate, endDate, startTime, endTime, dosage, timesPerDay);
 
         long days = this.daysBetween(startDate, endDate);
@@ -23,7 +23,6 @@ public class Calculator {
 
         return this.fillPrescriptions(medicineName, dosage, startDate, startTime, timesPerDay, days, intervals, comment);
     }
-
 
     private Schedule fillPrescriptions(String medicineName,
                                        double dosage,
@@ -36,8 +35,8 @@ public class Calculator {
 
         Schedule schedule = new Schedule();
 
-        for (int day = 0; day < days; day++) {
-
+        for (int day = 0; day < days; day++)
+        {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(startDate);
             calendar.set(calendar.get(Calendar.YEAR),
@@ -48,11 +47,11 @@ public class Calculator {
                     0);
 
             calendar.add(Calendar.DATE, day);
-
+            
             Calendar time = Calendar.getInstance();
             time.setTime(startTime);
 
-            calendar.set(Calendar.AM_PM, Calendar.AM);
+            calendar.set(Calendar.AM_PM, time.get(Calendar.AM_PM));
             calendar.set(Calendar.HOUR, time.get(Calendar.HOUR));
             calendar.set(Calendar.MINUTE, time.get(Calendar.MINUTE));
             calendar.set(Calendar.SECOND, time.get(Calendar.SECOND));
@@ -106,9 +105,9 @@ public class Calculator {
         }
     }
 
-    private long daysBetween(Date startDate, Date endDate) {
+    private long daysBetween(Date startDate, Date endDate)
+    {
         long daysBetweenInMilliSeconds = endDate.getTime() - startDate.getTime();
-
         return Math.abs((daysBetweenInMilliSeconds / (1000 * 60 * 60 * 24))) + 1;
     }
 

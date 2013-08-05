@@ -14,6 +14,7 @@ import com.MobiSeeker.PrescriptionWatcher.connection.ConnectionConstant;
 import com.MobiSeeker.PrescriptionWatcher.data.Adapter;
 import com.MobiSeeker.PrescriptionWatcher.data.Entry;
 import com.MobiSeeker.PrescriptionWatcher.data.PrescriptionRepository;
+import com.MobiSeeker.PrescriptionWatcher.data.Settings;
 
 import java.util.List;
 
@@ -104,6 +105,7 @@ public class Prescriptions extends BaseActivity {
     
     public void shareItem(View view) {
         Entry entry = (Entry) view.getTag();
+        entry.setUsername(new Settings(this).getUserName());
     	Intent intent=new Intent(this,NodesList.class);
     	intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY, entry);
     	startActivity(intent);

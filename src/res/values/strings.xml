@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="dearcustomerconfirm">Dear can you please confirm that you take your medicine ?</string>
+    <string name="acceptmedience">Dear please i need your help for watching my medicine can you help me ?</string>
+    
+        <string name="cancelmedicine">I don not like to take this medicine</string>
+    
+        <string name="thanksforinterest">Thank you</string>
+        
         <string name="save">Save</string>
     <string name="share">Share</string>
     <string name="app_name">Prescription Watcher</string>
