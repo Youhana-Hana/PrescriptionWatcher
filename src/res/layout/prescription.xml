@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="vertical" android:background="@drawable/background"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_margin="5dp">
@@ -18,32 +18,32 @@
 
             <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="wrap_content" style="@style/titletypepurpulmeduim"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/drugName"
                     android:layout_gravity="left|center_vertical"/>
 
             <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="match_parent"  android:textColor="#00000000"
                     android:layout_height="wrap_content" android:paddingLeft="5dp"
-                    android:id="@+id/drugName"
-                    android:layout_marginLeft="22dp"
+                    android:id="@+id/drugName" 
+                    android:layout_marginLeft="22dp" android:background="@drawable/input" 
                     android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:inputType="text"/>
 
             <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="wrap_content" style="@style/titletypepurpulmeduim"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/dosage"
                     android:layout_gravity="left|center_vertical"/>
 
             <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="match_parent" android:textColor="#00000000"
                     android:layout_height="wrap_content" android:paddingLeft="5dp"
                     android:inputType="numberDecimal"
-                    android:ems="10"
+                    android:ems="10" android:background="@drawable/input"
                     android:layout_marginLeft="22dp"
                     android:id="@+id/dosage"
                     android:imeOptions="actionNext"/>
@@ -52,13 +52,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/timesPerDay"
+                    android:text="@string/timesPerDay" style="@style/titletypepurpulmeduim"
                     android:id="@+id/textView"
                     android:layout_gravity="left|center_vertical"/>
 
             <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:textColor="#00000000"
+                    android:layout_height="wrap_content" android:background="@drawable/input"
                     android:inputType="number" android:paddingLeft="5dp"
                     android:ems="10"
                     android:id="@+id/timesPerDay"
@@ -69,14 +69,14 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textAppearance="?android:attr/textAppearanceMedium" style="@style/titletypepurpulmeduim"
                     android:text="@string/directions"
                     android:layout_gravity="left|center_vertical"/>
 
             <EditText
                     android:layout_width="fill_parent"
-                    android:layout_height="50dp"
-                    android:inputType="textMultiLine"
+                    android:layout_height="50dp" android:textColor="#00000000"
+                    android:inputType="textMultiLine" android:background="@drawable/input"
                     android:ems="10" android:paddingLeft="5dp"
                     android:layout_gravity="left|center_vertical"
                     android:layout_marginLeft="22dp"
@@ -88,7 +88,7 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"> 
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -96,14 +96,14 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/startDate"
                         android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
+                        android:layout_weight="1" style="@style/titletypepurpulmeduim"
                         android:minWidth="100dp"/>
 
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/startDate"
-                        android:layout_gravity="center_vertical|left"
+                        android:id="@+id/startDate" android:textColor="#00000000"
+                        android:layout_gravity="center_vertical|left" android:background="@drawable/input"
                         android:onClick="showDatePicker"
                         android:clickable="true"
                         android:inputType="date" android:paddingLeft="5dp"
@@ -113,12 +113,12 @@
 
                 <EditText
                         android:layout_width="wrap_content"
-                        android:minWidth="100dp"
+                        android:minWidth="100dp" android:textColor="#00000000"
                         android:layout_height="wrap_content"
                         android:id="@+id/startTime"
                         android:layout_gravity="left|center_vertical"
                         android:onClick="showTimePicker"
-                        android:clickable="true"
+                        android:clickable="true" android:background="@drawable/input"
                         android:layout_weight="1" android:paddingLeft="5dp"
                         android:inputType="datetime"
                         android:focusableInTouchMode="false"
@@ -137,14 +137,14 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/endDate"
                         android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
+                        android:layout_weight="1" style="@style/titletypepurpulmeduim"
                         android:minWidth="100dp"
                         />
 
                 <EditText
-                        android:layout_width="wrap_content"
+                        android:layout_width="wrap_content" android:background="@drawable/input"
                         android:layout_height="wrap_content"
-                        android:id="@+id/endDate"
+                        android:id="@+id/endDate" android:textColor="#00000000"
                         android:layout_gravity="left|center_vertical"
                         android:onClick="showDatePicker"
                         android:clickable="true" android:paddingLeft="5dp"
@@ -155,9 +155,9 @@
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/endTime"
+                        android:id="@+id/endTime" android:background="@drawable/input"
                         android:layout_gravity="left|center_vertical"
-                        android:onClick="showTimePicker"
+                        android:onClick="showTimePicker" android:textColor="#00000000"
                         android:clickable="true" android:paddingLeft="5dp"
                         android:layout_weight="1"
                         android:inputType="datetime"
@@ -172,7 +172,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/prescriptionimage"
                         android:layout_gravity="left|center_vertical"
-                        android:layout_weight="1"
+                        android:layout_weight="1" style="@style/titletypepurpulmeduim"
                         android:minWidth="100dp"/>
 
             
@@ -199,22 +199,22 @@
             android:gravity="center_horizontal">
 
         <Button
-                android:layout_width="0dp"
+                android:layout_width="0dp" android:background="@drawable/savebtn"
                 android:layout_height="wrap_content"
-                android:text="@android:string/cancel" android:layout_weight="1"
+                android:text="@android:string/cancel" android:layout_weight="1" android:textColor="#FFFFFFFF"
                 android:onClick="cancel"/>
 
         <Button
                 android:id="@+id/buttonDelete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp" android:background="@drawable/savebtn"
+                android:layout_height="wrap_content" android:textColor="#FFFFFFFF"
                 android:text="@string/delete" android:layout_weight="1"
                 android:onClick="delete"
                 android:visibility="invisible"/>
 
         <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp" android:background="@drawable/savebtn"
+                android:layout_height="wrap_content" android:textColor="#FFFFFFFF"
                 android:text="@string/save" android:layout_weight="1"
                 android:onClick="save"/>
 

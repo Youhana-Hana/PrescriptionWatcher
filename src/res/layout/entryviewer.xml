@@ -1,5 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="vertical" android:background="@drawable/background"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_margin="5dp">
@@ -17,13 +17,13 @@
 
             <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="wrap_content" style="@style/titletypepurpulmeduim"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/drugName"
                     android:layout_gravity="left|center_vertical"/>
 
             <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="match_parent" style="@style/titletypepurpulmeduim"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:id="@+id/drugName"
@@ -34,12 +34,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/dosage"
+                    android:text="@string/dosage" style="@style/titletypepurpulmeduim"
                     android:layout_gravity="left|center_vertical"/>
 
             <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="wrap_content" style="@style/titletypepurpulmeduim"
                     android:paddingLeft="5dp"
                     android:layout_marginLeft="22dp"
                     android:id="@+id/dosage"/>
@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/timesPerDay"
+                    android:text="@string/timesPerDay" style="@style/titletypepurpulmeduim"
                     android:id="@+id/textView"
                     android:layout_gravity="left|center_vertical"/>
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:paddingLeft="5dp"
-                    android:id="@+id/timesPerDay"
+                    android:id="@+id/timesPerDay" style="@style/titletypepurpulmeduim"
                     android:layout_gravity="left|center_vertical"
                     android:layout_marginLeft="22dp"
                     />
@@ -66,13 +66,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/directions"
+                    android:text="@string/directions" style="@style/titletypepurpulmeduim"
                     android:layout_gravity="left|center_vertical"/>
 
             <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="50dp"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="5dp" style="@style/titletypepurpulmeduim"
                     android:layout_gravity="left|center_vertical"
                     android:layout_marginLeft="22dp"
                     android:id="@+id/comment"
@@ -85,7 +85,7 @@
 
                 <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="wrap_content" style="@style/titletypepurpulmeduim"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/startDate"
                         android:layout_gravity="left|center_vertical"
@@ -95,7 +95,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/startDate"
+                        android:id="@+id/startDate" style="@style/titletypepurpulmeduim"
                         android:layout_gravity="center_vertical|left"
                         android:paddingLeft="5dp"
                         android:layout_weight="2"
@@ -105,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:minWidth="100dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/startTime"
+                        android:id="@+id/startTime" style="@style/titletypepurpulmeduim"
                         android:layout_gravity="left|center_vertical"
                         android:layout_weight="1" android:paddingLeft="5dp"
                         />
@@ -121,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@string/endDate"
+                        android:text="@string/endDate" style="@style/titletypepurpulmeduim"
                         android:layout_gravity="left|center_vertical"
                         android:layout_weight="1"
                         android:minWidth="100dp"
@@ -132,13 +132,13 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/endDate"
                         android:layout_gravity="left|center_vertical"
-                        android:paddingLeft="5dp"
+                        android:paddingLeft="5dp" style="@style/titletypepurpulmeduim"
                         android:layout_weight="2"
                         />
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/endTime"
+                        android:id="@+id/endTime" style="@style/titletypepurpulmeduim"
                         android:layout_gravity="left|center_vertical"
                        android:paddingLeft="5dp"
                         android:layout_weight="1"
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/prescriptionimage"
+                    android:text="@string/prescriptionimage" style="@style/titletypepurpulmeduim"
                     android:layout_gravity="left|center_vertical"
                     android:layout_weight="1"
                     android:minWidth="100dp"/>

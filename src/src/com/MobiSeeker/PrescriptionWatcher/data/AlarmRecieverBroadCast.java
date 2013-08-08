@@ -16,7 +16,6 @@ public class AlarmRecieverBroadCast extends BroadcastReceiver{
 		System.out.println("Alaram recieved ");
 		Intent intent=new Intent(arg0,PrescriptionWatcher.class);
 		intent.putExtra(ConnectionConstant.PRESCRIPTION_ENTRY, alarmIntent.getSerializableExtra(ConnectionConstant.PRESCRIPTION_ENTRY));
-		intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);                     
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		arg0.startActivity(intent);
 		

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="vertical" android:background="@drawable/background"
               android:id="@+id/mainpagerayout"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
 
     <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:background="@drawable/savebtn" android:layout_marginTop="20dp"
+            android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
             android:layout_gravity="center_horizontal"
-            android:text="@string/prescriptions"
+            android:text="@string/prescriptions" android:textColor="#FFFFFFFF"
             android:padding="10dp"
             android:onClick="viewPrescriptions"
             />
@@ -18,19 +18,19 @@
 
     <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/watching" android:visibility="gone"
+            android:layout_height="wrap_content" android:background="@drawable/savebtn"
+            android:layout_gravity="center_horizontal" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:text="@string/watching" android:visibility="gone" android:textColor="#FFFFFFFF"
             android:padding="10dp"
             android:onClick="viewContacts"
             />
 
 
     <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:layout_height="wrap_content" android:background="@drawable/savebtn"
             android:layout_gravity="center_horizontal"
-            android:text="@string/settings"
+            android:text="@string/settings" android:textColor="#FFFFFFFF"
             android:padding="10dp"
             android:onClick="viewSettings"
             />
@@ -38,8 +38,8 @@
        <Button
             android:layout_width="fill_parent" android:visibility="gone"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/testconnection"
+            android:layout_gravity="center_horizontal" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
+            android:text="@string/testconnection" android:textColor="#FFFFFFFF"
             android:padding="10dp"
             android:onClick="testConnection"
             />

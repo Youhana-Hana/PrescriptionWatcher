@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="vertical" android:background="@drawable/background"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
  
@@ -11,9 +11,10 @@
                   android:layout_weight="3">
 
         <ListView android:id="@+id/list"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:drawSelectorOnTop="false"
+                  android:layout_width="match_parent" android:layout_marginTop="10dp" 
+                  android:layout_height="match_parent" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"
+                  android:drawSelectorOnTop="false"  android:divider="@android:color/transparent"
+  android:dividerHeight="10.0sp"
                   android:layout_gravity="left|center_vertical"/>
 
         <TextView android:id="@android:id/empty"
@@ -29,9 +30,9 @@
                     android:layout_weight="1" android:gravity="center_vertical|center_horizontal" >
 
       <Button android:layout_width="fill_parent" android:id="@+id/newprescription_button"
-              android:layout_height="wrap_content" android:padding="10dp"
+              android:layout_height="wrap_content" android:padding="10dp" android:background="@drawable/savebtn"
               android:text="@string/newPrescription"
-              android:onClick="createPrescription"
+              android:onClick="createPrescription" android:textColor="#FFFFFFFF"
         />
     </LinearLayout>
 

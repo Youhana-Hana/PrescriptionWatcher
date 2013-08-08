@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 	<uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
     <application
             android:label="@string/app_name"
@@ -29,7 +30,7 @@
                 android:name=".activities.PrescriptionWatcher"
                 android:label="@string/app_name" android:icon="@drawable/prescription"
                 android:screenOrientation="portrait"
-                android:theme="@android:style/Holo.ButtonBar">
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -39,17 +40,17 @@
         <activity
                 android:name=".activities.Prescription"
                 android:label="@string/prescription"
-                android:icon="@drawable/prescription" android:theme="@android:style/Holo.ButtonBar">
+                android:icon="@drawable/prescription" >
         </activity>
 
         <activity
                 android:name=".activities.Prescriptions"
                 android:label="@string/prescription"
-                android:icon="@drawable/prescription" android:theme="@android:style/Holo.ButtonBar">
+                android:icon="@drawable/prescription" >
         </activity>
         <activity
                 android:name=".activities.Settings"
-                android:label="Settings" android:theme="@android:style/Holo.ButtonBar">
+                android:label="Settings" >
         </activity>
 
         <service

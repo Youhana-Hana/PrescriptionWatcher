@@ -77,13 +77,32 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 		else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.REQUEST_FOR_REGISTER_ALARAM)) {
+			Intent intent=new Intent(this,PrescriptionWatcher.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			intent.putExtra("takenmedcine", false);
+			intent.putExtra("requestforalaram", true);
+			intent.putExtra("node", node);
+			intent.putExtra("message", message);
+			startActivity(intent);
+		
 
-			confirmToRegisterAlarmForPrescription(message);
+		//	confirmToRegisterAlarmForPrescription(message);
 		} else if (MessageType.equalsIgnoreCase(ConnectionConstant.ALARAM_REGISTERED))
 		{
 			
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.PLEAECONFIRME_TAKEN_MIDICEN)) {
+			Intent intent=new Intent(this,PrescriptionWatcher.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			intent.putExtra("takenmedcine", true);
+			intent.putExtra("requestforalaram", false);
+
+			intent.putExtra("node", node);
+			intent.putExtra("message", message);
+			startActivity(intent);
+		
 			confirmForTakenMedicin(node, message);
 			
 		} else if (MessageType
@@ -111,12 +130,17 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 	
 	public void checkActivity()
 	{
-		if(currentRoboActivity!=null&&currentRoboActivity.isFinishing()){
+		try{
+		if(currentRoboActivity!=null&&currentRoboActivity.isFinishing())
+		{
 			Intent intent=new Intent(this,PrescriptionWatcher.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(intent);
-			}
+			
+		}
 
+		}catch(Exception ee){ee.printStackTrace();}
 	}
 	Ringtone r;
 	Uri notification;
@@ -137,7 +161,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 		
 	}
 	
-	private void confirmToRegisterAlarmForPrescription(
+	public void confirmToRegisterAlarmForPrescription(
 			final String prescriptionEntryString) {
 
 		checkActivity();
@@ -176,7 +200,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 
 	}
 
-	private void confirmForTakenMedicin(final String node,
+	public void confirmForTakenMedicin(final String node,
 			final String messageContent) {
 		checkActivity();
 		runNotification();

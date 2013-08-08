@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
      
     <PreferenceCategory android:title="@string/user_profile" >
-        <EditTextPreference android:title="@string/user_name"
+        <EditTextPreference android:title="@string/user_name" 
             android:summary="@string/user_name_summary"
             android:key="prefUsername"/>
     </PreferenceCategory>

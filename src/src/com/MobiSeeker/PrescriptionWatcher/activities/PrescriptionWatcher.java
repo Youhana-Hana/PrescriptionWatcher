@@ -15,6 +15,11 @@ public class PrescriptionWatcher extends BaseActivity implements onConnected {
 	 
 	Entry prescriptionEntry;
 	ServiceManger manger;
+	   private boolean isTakenMedcine;
+	    private boolean requestforalaram;
+	    String node;
+	    String message;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -39,17 +44,34 @@ public class PrescriptionWatcher extends BaseActivity implements onConnected {
         }
     }
     @Override
+    protected void onStart() {
+    	// TODO Auto-generated method stub
+    	super.onStart();
+        isTakenMedcine=getIntent().getBooleanExtra("takenmedcine",false);
+        requestforalaram=getIntent().getBooleanExtra("requestforalaram",false);
+        node=getIntent().getStringExtra("node");
+        message=getIntent().getStringExtra("message");
+        if(isTakenMedcine)
+        	confirmForTakenMedicin(node, message);
+        if(requestforalaram)
+        	confirmToRegisterAlarmForPrescription(message);
+   
+
+    }
+    
+    @Override
     protected void onRestart() {
     	// TODO Auto-generated method stub
     	super.onRestart();
     	setCurrentRoboActivity(this);
-    }
+        }
 
     @Override
     protected void onResume() {
     	// TODO Auto-generated method stub
     	super.onResume();
     	setCurrentRoboActivity(this);
+      
     }
 
     public void viewPrescriptions(View view) {
