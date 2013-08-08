@@ -55,8 +55,10 @@ public class PrescriptionWatcher extends BaseActivity implements onConnected {
         	confirmForTakenMedicin(node, message);
         if(requestforalaram)
         	confirmToRegisterAlarmForPrescription(message);
-   
-
+        isTakenMedcine=false;
+        requestforalaram=false;
+        getIntent().putExtra("takenmedcine", false);
+        getIntent().putExtra("requestforalaram", false);
     }
     
     @Override

@@ -103,7 +103,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 			intent.putExtra("message", message);
 			startActivity(intent);
 		
-			confirmForTakenMedicin(node, message);
+			//confirmForTakenMedicin(node, message);
 			
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.CONFIRMED_TAKEN_MIDICEN))
@@ -116,7 +116,15 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 			cancelForTakenMedicin(node, message);
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.REQUEST_FOR_TAKE_MEDICIEN)) {
-			confirmForTakenMedicin(node, message);
+			Intent intent=new Intent(this,PrescriptionWatcher.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			intent.putExtra("takenmedcine", true);
+			intent.putExtra("requestforalaram", false);
+
+			intent.putExtra("node", node);
+			intent.putExtra("message", message);
+			startActivity(intent);
 		} else if (MessageType
 				.equalsIgnoreCase(ConnectionConstant.GET_MY_LOCATION)) {
 
