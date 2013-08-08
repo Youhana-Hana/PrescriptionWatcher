@@ -27,7 +27,7 @@
             android:allowBackup="false">
 
         <activity
-                android:name=".activities.PrescriptionWatcher"
+                android:name=".activities.Splash"
                 android:label="@string/app_name" android:icon="@drawable/prescription"
                 android:screenOrientation="portrait"
                 >
@@ -75,8 +75,9 @@
                 android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
-    <activity android:name=".activities.NodesList"></activity>
+    <activity android:name=".activities.NodesList" ></activity>
     <activity android:name=".activities.PrescriptionViewer"></activity>
+    <activity android:name=".activities.PrescriptionWatcher"></activity>
          
    </application>
 </manifest>

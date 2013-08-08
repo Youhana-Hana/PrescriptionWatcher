@@ -78,6 +78,9 @@ public class Entry implements Serializable{
     }
 
     public String getMedicineName() {
+    	if(this.medicineName==null)
+    		return "";
+
         return this.medicineName;
     }
 
@@ -106,10 +109,16 @@ public class Entry implements Serializable{
     }
 
     public String getComment() {
+    	if(this.comment==null)
+    		return "";
+
         return this.comment;
     }
 
     public String getPrescriptionType() {
+    	if(this.prescriptionType==null)
+    		return "";
+
 		return prescriptionType;
 	}
 
@@ -118,10 +127,15 @@ public class Entry implements Serializable{
 	}
 
 	public String getPrescriptionUser() {
+    	if(this.prescriptionUser==null)
+    		return "";
+
 		return prescriptionUser;
 	}
 
     public String getPrescriptionImagePath() {
+    	if(this.prescriptionImagePath==null)
+    		return "";
         return this.prescriptionImagePath;
     }
 
@@ -163,6 +177,38 @@ public class Entry implements Serializable{
     public String toString() {
 	// TODO Auto-generated method stub
     	return new Gson().toJson(this);
-    }   
+    }
+
+	public void setMedicineName(String medicineName) {
+		this.medicineName = medicineName;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public void setStartTime(Time startTime) {
+		this.startTime = startTime;
+	}
+
+	public void setEndTime(Time endTime) {
+		this.endTime = endTime;
+	}
+
+	public void setDosage(double dosage) {
+		this.dosage = dosage;
+	}
+
+	public void setTimesPerDay(int timesPerDay) {
+		this.timesPerDay = timesPerDay;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}   
     
 }

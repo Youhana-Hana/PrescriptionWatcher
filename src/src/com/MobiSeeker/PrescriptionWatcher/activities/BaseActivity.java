@@ -1,6 +1,11 @@
 package com.MobiSeeker.PrescriptionWatcher.activities;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.HashMap;
+
+import org.joda.time.LocalTime;
+
 import roboguice.activity.RoboFragmentActivity;
 import android.R;
 import android.accounts.AccountManager;
@@ -8,10 +13,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -41,6 +48,7 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 //		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -178,7 +186,10 @@ public abstract class BaseActivity extends RoboFragmentActivity implements
 		runNotification();
 		final Entry prescriptionEntry = new Gson().fromJson(
 				prescriptionEntryString, Entry.class);
-
+		Time startTime=prescriptionEntry.getStartTime();
+        LocalTime localTime = new LocalTime(startTime);
+        LocalTime _startTime=localTime.plusMinutes(4);
+        prescriptionEntry.setStartTime(Time.valueOf(_startTime.toString("HH:mm:ss")));
 		AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
 				currentRoboActivity);
 		alertBuilder.setTitle(prescriptionEntry.getUsername());
